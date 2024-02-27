@@ -12,6 +12,7 @@ h1, h2, h3 {
 	margin-top: 0px;
 	font-weight: normal;
 	color: #FFFFFF;
+	font-family:'Times New Roman', Times, serif;
 }
 
 h1 {
@@ -88,7 +89,7 @@ a img {
 }
 
 #menu ul {
-	margin: 0px;
+	margin-top: -15px;
 	padding: 49px 0px 0px 0px;
 	list-style: none;
 	line-height: normal;
@@ -103,14 +104,11 @@ a img {
 	display: block;
 	width: auto;
 	padding: 6px 20px;
+	padding-bottom: 200px;
 }
 
 #menu a:hover {
 	text-decoration: underline;
-}
-
-#menu .active {
-	background: #404040;
 }
 
 #menu .active a {
