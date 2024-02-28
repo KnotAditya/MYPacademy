@@ -111,9 +111,30 @@ a img {
 	text-decoration: underline;
 }
 
-#menu .active a {
+#menu .active {
 	background: url(images/img02.gif) no-repeat 100% -40px;
 }
+
+.navbar1 a:hover {
+    color: #34c3eb !important;
+}
+
+.navbar2 a:hover {
+    color: red !important;
+}
+
+.navbar3 a:hover {
+    color: #f6aa05 !important; /* A shade of yellow */
+}
+
+.navbar4 a:hover {
+    color: greenyellow !important;
+}
+
+.navbar5 a:hover {
+    color: #f522f5 !important;
+}
+
 
 /* Page */
 
