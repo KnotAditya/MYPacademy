@@ -55,6 +55,7 @@ h1 {
 
 h2 {
 	font-size: 1.8em;
+	padding-top: 15px;
 }
 
 h3 {
@@ -64,6 +65,12 @@ h3 {
 p, ol, ul {
 	margin-bottom: 1.8em;
 	line-height: 160%;
+}
+
+p2 {
+	border: 2px solid black;
+	padding: 10px;
+	align: center;
 }
 
 a {
