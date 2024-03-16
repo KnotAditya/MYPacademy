@@ -59,18 +59,24 @@ h1, h2, h3 {
 
 h1 {
 	font-size: 2.4em;
-	padding-top: 28px;
-    padding-left: 350px;
 }
 
 h2 {
-	font-size: 1.8em;
+	font-size: 1.4em;
 }
 
 h3 {
 	font-size: 1.4em;
 	color: black;
 	text-align: center;
+}
+
+#text1 {
+    padding-top: 40px;
+    border: 2px solid #000000;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: white;
 }
 
 p, ol, ul {
@@ -116,6 +122,8 @@ a img {
 #logo {
 	float: left;
 	padding-left: 20px;
+    text-align: center;
+    width: 100%;
 }
 
 #logo h1, #logo p {
@@ -127,6 +135,7 @@ a img {
 
 #logo h1 {
 	padding: 25px 0px 0px 0px;
+    text-align: center;
 }
 
 /* Menu */
@@ -305,7 +314,7 @@ background: #444444 url(images/img02.jpg) no-repeat left 50%;
 }
 
 .navbar2 a:hover {
-    color: #004626 !important;
+    color: #eef83b !important;
 }
 
 .navbar3 a:hover {
@@ -318,4 +327,16 @@ background: #444444 url(images/img02.jpg) no-repeat left 50%;
 
 .navbar5 a:hover {
     color:  rgb(240, 35, 69) !important;
+}
+
+.nav-button {
+    padding: 10px 20px; /* Adjust padding to your preference */
+    background-color: #81b673; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* Remove border */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.nav-button:hover {
+    background-color: #5c8647; /* Change background color on hover */
 }

@@ -8,13 +8,13 @@ body {
 }
 
 #header, #menu {
-    background: #81b673;
+    background: rgb(240, 35, 69);
 }
 
 /* Menu */
 #menu {
     float: right;
-    background: #81b673; /* Ensure the navbar background is red */
+    background: rgb(240, 35, 69); /* Ensure the navbar background is red */
     padding-right: 0; /* Adjust padding if necessary */
 }
 
@@ -23,7 +23,7 @@ body {
     padding: 0;
     list-style: none;
     line-height: normal;
-    background: #81b673; /* Ensure the navbar background is red */
+    background: rgb(240, 35, 69); /* Ensure the navbar background is red */
 }
 
 #menu li {
@@ -35,20 +35,10 @@ body {
 #menu a {
     display: block;
     padding: 10px 20px; /* Adjust padding to your preference */
-    color: white; /* Adjust text color if necessary */
-    background: #81b673; /* Ensure the navbar background is red */
+    color: #FFFFFF; /* Adjust text color if necessary */
+    background: rgb(240, 35, 69); /* Ensure the navbar background is red */
 }
 
-.underline {
-	text-decoration: underline;
-}
-
-#economicschapter1 {
-	border: 2px solid black;
-	padding: 10px;
-	width: 300px;
-	height: 250px;
-}
 
 h1, h2, h3 {
 	margin-top: 0px;
@@ -60,22 +50,25 @@ h1, h2, h3 {
 h1 {
 	font-size: 2.4em;
 	padding-top: 28px;
-    padding-left: 350px;
+	padding-left: 10px;
 }
 
 h2 {
 	font-size: 1.8em;
+	padding-top: 15px;
 }
 
 h3 {
 	font-size: 1.4em;
-	color: black;
-	text-align: center;
 }
 
 p, ol, ul {
 	margin-bottom: 1.8em;
 	line-height: 160%;
+}
+
+p2 {
+	align: center;
 }
 
 a {
@@ -160,7 +153,26 @@ a img {
 #menu .active a {
 	background: url(images/img02.gif) no-repeat 100% -40px;
 }
-/* Page */
+
+.navbar1 a:hover {
+	color: #000000 !important;
+}
+
+.navbar2 a:hover {
+    color: #004626 !important;
+}
+
+.navbar3 a:hover {
+    color: #81b673 !important; /* A shade of yellow */
+}
+
+.navbar4 a:hover {
+    color: #6257e3 !important;
+}
+
+.navbar5 a:hover {
+    color:  #FFFFFF !important;
+}
 
 #page {
 	width: 900px;
@@ -298,24 +310,4 @@ background: #444444 url(images/img02.jpg) no-repeat left 50%;
 #footer a {
 	color: #FFFFFF;
 }
-/* Color of navigation bar hovers*/
 
-.navbar1 a:hover {
-	color: #000000 !important;
-}
-
-.navbar2 a:hover {
-    color: #004626 !important;
-}
-
-.navbar3 a:hover {
-    color: #FFFFFF !important; /* A shade of yellow */
-}
-
-.navbar4 a:hover {
-    color: #6257e3 !important;
-}
-
-.navbar5 a:hover {
-    color:  rgb(240, 35, 69) !important;
-}

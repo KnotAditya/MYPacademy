@@ -8,13 +8,13 @@ body {
 }
 
 #header, #menu {
-    background: #FF0000;
+    background: #004626;
 }
 
 /* Menu */
 #menu {
     float: right;
-    background: red; /* Ensure the navbar background is red */
+    background: #004626; /* Ensure the navbar background is red */
     padding-right: 0; /* Adjust padding if necessary */
 }
 
@@ -23,7 +23,7 @@ body {
     padding: 0;
     list-style: none;
     line-height: normal;
-    background: red; /* Ensure the navbar background is red */
+    background: #004626; /* Ensure the navbar background is red */
 }
 
 #menu li {
@@ -35,8 +35,8 @@ body {
 #menu a {
     display: block;
     padding: 10px 20px; /* Adjust padding to your preference */
-    color: white; /* Adjust text color if necessary */
-    background: red; /* Ensure the navbar background is red */
+    color: #FFFFFF; /* Adjust text color if necessary */
+    background: #004626; /* Ensure the navbar background is red */
 }
 
 
@@ -68,8 +68,6 @@ p, ol, ul {
 }
 
 p2 {
-	border: 2px solid black;
-	padding: 10px;
 	align: center;
 }
 
@@ -155,7 +153,26 @@ a img {
 #menu .active a {
 	background: url(images/img02.gif) no-repeat 100% -40px;
 }
-/* Page */
+
+.navbar1 a:hover {
+	color: #000000 !important;
+}
+
+.navbar2 a:hover {
+    color: #FFFFFF !important;
+}
+
+.navbar3 a:hover {
+    color: #81b673 !important; /* A shade of yellow */
+}
+
+.navbar4 a:hover {
+    color: #6257e3 !important;
+}
+
+.navbar5 a:hover {
+    color:  rgb(240, 35, 69) !important;
+}
 
 #page {
 	width: 900px;
@@ -292,4 +309,9 @@ background: #444444 url(images/img02.jpg) no-repeat left 50%;
 
 #footer a {
 	color: #FFFFFF;
+}
+#text {
+	padding: 6px;
+	text-align: center !important;
+	font-size: 15px;
 }
