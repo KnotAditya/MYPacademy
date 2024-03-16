@@ -8,13 +8,13 @@ body {
 }
 
 #header, #menu {
-    background: #f6aa05;
+    background: #81b673;
 }
 
 /* Menu */
 #menu {
     float: right;
-    background: #f6aa05; /* Ensure the navbar background is red */
+    background: #81b673; /* Ensure the navbar background is red */
     padding-right: 0; /* Adjust padding if necessary */
 }
 
@@ -23,7 +23,7 @@ body {
     padding: 0;
     list-style: none;
     line-height: normal;
-    background: #f6aa05; /* Ensure the navbar background is red */
+    background: #81b673; /* Ensure the navbar background is red */
 }
 
 #menu li {
@@ -36,7 +36,7 @@ body {
     display: block;
     padding: 10px 20px; /* Adjust padding to your preference */
     color: white; /* Adjust text color if necessary */
-    background: #f6aa05; /* Ensure the navbar background is red */
+    background: #81b673; /* Ensure the navbar background is red */
 }
 
 .underline {
@@ -46,6 +46,8 @@ body {
 #economicschapter1 {
 	border: 2px solid black;
 	padding: 10px;
+	width: 300px;
+	height: 250px;
 }
 
 h1, h2, h3 {
@@ -68,6 +70,7 @@ h2 {
 h3 {
 	font-size: 1.4em;
 	color: black;
+	text-align: center;
 }
 
 p, ol, ul {
@@ -294,4 +297,25 @@ background: #444444 url(images/img02.jpg) no-repeat left 50%;
 
 #footer a {
 	color: #FFFFFF;
+}
+/* Color of navigation bar hovers*/
+
+.navbar1 a:hover {
+	color: #000000 !important;
+}
+
+.navbar2 a:hover {
+    color: #eef83b !important;
+}
+
+.navbar3 a:hover {
+    color: #FFFFFF !important; /* A shade of yellow */
+}
+
+.navbar4 a:hover {
+    color: #6257e3 !important;
+}
+
+.navbar5 a:hover {
+    color:  rgb(240, 35, 69) !important;
 }
