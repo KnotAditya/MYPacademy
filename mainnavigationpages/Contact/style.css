@@ -8,13 +8,13 @@ body {
 }
 
 #header, #menu {
-    background: #f6aa05;
+    background: #FF0000;
 }
 
 /* Menu */
 #menu {
     float: right;
-    background: #f6aa05; /* Ensure the navbar background is red */
+    background: red; /* Ensure the navbar background is red */
     padding-right: 0; /* Adjust padding if necessary */
 }
 
@@ -23,7 +23,7 @@ body {
     padding: 0;
     list-style: none;
     line-height: normal;
-    background: #f6aa05; /* Ensure the navbar background is red */
+    background: red; /* Ensure the navbar background is red */
 }
 
 #menu li {
@@ -36,17 +36,9 @@ body {
     display: block;
     padding: 10px 20px; /* Adjust padding to your preference */
     color: white; /* Adjust text color if necessary */
-    background: #f6aa05; /* Ensure the navbar background is red */
+    background: red; /* Ensure the navbar background is red */
 }
 
-.underline {
-	text-decoration: underline;
-}
-
-#economicschapter1 {
-	border: 2px solid black;
-	padding: 10px;
-}
 
 h1, h2, h3 {
 	margin-top: 0px;
@@ -58,7 +50,8 @@ h1, h2, h3 {
 h1 {
 	font-size: 2.4em;
 	padding-top: 28px;
-    padding-left: 350px;
+	padding-left: 10px;
+    
 }
 
 h2 {
@@ -67,7 +60,6 @@ h2 {
 
 h3 {
 	font-size: 1.4em;
-	color: black;
 }
 
 p, ol, ul {
