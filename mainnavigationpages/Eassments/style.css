@@ -1,4 +1,3 @@
-
 body {
 	margin: 0px;
 	padding: 0px;
@@ -8,6 +7,39 @@ body {
 	color: #444444;
 }
 
+#header, #menu {
+    background: #81b673;
+}
+
+/* Menu */
+#menu {
+    float: right;
+    background: #81b673; /* Ensure the navbar background is red */
+    padding-right: 0; /* Adjust padding if necessary */
+}
+
+#menu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    line-height: normal;
+    background: #81b673; /* Ensure the navbar background is red */
+}
+
+#menu li {
+    float: left;
+    margin: 0px;
+    padding: 0px; /* Adjust padding if necessary */
+}
+
+#menu a {
+    display: block;
+    padding: 10px 20px; /* Adjust padding to your preference */
+    color: white; /* Adjust text color if necessary */
+    background: g#81b673; /* Ensure the navbar background is red */
+}
+
+
 h1, h2, h3 {
 	margin-top: 0px;
 	font-weight: normal;
@@ -15,8 +47,18 @@ h1, h2, h3 {
 	font-family:'Times New Roman', Times, serif;
 }
 
+h4,h5 {
+    padding: px;
+	margin-top: 0px;
+	font-weight: normal;
+	color: #000000;
+	font-family:'Times New Roman', Times, serif;
+}
+
 h1 {
 	font-size: 2.4em;
+	padding-top: 28px;
+	padding-left: 10px;
 }
 
 h2 {
@@ -26,6 +68,15 @@ h2 {
 h3 {
 	font-size: 1.4em;
 }
+
+h4 {
+    font-size: 1.2em;
+}
+
+h5 {
+    font-size: 3.0em;
+}
+
 
 p, ol, ul {
 	margin-bottom: 1.8em;
@@ -53,6 +104,8 @@ a img {
 
 /* Header */
 
+/* Header */
+/* Header */
 #header {
 	width: 900px;
 	height: 100px;
@@ -65,7 +118,6 @@ a img {
 }
 
 /* Logo */
-
 #logo {
 	float: left;
 	padding-left: 20px;
@@ -83,14 +135,14 @@ a img {
 }
 
 /* Menu */
-
 #menu {
 	float: right;
+	height: 100px; /* Add this property */
 }
 
 #menu ul {
-	margin-top: -15px;
-	padding: 49px 0px 0px 0px;
+	margin: 0;
+	padding: 30px 0px 0px 0px; /* Adjust padding to your preference */
 	list-style: none;
 	line-height: normal;
 }
@@ -104,53 +156,25 @@ a img {
 	display: block;
 	width: auto;
 	padding: 6px 20px;
-	padding-bottom: 200px;
 }
 
 #menu a:hover {
 	text-decoration: underline;
 }
 
-#menu .active {
+#menu .active a {
 	background: url(images/img02.gif) no-repeat 100% -40px;
 }
-
-.navbar1 a:hover {
-    color: #34c3eb !important;
-}
-
-.navbar2 a:hover {
-    color: red !important;
-}
-
-.navbar3 a:hover {
-    color: #f6aa05 !important; /* A shade of yellow */
-}
-
-.navbar4 a:hover {
-    color: greenyellow !important;
-}
-
-.navbar5 a:hover {
-    color: #f522f5 !important;
-}
-
-
 /* Page */
 
 #page {
 	width: 900px;
+	height: 1000px;
 	margin: 0px auto;
-	padding: 10px 0px 0px 0px;
 	background: #FFFFFF;
 }
 
-#header-pic {
-	background: url(images/website-banner.jpeg) no-repeat left top;
-	width: 1000px;
-	height: 250px;
-	margin-left: 100px;
-}
+
 
 /* Content */
 
@@ -165,7 +189,7 @@ a img {
 
 .post .title {
 	margin: 0px;
-	background: #444444 url(images/img02.jpg) no-repeat left 50%;
+background: #444444 url(images/img02.jpg) no-repeat left 50%;
 	padding: 7px 25px;
 	font-size: 1.4em;
 }
@@ -215,7 +239,6 @@ a img {
 	margin-left: 20px;
 	margin-right: 20px;
 	line-height: 30px;
-	padding-left: 15px;
 	border-bottom: 1px dashed #BDBDBD;
 	background: url(images/img04.jpg) no-repeat left 50%;
 }
