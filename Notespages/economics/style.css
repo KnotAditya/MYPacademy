@@ -330,13 +330,21 @@ background: #444444 url(images/img02.jpg) no-repeat left 50%;
 }
 
 
-.nav-button img {
-    padding: 30px 20px;
-    background-color: transparent;
-    cursor: pointer;
-    position: relative;
-    top: -80px;
-    left: -380px;
-    width: 100px; /* Set the width of the image */
-    height: 60px; /* Set the height of the image */
+.nav-button {
+	padding: 10px 20px;
+    background-color: gray;
+	border: none;
+	cursor: pointer;
+	position: relative;
+	top: -45px;
+	left: -350px;
+	width: 130px;
+	height: 60px;
+	border-radius: 10px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+.nav-button:hover {
+	background-color: black;
 }
