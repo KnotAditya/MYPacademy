@@ -329,14 +329,14 @@ background: #444444 url(images/img02.jpg) no-repeat left 50%;
     color:  rgb(240, 35, 69) !important;
 }
 
-.nav-button {
-    padding: 10px 20px; /* Adjust padding to your preference */
-    background-color: #81b673; /* Button background color */
-    color: white; /* Button text color */
-    border: none; /* Remove border */
-    cursor: pointer; /* Change cursor to pointer on hover */
-}
 
-.nav-button:hover {
-    background-color: #5c8647; /* Change background color on hover */
+.nav-button img {
+    padding: 30px 20px;
+    background-color: transparent;
+    cursor: pointer;
+    position: relative;
+    top: -80px;
+    left: -380px;
+    width: 100px; /* Set the width of the image */
+    height: 60px; /* Set the height of the image */
 }
