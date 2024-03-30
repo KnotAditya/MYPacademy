@@ -101,8 +101,68 @@ body {
 	position: absolute;
 	top: 550px;
 }
+#physicsformulabooklet {
+	border: 2px solid black;
+	padding: 10px;
+	width: 250px;
+	height: 100px;
+	position: absolute;
+	top: 750px;
+}
+#physicschapter1 {
+	border: 2px solid black;
+	padding: 10px;
+	width: 250px;
+	height: 100px;
+	position: absolute;
+	top: 750px;
+	left: 580px;
+}
+#physicschapter2 {
+	border: 2px solid black;
+	padding: 10px;
+	width: 250px;
+	height: 100px;
+	position: absolute;
+	top: 750px;
+	left: 900px;
+}
+#physicschapter3 {
+	border: 2px solid black;
+	padding: 10px;
+	width: 250px;
+	height: 100px;
+	position: absolute;
+	top: 900px;
+}
+#physicschapter4 {
+	border: 2px solid black;
+	padding: 10px;
+	width: 250px;
+	height: 100px;
+	position: absolute;
+	top: 900px;
+	left: 580px;
+}
+#physicschapter5 {
+	border: 2px solid black;
+	padding: 10px;
+	width: 250px;
+	height: 100px;
+	position: absolute;
+	top: 900px;
+	left: 900px;
+}
+#physicschapter6 {
+	border: 2px solid black;
+	padding: 10px;
+	width: 250px;
+	height: 100px;
+	position: absolute;
+	top: 1050px;
+}
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
 	margin-top: 0px;
 	font-weight: normal;
 	color: #000000;
@@ -125,6 +185,12 @@ h3 {
 	text-align: center;
 }
 
+h4 {
+	font-size: 1.8em;
+	color: black;
+    position: absolute;
+    top: 700px;
+}
 p, ol, ul {
 	margin-bottom: 1.8em;
 	line-height: 160%;
@@ -216,7 +282,7 @@ a img {
 
 #page {
 	width: 900px;
-	height: 1000px;
+	height: 2000px;
 	margin: 0px auto;
 	background: #FFFFFF;
 }
