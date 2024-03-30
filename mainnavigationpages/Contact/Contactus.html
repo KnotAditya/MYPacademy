@@ -29,4 +29,17 @@
 <div id="page">
     <div style="clear:both; margin:0;"></div>
     <h1><b>Contact Us:</b></h1>
+
+	<div id="feedback-form">
+		<form id="contact-form" method="POST" action="send-feedback.php">
+		  <label for="email">Email:</label>
+		  <input type="email" name="email" id="email" required />
+		  <br />
+		  <label for="message">Message:</label>
+		  <textarea name="message" id="message" rows="5" cols="50" required></textarea>
+		  <br />
+		  <button type="submit" name="submit">Send Feedback</button>
+		</form>
+	  </div>
+
 </div>
