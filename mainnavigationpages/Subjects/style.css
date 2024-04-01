@@ -161,6 +161,50 @@ body {
 	position: absolute;
 	top: 1050px;
 }
+#physicschapter7 {
+	border: 2px solid black;
+	padding: 10px;
+	width: 250px;
+	height: 100px;
+	position: absolute;
+	top: 1050px;
+	left: 580px;
+}
+#physicschapter8 {
+	border: 2px solid black;
+	padding: 10px;
+	width: 250px;
+	height: 100px;
+	position: absolute;
+	top: 1050px;
+	left: 900px;
+}
+#physicschapter9 {
+	border: 2px solid black;
+	padding: 10px;
+	width: 250px;
+	height: 100px;
+	position: absolute;
+	top: 1200px;
+}
+#physicschapter10 {
+	border: 2px solid black;
+	padding: 10px;
+	width: 250px;
+	height: 100px;
+	position: absolute;
+	top: 1200px;
+	left: 580px;
+}
+#physicschapter11 {
+	border: 2px solid black;
+	padding: 10px;
+	width: 250px;
+	height: 100px;
+	position: absolute;
+	top: 1200px;
+	left: 900px;
+}
 
 h1, h2, h3, h4 {
 	margin-top: 0px;
