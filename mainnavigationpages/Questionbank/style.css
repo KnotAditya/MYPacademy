@@ -388,3 +388,59 @@ background: #444444 url(images/img02.jpg) no-repeat left 50%;
   .collapsible-list:hover .arrow {
 	transform: rotate(180deg);
   }
+  .dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-button {
+  background-color: #f9f9f9;
+  border: none;
+  padding: 10px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #f9f9f9;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.box-container {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.box {
+  background-color: #eee;
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #333;
+}
+.box {
+	background-color: #eee;
+	padding: 10px;
+	border-radius: 5px;
+	text-decoration: none;
+	color: #333;
+  }
