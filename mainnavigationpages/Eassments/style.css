@@ -8,13 +8,13 @@ body {
 }
 
 #header, #menu {
-    background: #81b673;
+    background: #6257e3;
 }
 
 /* Menu */
 #menu {
     float: right;
-    background: #81b673; /* Ensure the navbar background is red */
+    background: #6257e3; 
     padding-right: 0; /* Adjust padding if necessary */
 }
 
@@ -23,7 +23,7 @@ body {
     padding: 0;
     list-style: none;
     line-height: normal;
-    background: #81b673; /* Ensure the navbar background is red */
+    background: #6257e3; 
 }
 
 #menu li {
@@ -36,7 +36,7 @@ body {
     display: block;
     padding: 10px 20px; /* Adjust padding to your preference */
     color: white; /* Adjust text color if necessary */
-    background: g#81b673; /* Ensure the navbar background is red */
+    background: g#6257e3; 
 }
 
 
