@@ -205,8 +205,51 @@ body {
 	top: 1200px;
 	left: 900px;
 }
+#chemistrychapter1 {
+	border: 2px solid black;
+	padding: 10px;
+	width: 250px;
+	height: 100px;
+	position: absolute;
+	top: 1400px;
+}
+#chemistrychapter2 {
+	border: 2px solid black;
+	padding: 10px;
+	width: 250px;
+	height: 100px;
+	position: absolute;
+	top: 1400px;
+	left: 580px;
+}
+#chemistrychapter3 {
+	border: 2px solid black;
+	padding: 10px;
+	width: 250px;
+	height: 100px;
+	position: absolute;
+	top: 1400px;
+	left: 900px;
+}
+#chemistrychapter4 {
+	border: 2px solid black;
+	padding: 10px;
+	width: 250px;
+	height: 100px;
+	position: absolute;
+	top: 1550px;
+}
+#chemistrychapter5 {
+	border: 2px solid black;
+	padding: 10px;
+	width: 250px;
+	height: 100px;
+	position: absolute;
+	top: 1550px;
+	left: 580px;
+}
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5 {
 	margin-top: 0px;
 	font-weight: normal;
 	color: #000000;
@@ -234,6 +277,12 @@ h4 {
 	color: black;
     position: absolute;
     top: 700px;
+}
+h5 {
+	font-size: 1.8em;
+	color: black;
+    position: absolute;
+    top: 1350px;
 }
 p, ol, ul {
 	margin-bottom: 1.8em;
