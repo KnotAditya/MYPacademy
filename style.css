@@ -265,9 +265,15 @@ a img {
 	padding: 0px;
 	border: none;
 }
-
 #search #s {
 	width: 160px;
+}
+
+#ContactUs {
+	max-width: 100%; /* or specific size as needed */
+	overflow-wrap: break-word;
+	padding-left: 5px;
+	padding-right: 5px;
 }
 
 /* Footer */
