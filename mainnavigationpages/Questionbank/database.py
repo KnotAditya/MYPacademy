@@ -28,3 +28,11 @@ Economics = {
     "What is the unemployment rate in the United States?": "3.7%",
     "What is the inflation rate in the United States?": "2.1%"
 }
+
+Subjects = {
+    "Physics": Physics,
+    "Chemistry": Chemistry,
+    "Biology": Biology,
+    "Maths": Maths,
+    "Economics": Economics
+}
