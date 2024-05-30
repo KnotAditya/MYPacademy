@@ -49,8 +49,41 @@
 		  
 	</div>
 </div>
-<!-- Footer -->
-<div id="footer">
-	<p>&copy;. All Rights Reserved. Design by <strong>MYPacademy</strong>.</p>
-	<p><a href="mailto:TheMYPacademy@gmail.com">Contact Us at TheMYPacademy@gmail.com</a></p>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <style>
+        /* Add some basic styling to make it look decent */
+        body {
+            font-family: Arial, sans-serif;
+        }
+       .question-container {
+            margin: 20px;
+        }
+       .question {
+            font-weight: bold;
+        }
+       .choices {
+            margin-left: 20px;
+        }
+       .choice {
+            margin-bottom: 10px;
+        }
+       .next-button {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="question-container">
+        <p class="question" id="question"></p>
+        <div class="choices" id="choices"></div>
+        <button class="next-button" id="next-button">Next</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
