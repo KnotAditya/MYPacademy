@@ -39,3 +39,48 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+let questions = [
+    {
+        question: "What is the capital of France?",
+        choices: ["Paris", "London", "Berlin", "Rome"],
+        answer: 0
+    },
+    {
+        question: "What is the largest planet in our solar system?",
+        choices: ["Earth", "Saturn", "Jupiter", "Uranus"],
+        answer: 2
+    },
+    // Add more questions here
+];
+
+let currentQuestionIndex = 0;
+
+document.getElementById("next-button").addEventListener("click", () => {
+    currentQuestionIndex++;
+    if (currentQuestionIndex >= questions.length) {
+        currentQuestionIndex = 0;
+    }
+    updateQuestion();
+});
+
+function updateQuestion() {
+    const questionContainer = document.getElementById("question-container");
+    questionContainer.innerHTML = "";
+
+    const questionElement = document.createElement("p");
+    questionElement.className = "question";
+    questionElement.textContent = questions[currentQuestionIndex].question;
+    questionContainer.appendChild(questionElement);
+
+    const choicesElement = document.createElement("div");
+    choicesElement.className = "choices";
+    questions[currentQuestionIndex].choices.forEach((choice, index) => {
+        const choiceElement = document.createElement("div");
+        choiceElement.className = "choice";
+        choiceElement.textContent = choice;
+        choicesElement.appendChild(choiceElement);
+    });
+    questionContainer.appendChild(choicesElement);
+}
+
+updateQuestion();
