@@ -89,6 +89,82 @@
     color: red;
   }
 </style>
+</head>
+<body>
+
+<div id="wrapper">
+
+<div id="header">
+    <div id="logo">
+        <h1><a href="#">MYPacademy</a></h1>
+    </div>
+    <div id="menu">
+        <ul>
+            <li class="navbar1"><a href="../../index.html">Home</a></li>
+            <li class="navbar2"><a href="../About-us/Aboutus.html">About Us</a></li>
+            <li class="navbar3"><a href="../Subjects/Subjects.html">Subjects</a></li>
+            <li class="navbar4"><a href="../Eassments/Eassessmentpage.html">E-assessment practice</a></li>
+            <li class="navbar5"><a href="../Questionbank/Questionbank.html">Question Bank</a></li>
+        </ul>
+    </div>
+</div>
+
+<div id="page">
+    <div style="clear:both; margin:0;"></div>
+    <h1 align="center"><b>Question Bank:</b></h1>
+    <p align="center">Choose a Subject:</p>
+    <div class="subject-buttons">
+        <div class="box-container Chemistry" onclick="toggleDropdown('Chemistry')">
+            <a href="javascript:void(0);" class="box">Chemistry</a>
+            <div class="dropdown-content">
+                <a href="javascript:void(0);" onclick="displayQuestions('Chemistry', 'Unit 1: Atomic Structure')">Unit 1: Atomic Structure</a>
+                <a href="javascript:void(0);" onclick="displayQuestions('Chemistry', 'Unit 2: Chemical Bonding')">Unit 2: Chemical Bonding</a>
+                <!-- Add more units as needed -->
+            </div>
+        </div>
+        <div class="box-container Biology" onclick="toggleDropdown('Biology')">
+            <a href="javascript:void(0);" class="box">Biology</a>
+            <div class="dropdown-content">
+                <a href="javascript:void(0);" onclick="displayQuestions('Biology', 'Unit 1: Cells')">Unit 1: Cells</a>
+                <a href="javascript:void(0);" onclick="displayQuestions('Biology', 'Unit 2: Active and Passive Transport')">Unit 2: Active and Passive Transport</a>
+                <!-- Add more units as needed -->
+            </div>
+        </div>
+        <div class="box-container Physics" onclick="toggleDropdown('Physics')">
+            <a href="javascript:void(0);" class="box">Physics</a>
+            <div class="dropdown-content">
+                <a href="javascript:void(0);" onclick="displayQuestions('Physics', 'Unit 1: Forces and Motion')">Unit 1: Forces and Motion</a>
+                <a href="javascript:void(0);" onclick="displayQuestions('Physics', 'Unit 2: Astrophysics')">Unit 2: Astrophysics</a>
+                <!-- Add more units as needed -->
+            </div>
+        </div>
+        <div class="box-container Math" onclick="toggleDropdown('Math')">
+            <a href="javascript:void(0);" class="box">Math</a>
+            <div class="dropdown-content">
+                <a href="javascript:void(0);" onclick="displayQuestions('Math', 'Unit 1: Algebra')">Unit 1: Algebra</a>
+                <a href="javascript:void(0);" onclick="displayQuestions('Math', 'Unit 2: Trigonometry')">Unit 2: Trigonometry</a>
+                <!-- Add more units as needed -->
+            </div>
+        </div>
+        <div class="box-container Economics" onclick="toggleDropdown('Economics')">
+            <a href="javascript:void(0);" class="box">Economics</a>
+            <div class="dropdown-content">
+                <a href="javascript:void(0);" onclick="displayQuestions('Economics', 'Unit 1: Supply and Demand')">Unit 1: Supply and Demand</a>
+                <a href="javascript:void(0);" onclick="displayQuestions('Economics', 'Unit 2: Economic Growth')">Unit 2: Economic Growth</a>
+                <!-- Add more units as needed -->
+            </div>
+        </div>
+        <!-- Add more subjects as needed -->
+    </div>
+    <div id="question-container" class="question-container"></div>
+</div>
+</div>
+
+<div id="footer">
+    <p>&copy; All Rights Reserved. Design by <strong>MYPacademy</strong>.</p>
+    <p><a href="mailto:TheMYPacademy@gmail.com">Contact Us at TheMYPacademy@gmail.com</a></p>
+</div>
+
 <script>
 const questions = {
     "Chemistry": {
@@ -96,29 +172,147 @@ const questions = {
             {
                 question: "What is the atomic number of carbon?",
                 options: ["6", "12", "14", "16"],
-                answer: "6"
+                answer: "6",
+                image: "path/to/carbon_image.jpg" // Add your image path here
             },
             {
                 question: "Which state of matter is the most spread apart?",
                 options: ["solid", "liquid", "gas", "plasma"],
-                answer: "gas"
+                answer: "gas",
+                image: "path/to/matter_image.jpg"
             },
             {
                 question: "What is the chemical formula for water?",
                 options: ["H2O", "O2", "CO2", "H2"],
-                answer: "H2O"
+                answer: "H2O",
+                image: "path/to/water_image.jpg"
             }
         ],
         "Unit 2: Chemical Bonding": [
             {
                 question: "What type of bond is formed between two nonmetals?",
                 options: ["Ionic bond", "Covalent bond", "Metallic bond", "Hydrogen bond"],
-                answer: "Covalent bond"
+                answer: "Covalent bond",
+                image: "path/to/bond_image.jpg"
             },
             // Add more questions as needed
         ],
         // Add more units and questions as needed
     },
+    "Physics": {
+        "Unit 1: Forces and Motion": [
+            {
+                question: "What is the SI unit for force?",
+                options: ["N", "m", "kg", "s"],
+                answer: "N",
+                image: "path/to/force_image.jpg"
+            },
+            {
+                question: "What is the SI unit for acceleration?",
+                options: ["m/s", "m/s^2", "kg", "N"],
+                answer: "m/s^2",
+                image: "path/to/acceleration_image.jpg"
+            }
+        ],
+        "Unit 2: Astrophysics": [
+            {
+                question: "What is the name of the largest planet in our solar system?",
+                options: ["Earth", "Jupiter", "Mars", "Saturn"],
+                answer: "Jupiter",
+                image: "path/to/planet_image.jpg"
+            }
+        ]
+    },
+    "Biology": {
+        "Unit 1: Cells": [
+            {
+                question: "What is the smallest unit of life?",
+                options: ["Cell", "Organ", "Organism", "Tissue"],
+                answer: "Cell",
+                image: "../../images/MYP.png"
+            },
+            {
+                question: "What is the name of the organelle that produces energy?",
+                options: ["Mitochondria", "Chloroplast", "Nucleus", "Ribosome"],
+                answer: "Mitochondria",
+                image: "path/to/mitochondria_image.jpg"
+            }
+        ],
+        "Unit 2: Active and Passive Transport": [
+            {
+                question: "What is the process by which substances move across a cell membrane without the help of energy?",
+                options: ["Active transport", "Passive transport", "Osmosis", "Diffusion"],
+                answer: "Passive transport",
+                image: "path/to/transport_image.jpg"
+            },
+            {
+                question: "What type of transport utilizes energy?",
+                options: ["Active transport", "Transpirational pull", "Osmosis", "Diffusion"],
+                answer: "Active transport",
+                image: "path/to/active_transport_image.jpg"
+            }
+        ]
+    },
+    "Math": {
+        "Unit 1: Algebra": [
+            {
+                question: "What is the name of the operation that combines two or more terms?",
+                options: ["Addition", "Subtraction", "Multiplication", "Division"],
+                answer: "Multiplication",
+                image: "path/to/algebra_image.jpg"
+            },
+            {
+                question: "What formula is used to find the area of a circle?",
+                options: ["A = πr^2", "A = πr", "A = ππ", "A = 2πr"],
+                answer: "A = πr^2",
+                image: "../../images/download.png"
+            }
+        ],
+        "Unit 2: Trigonometry": [
+            {
+                question: "What is the name of the function that describes the relationship between the sides of a right angled triangle?",
+                options: ["Sine", "Cosine", "Tangent", "Secant"],
+                answer: "Sine",
+                image: "path/to/trigonometry_image.jpg"
+            },
+            {
+                question: "What is Sine rule?",
+                options: ["Sine = Opposite / Hypotenuse", "Sine = Adjacent / Hypotenuse", "Sine = Opposite / Adjacent", "Sine = Adjacent / Opposite"],
+                answer: "Sine = Opposite / Hypotenuse",
+                image: "path/to/sine_rule_image.jpg"
+            }
+        ]
+    },
+    "Economics": {
+        "Unit 1: Supply and Demand": [
+            {
+                question: "What is the name of the graph that shows the relationship between price and quantity?",
+                options: ["Supply curve", "Demand curve", "Supply and demand curve", "Supply and demand graph"],
+                answer: "Demand curve",
+                image: "path/to/demand_curve_image.jpg"
+            },
+            {
+                question: "What is the law of supply?",
+                options: ["The higher the price, the higher the quantity supplied", "The lower the price, the lower the quantity supplied", "The higher the price, the lower the quantity supplied", "The lower the price, the higher the quantity supplied"],
+                answer: "The higher the price, the higher the quantity supplied",
+                image: "path/to/supply_law_image.jpg"
+            }
+        ],
+        "Unit 2: Economic Growth": [
+            {
+                question: "What is the name of the graph that shows the relationship between GDP and time?",
+                options: ["GDP curve", "GDP graph", "GDP line", "GDP chart"],
+                answer: "GDP graph",
+                image: "path/to/gdp_graph_image.jpg"
+            },
+            {
+                question: "What is the name of the graph that shows the relationship between inflation and time?",
+                options: ["Inflation curve", "Inflation graph", "Inflation line", "Inflation chart"],
+                answer: "Inflation graph",
+                image: "path/to/inflation_graph_image.jpg"
+            }
+        ]
+    }
     // Add more subjects and their respective units and questions as needed
 };
 
@@ -151,6 +345,7 @@ function displayQuestions(subject, unit) {
         let questionHTML = `
             <div class="question">
                 <p>${q.question}</p>
+                ${q.image ? `<img src="${q.image}" alt="Question Image" style="max-width: 100%; height: auto;">` : ''}
                 ${q.options.map(option => `
                     <label>
                         <input type="radio" name="question${index}" value="${option}">
@@ -196,56 +391,49 @@ function displayQuestions(subject, unit) {
 
     showQuestion(currentQuestionIndex);
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    var elements = document.querySelectorAll("*"); // Select all elements
+
+    // Set initial opacity to 0 for the fade-in effect
+    elements.forEach(function(element) {
+        element.style.opacity = 0;
+    });
+
+    var index = 0;
+    var interval = setInterval(function() {
+        if (index < elements.length) {
+            fadeIn(elements[index]);
+            index++;
+        } else {
+            clearInterval(interval);
+        }
+    }, 25);
+
+    // Function to apply fade-in effect
+    function fadeIn(element) {
+        var opacity = 0;
+        var interval = setInterval(function() {
+            if (opacity < 1) {
+                opacity += 0.05;
+                element.style.opacity = opacity;
+            } else {
+                clearInterval(interval);
+            }
+        }, 25);
+    }
+
+    // Toggle responsive menu (for the hamburger icon)
+    document.getElementById('hamburger-icon').addEventListener('click', function() {
+        var navigation = document.getElementById("menu");
+        if (navigation.className === "topnav") {
+            navigation.className += " responsive";
+        } else {
+            navigation.className = "topnav";
+        }
+    });
+});
 </script>
-</head>
-<body>
 
-<div id="wrapper">
-
-<div id="header">
-    <div id="logo">
-        <h1><a href="#">MYPacademy</a></h1>
-    </div>
-    <div id="menu">
-        <ul>
-            <li class="navbar1"><a href="../../index.html">Home</a></li>
-            <li class="navbar2"><a href="../About-us/Aboutus.html">About Us</a></li>
-            <li class="navbar3"><a href="../Subjects/Subjects.html">Subjects</a></li>
-            <li class="navbar4"><a href="../Eassments/Eassessmentpage.html">E-assessment practice</a></li>
-            <li class="navbar5"><a href="../Questionbank/Questionbank.html">Question Bank</a></li>
-        </ul>
-    </div>
-</div>
-
-<div id="page">
-    <div style="clear:both; margin:0;"></div>
-    <h1 align="center"><b>Question Bank:</b></h1>
-    <p align="center">Choose a Subject:</p>
-    <div class="subject-buttons">
-        <div class="box-container Chemistry" onclick="toggleDropdown('Chemistry')">
-            <a href="javascript:void(0);" class="box">Chemistry</a>
-            <div class="dropdown-content">
-                <a href="javascript:void(0);" onclick="displayQuestions('Chemistry', 'Unit 1: Atomic Structure')">Unit 1: Atomic Structure</a>
-                <a href="javascript:void(0);" onclick="displayQuestions('Chemistry', 'Unit 2: Chemical Bonding')">Unit 2: Chemical Bonding</a>
-                <!-- Add more units as needed -->
-            </div>
-        </div>
-        <div class="box-container Biology" onclick="toggleDropdown('Biology')">
-            <a href="javascript:void(0);" class="box">Biology</a>
-            <div class="dropdown-content">
-                <a href="javascript:void(0);" onclick="displayQuestions('Biology', 'Unit 1: Cell Biology')">Unit 1: Cell Biology</a>
-                <a href="javascript:void(0);" onclick="displayQuestions('Biology', 'Unit 2: Genetics')">Unit 2: Genetics</a>
-                <!-- Add more units as needed -->
-            </div>
-        </div>
-        <!-- Add more subjects as needed -->
-    </div>
-    <div id="question-container" class="question-container"></div>
-</div>
-</div>
-
-<div id="footer">
-    <p>&copy;. All Rights Reserved. Design by <strong>MYPacademy</strong>.</p>
-    <p><a href="mailto:TheMYPacademy@gmail.com">Contact Us at TheMYPacademy@gmail.com</a></p>
-</div>
-
+</body>
+</html>
