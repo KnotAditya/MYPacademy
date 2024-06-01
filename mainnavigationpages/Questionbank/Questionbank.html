@@ -39,7 +39,7 @@
     height: 0;
     overflow: hidden;
     transition: opacity 0.5s ease, height 0.5s ease;
-    width: 200px; /* Adjust this value as needed */
+    width: 200px;
   }
   .dropdown-content a {
     color: black;
@@ -58,8 +58,70 @@
   .subject-buttons {
     text-align: center;
   }
+  .question-container {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  .question-container p {
+    margin: 0 0 10px;
+  }
+  .question-container button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .question-container button:hover {
+    background-color: #45a049;
+  }
+  .correct {
+    color: green;
+  }
+  .incorrect {
+    color: red;
+  }
 </style>
 <script>
+const questions = {
+    "Chemistry": {
+        "Unit 1: Atomic Structure": [
+            {
+                question: "What is the atomic number of carbon?",
+                options: ["6", "12", "14", "16"],
+                answer: "6"
+            },
+            {
+                question: "Which state of matter is the most spread apart?",
+                options: ["solid", "liquid", "gas", "plasma"],
+                answer: "gas"
+            },
+            {
+                question: "What is the chemical formula for water?",
+                options: ["H2O", "O2", "CO2", "H2"],
+                answer: "H2O"
+            }
+        ],
+        "Unit 2: Chemical Bonding": [
+            {
+                question: "What type of bond is formed between two nonmetals?",
+                options: ["Ionic bond", "Covalent bond", "Metallic bond", "Hydrogen bond"],
+                answer: "Covalent bond"
+            },
+            // Add more questions as needed
+        ],
+        // Add more units and questions as needed
+    },
+    // Add more subjects and their respective units and questions as needed
+};
+
 function toggleDropdown(subject) {
     var dropdowns = document.getElementsByClassName("dropdown-content");
     for (var i = 0; i < dropdowns.length; i++) {
@@ -73,6 +135,67 @@ function toggleDropdown(subject) {
         }
     }
 }
+
+function displayQuestions(subject, unit) {
+    const questionContainer = document.getElementById("question-container");
+    const questionData = questions[subject][unit];
+    let currentQuestionIndex = 0;
+
+    function showQuestion(index) {
+        if (index >= questionData.length) {
+            questionContainer.innerHTML = "<p>All questions answered correctly!</p>";
+            return;
+        }
+
+        const q = questionData[index];
+        let questionHTML = `
+            <div class="question">
+                <p>${q.question}</p>
+                ${q.options.map(option => `
+                    <label>
+                        <input type="radio" name="question${index}" value="${option}">
+                        ${option}
+                    </label><br>
+                `).join('')}
+                <button onclick="checkAnswer('${subject}', '${unit}', ${index})">Submit</button>
+                <p class="result"></p>
+            </div>
+        `;
+        questionContainer.innerHTML = questionHTML;
+        questionContainer.style.display = "block";
+        setTimeout(() => {
+            questionContainer.style.opacity = 1;
+        }, 100); // Delayed for smooth transition
+    }
+
+    window.checkAnswer = function(subject, unit, index) {
+        const questionData = questions[subject][unit][index];
+        const selectedOption = document.querySelector(`input[name="question${index}"]:checked`);
+        const result = document.querySelector(".result");
+
+        if (selectedOption) {
+            if (selectedOption.value === questionData.answer) {
+                result.textContent = "Correct!";
+                result.className = "correct";
+                setTimeout(() => {
+                    currentQuestionIndex++;
+                    showQuestion(currentQuestionIndex);
+                }, 1000); // Delayed for smooth transition
+            } else {
+                result.textContent = "Incorrect! Try again.";
+                result.className = "incorrect";
+                document.querySelectorAll(`input[name="question${index}"]`).forEach(input => {
+                    input.checked = false; // Allow retrying the question
+                });
+            }
+        } else {
+            result.textContent = "Please select an option.";
+            result.className = "incorrect";
+        }
+    }
+
+    showQuestion(currentQuestionIndex);
+}
 </script>
 </head>
 <body>
@@ -83,7 +206,6 @@ function toggleDropdown(subject) {
     <div id="logo">
         <h1><a href="#">MYPacademy</a></h1>
     </div>
-    <!-- end #logo -->
     <div id="menu">
         <ul>
             <li class="navbar1"><a href="../../index.html">Home</a></li>
@@ -93,9 +215,8 @@ function toggleDropdown(subject) {
             <li class="navbar5"><a href="../Questionbank/Questionbank.html">Question Bank</a></li>
         </ul>
     </div>
-    <!-- end #menu -->
 </div>
-<!-- end #header -->
+
 <div id="page">
     <div style="clear:both; margin:0;"></div>
     <h1 align="center"><b>Question Bank:</b></h1>
@@ -104,52 +225,27 @@ function toggleDropdown(subject) {
         <div class="box-container Chemistry" onclick="toggleDropdown('Chemistry')">
             <a href="javascript:void(0);" class="box">Chemistry</a>
             <div class="dropdown-content">
-                <a href="#">Unit 1: Atomic Structure</a>
-                <a href="#">Unit 2: Chemical Bonding</a>
-                <a href="#">Unit 3: States of Matter</a>
-                <a href="#">Unit 4: Thermodynamics</a> <!-- Added new unit -->
+                <a href="javascript:void(0);" onclick="displayQuestions('Chemistry', 'Unit 1: Atomic Structure')">Unit 1: Atomic Structure</a>
+                <a href="javascript:void(0);" onclick="displayQuestions('Chemistry', 'Unit 2: Chemical Bonding')">Unit 2: Chemical Bonding</a>
+                <!-- Add more units as needed -->
             </div>
         </div>
         <div class="box-container Biology" onclick="toggleDropdown('Biology')">
             <a href="javascript:void(0);" class="box">Biology</a>
             <div class="dropdown-content">
-                <a href="#">Unit 1: Cell Biology</a>
-                <a href="#">Unit 2: Genetics</a>
-                <a href="#">Unit 3: Human Physiology</a>
+                <a href="javascript:void(0);" onclick="displayQuestions('Biology', 'Unit 1: Cell Biology')">Unit 1: Cell Biology</a>
+                <a href="javascript:void(0);" onclick="displayQuestions('Biology', 'Unit 2: Genetics')">Unit 2: Genetics</a>
+                <!-- Add more units as needed -->
             </div>
         </div>
-        <div class="box-container Physics" onclick="toggleDropdown('Physics')">
-            <a href="javascript:void(0);" class="box">Physics</a>
-            <div class="dropdown-content">
-                <a href="#">Unit 1: Mechanics</a>
-                <a href="#">Unit 2: Waves</a>
-                <a href="#">Unit 3: Electricity</a>
-            </div>
-        </div>
-        <div class="box-container Math" onclick="toggleDropdown('Math')">
-            <a href="javascript:void(0);" class="box">Math</a>
-            <div class="dropdown-content">
-                <a href="#">Unit 1: Algebra</a>
-                <a href="#">Unit 2: Geometry</a>
-                <a href="#">Unit 3: Calculus</a>
-            </div>
-        </div>
-        <div class="box-container Economics" onclick="toggleDropdown('Economics')">
-            <a href="javascript:void(0);" class="box">Economics</a>
-            <div class="dropdown-content">
-                <a href="#">Unit 1: Microeconomics</a>
-                <a href="#">Unit 2: Macroeconomics</a>
-                <a href="#">Unit 3: International Economics</a>
-            </div>
-        </div>
+        <!-- Add more subjects as needed -->
     </div>
+    <div id="question-container" class="question-container"></div>
 </div>
 </div>
-<!-- Footer -->
+
 <div id="footer">
     <p>&copy;. All Rights Reserved. Design by <strong>MYPacademy</strong>.</p>
     <p><a href="mailto:TheMYPacademy@gmail.com">Contact Us at TheMYPacademy@gmail.com</a></p>
 </div>
 
-</body>
-</html>
