@@ -4,50 +4,146 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>MYPacademy</title>
 <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
-<script src="javafile.js"></script>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+  .box-container {
+    margin: 10px 0;
+    position: relative;
+    display: inline-block;
+  }
+  .box-container a.box {
+    display: block;
+    padding: 10px;
+    background-color: #e7e7e7;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #333;
+    width: 100px;
+    transition: background-color 0.3s ease;
+  }
+  .box-container a.box:hover {
+    background-color: #ccc;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: opacity 0.5s ease, height 0.5s ease;
+    width: 200px; /* Adjust this value as needed */
+  }
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  .dropdown-content a:hover {
+    background-color: #f1f1f1;
+  }
+  .show {
+    display: block;
+    opacity: 1;
+    height: auto;
+  }
+  .subject-buttons {
+    text-align: center;
+  }
+</style>
+<script>
+function toggleDropdown(subject) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    for (var i = 0; i < dropdowns.length; i++) {
+        var dropdown = dropdowns[i];
+        if (dropdown.parentElement.classList.contains(subject)) {
+            dropdown.classList.toggle("show");
+            dropdown.style.height = dropdown.classList.contains("show") ? dropdown.scrollHeight + "px" : "0";
+        } else {
+            dropdown.classList.remove("show");
+            dropdown.style.height = "0";
+        }
+    }
+}
+</script>
 </head>
 <body>
 
 <div id="wrapper">
 
 <div id="header">
-	<div id="logo">
-		<h1><a href="#">MYPacademy</a></h1>
-	</div>
-	<!-- end #logo -->
-	<div id="menu">
-		<ul>
-			<li class="navbar1"><a href="../../index.html">Home</a></li>
-			<li class="navbar2"><a href="../About-us/Aboutus.html">About Us</a></li>
-			<li class="navbar3"><a href="../Subjects/Subjects.html">Subjects</a></li>
-			<li class="navbar4"><a href="../Eassments/Eassessmentpage.html">E-assessment practice</a></li>
-			<li class="navbar5"><a href="../Questionbank/Questionbank.html">Question Bank</li>
-		</ul>
-	</div>
-	<!-- end #menu -->
+    <div id="logo">
+        <h1><a href="#">MYPacademy</a></h1>
+    </div>
+    <!-- end #logo -->
+    <div id="menu">
+        <ul>
+            <li class="navbar1"><a href="../../index.html">Home</a></li>
+            <li class="navbar2"><a href="../About-us/Aboutus.html">About Us</a></li>
+            <li class="navbar3"><a href="../Subjects/Subjects.html">Subjects</a></li>
+            <li class="navbar4"><a href="../Eassments/Eassessmentpage.html">E-assessment practice</a></li>
+            <li class="navbar5"><a href="../Questionbank/Questionbank.html">Question Bank</a></li>
+        </ul>
+    </div>
+    <!-- end #menu -->
 </div>
 <!-- end #header -->
 <div id="page">
     <div style="clear:both; margin:0;"></div>
-    <h1 align="center"><b>Question Bank:</b,<font-family:Arial></font-family:Arial></h1>
-		<p1>Choose a Subject:<font-family:Arial></font-family:Arial></p1>
-		  <div class="box-container">
-			<a href="https://www.chemistry.com" class="box">Chemistry</a>
-		  </div>
-		  <div class="box-container">
-			<a href="https://www.biology.com" class="box">Biology</a>
-		  </div>
-		  <div class="box-container">
-			<a href="https://www.physics.com" class="box">Physics</a>
-		  </div>
-		  <div class="box-container">
-			<a href="https://www.math.com" class="box">Math</a>
-		  </div>
-		  <div class="box-container">
-			<a href="https://www.economics.com" class="box">Economics</a>
-		  </div>
-		  
-	</div>
+    <h1 align="center"><b>Question Bank:</b></h1>
+    <p align="center">Choose a Subject:</p>
+    <div class="subject-buttons">
+        <div class="box-container Chemistry" onclick="toggleDropdown('Chemistry')">
+            <a href="javascript:void(0);" class="box">Chemistry</a>
+            <div class="dropdown-content">
+                <a href="#">Unit 1: Atomic Structure</a>
+                <a href="#">Unit 2: Chemical Bonding</a>
+                <a href="#">Unit 3: States of Matter</a>
+                <a href="#">Unit 4: Thermodynamics</a> <!-- Added new unit -->
+            </div>
+        </div>
+        <div class="box-container Biology" onclick="toggleDropdown('Biology')">
+            <a href="javascript:void(0);" class="box">Biology</a>
+            <div class="dropdown-content">
+                <a href="#">Unit 1: Cell Biology</a>
+                <a href="#">Unit 2: Genetics</a>
+                <a href="#">Unit 3: Human Physiology</a>
+            </div>
+        </div>
+        <div class="box-container Physics" onclick="toggleDropdown('Physics')">
+            <a href="javascript:void(0);" class="box">Physics</a>
+            <div class="dropdown-content">
+                <a href="#">Unit 1: Mechanics</a>
+                <a href="#">Unit 2: Waves</a>
+                <a href="#">Unit 3: Electricity</a>
+            </div>
+        </div>
+        <div class="box-container Math" onclick="toggleDropdown('Math')">
+            <a href="javascript:void(0);" class="box">Math</a>
+            <div class="dropdown-content">
+                <a href="#">Unit 1: Algebra</a>
+                <a href="#">Unit 2: Geometry</a>
+                <a href="#">Unit 3: Calculus</a>
+            </div>
+        </div>
+        <div class="box-container Economics" onclick="toggleDropdown('Economics')">
+            <a href="javascript:void(0);" class="box">Economics</a>
+            <div class="dropdown-content">
+                <a href="#">Unit 1: Microeconomics</a>
+                <a href="#">Unit 2: Macroeconomics</a>
+                <a href="#">Unit 3: International Economics</a>
+            </div>
+        </div>
+    </div>
+</div>
 </div>
 <!DOCTYPE html>
 <html lang="en">
