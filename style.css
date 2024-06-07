@@ -157,10 +157,10 @@ a img {
 }
 
 #header-pic {
-	background: url(images/website-banner-resized.jpeg) no-repeat left top;
-	width: 1000px;
-	height: 250px;
-	margin-left: 100px;
+	background: url(images/anf.png) no-repeat left top;
+	width: 400px;
+	height: 400px;
+	margin-left: 250px;
 }
 
 /* Content */
