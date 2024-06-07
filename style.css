@@ -251,6 +251,35 @@ a img {
 }
 
 /* Search */
+.suggestions-box {
+    border: 1px solid #ccc;
+    max-height: 200px;
+    overflow-y: auto;
+    background: #fff;
+    position: absolute;
+    z-index: 1000;
+    display: none; /* Initially hidden */
+    margin-top: 5px; /* Adjust margin to position below the search bar */
+    width: auto; /* Width will adjust based on content */
+    max-width: 300px; /* Maximum width of the suggestions box */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for better visibility */
+}
+
+.suggestion {
+    padding: 10px;
+    cursor: pointer;
+    white-space: nowrap; /* Prevent wrapping of text */
+}
+
+.suggestion a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.suggestion:hover {
+    background: #f0f0f0;
+}
 
 #search {
 }

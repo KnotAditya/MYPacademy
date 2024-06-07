@@ -4,16 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>MYPacademy</title>
 <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
-<script src="javafile.js"></script>
-<script>
-function handleSearch(event) {
-    event.preventDefault();
-    const query = document.getElementById('s').value.toLowerCase();
-    if (query) {
-        window.location.href = `mainnavigationpages/Subjects/Subjects.html#${query}`;
-    }
-}
-</script>
+<script src="javafile.js" defer></script>
 </head>
 <body>
 
@@ -24,7 +15,7 @@ function handleSearch(event) {
         <h1><a href="#">MYPacademy</a></h1>
     </div>
     <!-- end #logo -->
-    <div id="menu">
+    <div id="menu" class="topnav">
         <ul>
             <li class="navbar1"><a href="index.html">Home</a></li>
             <li class="navbar2"><a href="mainnavigationpages/About-us/Aboutus.html">About Us</a></li>
@@ -32,6 +23,7 @@ function handleSearch(event) {
             <li class="navbar4"><a href="mainnavigationpages/Eassments/Eassessmentpage.html">E-assessment practice</a></li>
             <li class="navbar5"><a href="mainnavigationpages/Questionbank/Questionbank.html">Question Bank</a></li>
         </ul>
+        <a href="javascript:void(0);" class="icon" id="hamburger-icon">&#9776;</a>
     </div>
     <!-- end #menu -->
 </div>
@@ -66,10 +58,11 @@ function handleSearch(event) {
                     <h2>Search</h2>
                     <form method="get" action="" onsubmit="handleSearch(event)">
                         <fieldset>
-                        <input type="text" id="s" name="s" value="" />
+                        <input type="text" id="s" name="s" value="" autocomplete="off"/>
                         <input type="submit" id="x" value="Search" />
                         </fieldset>
                     </form>
+                    <div id="suggestions" class="suggestions-box"></div>
                 </li>
                 <li>
                     <h2>Subjects</h2>
@@ -77,7 +70,7 @@ function handleSearch(event) {
                         <li><a href="mainnavigationpages/Subjects/Subjects.html#biology">Biology</a></li>
                         <li><a href="mainnavigationpages/Subjects/Subjects.html#economics">Economics</a></li>
                         <li><a href="mainnavigationpages/Subjects/Subjects.html#physics">Physics</a></li>
-                        <li><a href="mainnavigationpages/Subjects/Subjects.html#mathematics">Mathematics</a></li>
+                        <li><a href="mainnavigationpages/Subjects/Subjects.html#math">Mathematics</a></li>
                         <li><a href="mainnavigationpages/Subjects/Subjects.html#chemistry">Chemistry</a></li>
                     </ul>
                 </li>
