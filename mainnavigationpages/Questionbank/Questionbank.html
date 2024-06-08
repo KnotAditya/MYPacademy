@@ -905,64 +905,74 @@ function displayQuestions(subject, unit) {
     let questionData = questions[subject][unit];
     questionData = shuffle(questionData);  // Shuffle the questions here
     let currentQuestionIndex = 0;
+    let attempts = 0; // Track attempts for each question
 
     function showQuestion(index) {
-        if (index >= questionData.length) {
-            questionContainer.innerHTML = "<p>All questions answered correctly!</p>";
-            return;
-        }
-
-        const q = questionData[index];
-        let questionHTML = `
-            <div class="question">
-                ${q.image ? `<img src="${q.image}" alt="Question Image" style="max-width: 100%; height: auto;">` : ''}
-                ${q.question ? `<p>${q.question}</p>` : ''}
-                ${q.options.map(option => `
-                    <label>
-                        <input type="radio" name="question${index}" value="${option}">
-                        ${option}
-                    </label><br>
-                `).join('')}
-                <button onclick="checkAnswer('${subject}', '${unit}', ${index})">Submit</button>
-                <p class="result"></p>
-            </div>
-        `;
-        questionContainer.innerHTML = questionHTML;
-        questionContainer.style.display = "block";
-        setTimeout(() => {
-            questionContainer.style.opacity = 1;
-        }, 100); // Delayed for smooth transition
+    if (index >= questionData.length) {
+        questionContainer.innerHTML = "<p>All questions answered correctly!</p>";
+        return;
     }
 
-    window.checkAnswer = function(subject, unit, index) {
-        const questionData = questions[subject][unit][index];
-        const selectedOption = document.querySelector(`input[name="question${index}"]:checked`);
-        const result = document.querySelector(".result");
+    const q = questionData[index];
+    let questionHTML = `
+        <div class="question">
+            ${q.image? `<img src="${q.image}" alt="Question Image" style="max-width: 100%; height: auto;">` : ''}
+            ${q.question? `<p>${q.question}</p>` : ''}
+            ${q.options.map(option => `
+                <label>
+                    <input type="radio" name="question${index}" value="${option}">
+                    ${option}
+                </label><br>
+            `).join('')}
+            <button onclick="checkAnswer(${index})">Submit</button>
+            <p class="result"></p>
+        </div>
+    `;
+    questionContainer.innerHTML = questionHTML;
+    questionContainer.style.display = "block";
+    setTimeout(() => {
+        questionContainer.style.opacity = 1;
+    }, 100); // Delayed for smooth transition
+}
 
-        if (selectedOption) {
-            if (selectedOption.value === questionData.answer) {
-                result.textContent = "Correct!";
-                result.className = "correct";
-                setTimeout(() => {
-                    currentQuestionIndex++;
-                    showQuestion(currentQuestionIndex);
-                }, 1000); // Delayed for smooth transition
-            } else {
-                result.textContent = "Incorrect! Try again.";
-                result.className = "incorrect";
-                document.querySelectorAll(`input[name="question${index}"]`).forEach(input => {
-                    input.checked = false; // Allow retrying the question
-                });
-            }
+window.checkAnswer = function(index) {
+    const questionData = questions[subject][unit][index];
+    const selectedOption = document.querySelector(`input[name="question${index}"]:checked`);
+    const result = document.querySelector(".result");
+
+    if (selectedOption) {
+        if (selectedOption.value === questionData.answer) {
+            result.textContent = "Correct!";
+            result.className = "correct";
+            setTimeout(() => {
+                currentQuestionIndex++;
+                attempts = 0; // Reset attempts for the next question
+                showQuestion(currentQuestionIndex);
+            }, 1000); // Delayed for smooth transition
         } else {
-            result.textContent = "Please select an option.";
+            attempts++;
+            if (attempts < 2) {
+                result.textContent = "Incorrect! Try again.";
+            } else {
+                result.textContent = "That's still wrong. Try again.";
+            }
             result.className = "incorrect";
+            document.querySelectorAll(`input[name="question${index}"]`).forEach(input => {
+                input.checked = false; // Allow retrying the question
+            });
+            // Add the following code to allow retries
+            setTimeout(() => {
+                showQuestion(currentQuestionIndex);
+            }, 1000); // Delayed for smooth transition
         }
+    } else {
+        result.textContent = "Please select an option.";
+        result.className = "incorrect";
     }
+}
 
     showQuestion(currentQuestionIndex);
 }
-
 
 document.addEventListener("DOMContentLoaded", function() {
     var elements = document.querySelectorAll("*"); // Select all elements
