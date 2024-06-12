@@ -373,3 +373,38 @@ background: #444444 url(images/img02.jpg) no-repeat left 50%;
 .navbar5 a:hover {
     color:  rgb(240, 35, 69) !important;
 }
+
+#video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.video-container {
+    background: #f9f9f9;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.video-container h4 {
+    margin-bottom: 10px;
+}
+
+.video-item {
+    margin-bottom: 20px;
+}
+
+.video-item h5 {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+video {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
