@@ -1,0 +1,1805 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>MYPacademy</title>
+<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+  .box-container {
+    margin: 10px 0;
+    position: relative;
+    display: inline-block;
+  }
+  .box-container a.box {
+    display: block;
+    padding: 10px;
+    background-color: #e7e7e7;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #333;
+    width: 100px;
+    transition: background-color 0.3s ease;
+  }
+  .box-container a.box:hover {
+    background-color: #ccc;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: opacity 0.5s ease, height 0.5s ease;
+    width: 200px;
+  }
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  .dropdown-content a:hover {
+    background-color: #f1f1f1;
+  }
+  .show {
+    display: block;
+    opacity: 1;
+    height: auto;
+  }
+  .subject-buttons {
+    text-align: center;
+  }
+  .question-container {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  .question-container p {
+    margin: 0 0 10px;
+  }
+  .question-container button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .question-container button:hover {
+    background-color: #45a049;
+  }
+  .correct {
+    color: green;
+  }
+  .incorrect {
+    color: red;
+  }
+  .question img {
+    display: block;
+    margin: 0 auto 20px; /* Center the image and add margin below it */
+    max-width: 100%; /* Ensure the image does not overflow */
+    height: auto; /* Maintain the aspect ratio */
+  }
+</style>
+</head>
+<body>
+
+<div id="wrapper">
+
+<div id="header">
+    <div id="logo">
+        <h1><a href="#">MYPacademy</a></h1>
+    </div>
+    <div id="menu">
+        <ul>
+            <li class="navbar1"><a href="../../index.html">Home</a></li>
+            <li class="navbar2"><a href="../About-us/Aboutus.html">About Us</a></li>
+            <li class="navbar3"><a href="../Subjects/Subjects.html">Subjects</a></li>
+            <li class="navbar4"><a href="../Eassments/Eassessmentpage.html">E-assessment practice</a></li>
+            <li class="navbar5"><a href="../Questionbank/Questionbank.html">Question Bank</a></li>
+        </ul>
+    </div>
+</div>
+
+<div id="page">
+    <div style="clear:both; margin:0;"></div>
+    <h1 align="center"><b>Question Bank:</b></h1>
+    <p align="center">Choose a Subject:</p>
+    <div class="subject-buttons">
+        <div class="box-container Chemistry" onclick="toggleDropdown('Chemistry')">
+            <a href="javascript:void(0);" class="box">Chemistry</a>
+            <div class="dropdown-content">
+                <a href="javascript:void(0);" onclick="displayQuestions('Chemistry', 'Unit 1: What is Matter?')">Unit 1: What is Matter?</a>
+                <a href="javascript:void(0);" onclick="displayQuestions('Chemistry', 'Unit 2: How do we use Matter?')">Unit 2: How do we use Matter?</a>
+                <a href="javascript:void(0);" onclick="displayQuestions('Chemistry', 'Unit 3: Atomic Structure')">Unit 3: Atomic Structure</a>
+                <a href="javascript:void(0);" onclick="displayQuestions('Chemistry', 'Unit 4: Bonding')">Unit 4: Bonding</a>
+                <a href="javascript:void(0);" onclick="displayQuestions('Chemistry', 'Unit 5: Acids and Alkalis')">Unit 5: Acids and Alkalis</a>
+                <a href="javascript:void(0);" onclick="displayQuestions('Chemistry', 'Unit 6: Stoichiometry')">Unit 6: Stoichiometry</a>
+                <a href="javascript:void(0);" onclick="displayQuestions('Chemistry', 'Unit 7: Radioactivity')">Unit 7: Radioactivity</a>
+                <a href="javascript:void(0);" onclick="displayQuestions('Chemistry', 'Unit 8: Redox')">Unit 8: Redox</a>
+                <a href="javascript:void(0);" onclick="displayQuestions('Chemistry', 'Unit 9: Climate Change')">Unit 9: Climate Change</a>
+                <a href="javascript:void(0);" onclick="displayQuestions('Chemistry', 'Unit 10: Thermal Chemistry')">Unit 10: Thermal Chemistry</a>
+                <a href="javascript:void(0);" onclick="displayQuestions('Chemistry', 'Unit 11: Rate of Reactions and Equilibrium')">Unit 11: Rate of Reactions and Equilibrium</a>
+                <a href="javascript:void(0);" onclick="displayQuestions('Chemistry', 'Unit 12: Organic Chemistry')">Unit 12: Organic Chemistry</a>
+                <!-- Add more units as needed -->
+            </div>
+        </div>
+        <div class="box-container Biology" onclick="toggleDropdown('Biology')">
+            <a href="javascript:void(0);" class="box">Biology</a>
+            <div class="dropdown-content">
+                <a href="javascript:void(0);" onclick="displayQuestions('Biology', 'Unit 1: How is life organized?')">Unit 1: How is life organized?</a>
+                <a href="javascript:void(0);" onclick="displayQuestions('Biology', 'Unit 2: What chemical process supports life?')">Unit 2: What chemical process supports life?</a>
+                <a href="javascript:void(0);" onclick="displayQuestions('Biology', 'Unit 3: How do organisms sustain themselves?')">Unit 3: How do organisms sustain themselves?</a>
+                <a href="javascript:void(0);" onclick="displayQuestions('Biology', 'Unit 4: What issues do larger organisms face?')">Unit 4: What issues do larger organisms face?</a>
+                <a href="javascript:void(0);" onclick="displayQuestions('Biology', 'Unit 5: What factors affect human health?')">Unit 1: What factors affect human health?</a>
+                <a href="javascript:void(0);" onclick="displayQuestions('Biology', 'Unit 6: Heredity and Genetics')">Unit 6: Heredity and Genetics</a>
+                <a href="javascript:void(0);" onclick="displayQuestions('Biology', 'Unit 7: How have different forms of life arisen?')">Unit 7: How have different forms of life arisen?</a>
+                <a href="javascript:void(0);" onclick="displayQuestions('Biology', 'Unit 8: How are animals adapted to life?')">Unit 8: How are animals adapted to life?</a>
+                <a href="javascript:void(0);" onclick="displayQuestions('Biology', 'Unit 9: How do species interact?')">Unit 9: How do species interact?</a>
+                <a href="javascript:void(0);" onclick="displayQuestions('Biology', 'Unit 10: How do human interactions affect the environment?')">Unit 10: How does human interactions affect the environment?</a>
+                <!-- Add more units as needed -->
+            </div>
+        </div>
+        <div class="box-container Physics" onclick="toggleDropdown('Physics')">
+            <a href="javascript:void(0);" class="box">Physics</a>
+            <div class="dropdown-content">
+                <a href="javascript:void(0);" onclick="displayQuestions('Physics', 'Unit 1: Measurements')">Unit 1: Measurements</a>
+                <a href="javascript:void(0);" onclick="displayQuestions('Physics', 'Unit 2: Motion and Forces')">Unit 2: Motion and Forces</a>
+                <a href="javascript:void(0);" onclick="displayQuestions('Physics', 'Unit 3: Newtons Law')">Unit 3: Newtons Laws</a>
+                <a href="javascript:void(0);" onclick="displayQuestions('Physics', 'Unit 4: Work Power Energy')">Unit 4: Work Power Energy</a>
+                <a href="javascript:void(0);" onclick="displayQuestions('Physics', 'Unit 5: Thermal Physics')">Unit 5: Thermal Physics</a>
+                <a href="javascript:void(0);" onclick="displayQuestions('Physics', 'Unit 6: Climate Change')">Unit 6: Climate Change</a>
+                <a href="javascript:void(0);" onclick="displayQuestions('Physics', 'Unit 7: Waves and Optics')">Unit 7: Waves and Optics</a>
+                <a href="javascript:void(0);" onclick="displayQuestions('Physics', 'Unit 8: Electricity')">Unit 8: Electricity</a>
+                <a href="javascript:void(0);" onclick="displayQuestions('Physics', 'Unit 9: Electromagnetism')">Unit 9: Electromagnetism</a>
+                <a href="javascript:void(0);" onclick="displayQuestions('Physics', 'Unit 10: Astrophysics')">Unit 10: Astrophysics</a>
+                <a href="javascript:void(0);" onclick="displayQuestions('Physics', 'Unit 11: Radioactivity')">Unit 11: Radioactivity</a>
+                <!-- Add more units as needed -->
+            </div>
+        </div>
+        <div class="box-container Math" onclick="toggleDropdown('Math')">
+            <a href="javascript:void(0);" class="box">Math</a>
+            <div class="dropdown-content">
+                <a href="javascript:void(0);" onclick="displayQuestions('Math', 'Unit 1: Algebra')">Unit 1: Algebra</a>
+                <a href="javascript:void(0);" onclick="displayQuestions('Math', 'Unit 2: Surds')">Unit 2: Surds</a>
+                <a href="javascript:void(0);" onclick="displayQuestions('Math', 'Unit 3: Exponents and Logarithms')">Unit 3: Exponents and Logarithms</a>
+                <a href="javascript:void(0);" onclick="displayQuestions('Math', 'Unit 4: Equations')">Unit 4: Equations</a>
+                <a href="javascript:void(0);" onclick="displayQuestions('Math', 'Unit 5: Functions and Function Graphs')">Unit 5: Functions and Function Graphs</a>
+                <a href="javascript:void(0);" onclick="displayQuestions('Math', 'Unit 6: Trigonometry')">Unit 6: Trigonometry</a>
+                <a href="javascript:void(0);" onclick="displayQuestions('Math', 'Unit 7: Coordinate Geometry')">Unit 7: Coordinate Geometry</a>
+                <a href="javascript:void(0);" onclick="displayQuestions('Math', 'Unit 8: Probability and Sets')">Unit 8: Probability and Sets</a>
+                <a href="javascript:void(0);" onclick="displayQuestions('Math', 'Unit 9: Geometry')">Unit 9: Geometry</a>
+                <a href="javascript:void(0);" onclick="displayQuestions('Math', 'Unit 10: Linear Relations')">Unit 10: Linear Relations</a>
+                <a href="javascript:void(0);" onclick="displayQuestions('Math', 'Unit 11: Statistics')">Unit 11: Statistics</a>
+                <!-- Add more units as needed -->
+            </div>
+        </div>
+        <div class="box-container Economics" onclick="toggleDropdown('Economics')">
+            <a href="javascript:void(0);" class="box">Economics</a>
+            <div class="dropdown-content">
+                <a href="javascript:void(0);" onclick="displayQuestions('Economics', 'Unit 1: The Basic Economic Problem')">Unit 1: The Basic Economic Problem</a>
+                <a href="javascript:void(0);" onclick="displayQuestions('Economics', 'Unit 2: Supply and Demand')">Unit 2: Supply and Demand</a>
+                <a href="javascript:void(0);" onclick="displayQuestions('Economics', 'Unit 3: Organization of products and growth of firms')">Unit 3: Organization of products and growth of firms</a>
+                <a href="javascript:void(0);" onclick="displayQuestions('Economics', 'Unit 4: Introductions to Macroeconomics')">Unit 4: Introductions to Macroeconomics</a>
+                <a href="javascript:void(0);" onclick="displayQuestions('Economics', 'Unit 5: Inflation and Unemployment')">Unit 5: Inflation and Unemployment</a>
+                <a href="javascript:void(0);" onclick="displayQuestions('Economics', 'Unit 6: Economic Growth')">Unit 6: Economic Growth</a>
+                <a href="javascript:void(0);" onclick="displayQuestions('Economics', 'Unit 7: Macroeconomic Policies')">Unit 7: Macroeconomic Policies</a>
+                <!-- Add more units as needed -->
+            </div>
+        </div>
+        <!-- Add more subjects as needed -->
+    </div>
+    <div id="question-container" class="question-container"></div>
+</div>
+</div>
+
+<div id="footer">
+    <p>&copy; All Rights Reserved. Design by <strong>MYPacademy</strong>.</p>
+    <p><a href="mailto:TheMYPacademy@gmail.com">Contact Us at TheMYPacademy@gmail.com</a></p>
+</div>
+
+<script>
+const questions = {
+    "Chemistry": {
+        "Unit 1: What is Matter?": [
+            {
+                question: "What is the definition of matter?",
+                options: ["A.) Matter is a form of energy that moves at the speed of light.", "B.) Matter is anything that takes up space and has mass.", "C.) Matter is composed solely of light and sound waves.", "D.) Matter exists only in a vacuum and does not interact with other substances."],
+                answer: "B.) Matter is anything that takes up space and has mass."
+            },
+            {
+                question: "How do pure substances differ from impure substances?",
+                options: ["A.) Pure substances consist of only one type of atom, while impure substances consist of more than one type of atom.", "B.) Pure substances can be easily separated into their components by physical means, while impure substances cannot.", "C.) Pure substances have variable chemical compositions, while impure substances have a fixed chemical composition.", "D.) Pure substances are always in the gas phase, while impure substances are always in the solid phase."],
+                answer: "A.) Pure substances consist of only one type of atom, while impure substances consist of more than one type of atom."
+            },
+            {
+                question: "What characterizes the movement of particles in a gas compared to a solid?",
+                options: ["A.) In a gas, particles are fixed in place and do not move, while in a solid, particles move freely and spread apart.", "B.) In a gas, particles move only in a circular motion, while in a solid, particles move in straight lines.", "C.) In a gas, particles do not interact with each other, while in a solid, particles collide frequently and change directions.", "D.) In a gas, particles move freely and spread apart, while in a solid, particles vibrate in place but do not move around."],
+                answer: "D.) In a gas, particles move freely and spread apart, while in a solid, particles vibrate in place but do not move around."
+            },
+            {
+                question: "What is the volume occupied by one mole of any gas at STP?",
+                options: ["A.) 24L", "B.) 22.4L", "C.) 20.4L", "D.) 23L"],
+                answer: "B.) 22.4L"
+            },
+            {
+                question: "How does the mass of a molecule affect the rate of diffusion?",
+                options: ["A.) The more mass a molecule has, the faster the rate of diffusion, because heavier molecules move more quickly.", "B.) The mass of a molecule has no effect on the rate of diffusion; all molecules diffuse at the same rate regardless of their mass.", "C.) The more mass a molecule has, the slower the rate of diffusion, as more energy is required to move it.", "D.) The more mass a molecule has, the rate of diffusion increases exponentially, since larger molecules have more kinetic energy."],
+                answer: "C.) The more mass a molecule has, the slower the rate of diffusion, as more energy is required to move it."
+            }
+        ],
+        "Unit 2: How do we use Matter?": [
+            {
+                question: "What distinguishes a homogeneous mixture from a heterogeneous mixture?",
+                options: ["A.) Homogeneous mixtures have a uniform composition throughout, while heterogeneous mixtures have visibly different parts and non-uniform composition.", "B.) Homogeneous mixtures are always solid, while heterogeneous mixtures are always liquid.", "C.) Homogeneous mixtures can be separated into their components by physical means, while heterogeneous mixtures cannot.", "D.) Homogeneous mixtures have variable compositions, while heterogeneous mixtures have a fixed composition throughout."],
+                answer: "A.) Homogeneous mixtures have a uniform composition throughout, while heterogeneous mixtures have visibly different parts and non-uniform composition."
+            },
+            {
+                question: "How do crystalline solids differ from amorphous solids in terms of structure?",
+                options: ["A.) Crystalline solids have no definite shape, while amorphous solids have a definite geometric shape.", "B.) Crystalline solids are always softer and less dense than amorphous solids.", "C.) Crystalline solids have a highly ordered structure with a repeating pattern, whereas amorphous solids lack long-range order and have a more random arrangement of atoms.", "D.) Crystalline solids melt over a range of temperatures, whereas amorphous solids melt at a specific, sharp temperature."],
+                answer: "C.) Crystalline solids have a highly ordered structure with a repeating pattern, whereas amorphous solids lack long-range order and have a more random arrangement of atoms."
+            },
+            {
+                question: "What is the purpose of distillation in separating substances?",
+                options: ["A.) Distillation separates liquids based on their boiling points by heating a mixture to boil off one component, which is then condensed back into a purified liquid.", "B.) Distillation separates substances by freezing the mixture and allowing the component with the lowest freezing point to melt first.", "C.) Distillation involves separating substances based on their magnetic properties by using a magnet to attract one component out of the mixture.", "D.) Distillation is used to separate solids from liquids by filtering the mixture and collecting the solid residue."],
+                answer: "A.) Distillation separates liquids based on their boiling points by heating a mixture to boil off one component, which is then condensed back into a purified liquid."
+            },
+            {
+                question: "How does filtration separate mixtures?",
+                options: ["A.) Filtration separates mixtures by evaporating the liquid component, leaving the solid particles behind.", "B.) Filtration separates mixtures by using a magnet to attract the solid particles out of the liquid or gas.", "C.) Filtration separates mixtures by dissolving the solid particles in a solvent, allowing only the liquid to pass through the filter.", "D.) Filtration separates solid particles from a liquid or gas by passing the mixture through a filter, which traps the solid particles and allows the liquid or gas to pass through."],
+                answer: "D.) Filtration separates solid particles from a liquid or gas by passing the mixture through a filter, which traps the solid particles and allows the liquid or gas to pass through."
+            },
+            {
+                question: "How does diffusion work in terms of particle movement?",
+                options: ["A.) Diffusion is the process where particles move from an area of low concentration to an area of high concentration, requiring external energy input.", "B.) Diffusion is the process where particles move from an area of high concentration to an area of low concentration, driven by the kinetic energy of the particles.", "C.) Diffusion is the process where particles remain stationary, and the medium they are in moves to distribute the particles evenly.", "D.) Diffusion involves particles moving randomly but staying within the same region of concentration without spreading out."],
+                answer: "B.) Diffusion is the process where particles move from an area of high concentration to an area of low concentration, driven by the kinetic energy of the particles."
+            }
+        ],
+        "Unit 3: Atomic Structure": [
+            {
+                question: "What are protons, neutrons, and electrons in an atom, and how do they contribute to its structure?",
+                options: ["A.) Protons are negatively charged particles in the nucleus, neutrons are positively charged, and electrons have no charge but determine the atom's mass.", "B.) Protons are positively charged in the nucleus, defining the element. Neutrons add mass and stability, while electrons orbit the nucleus, influencing chemical bonding.", "C.) Protons and neutrons orbit the nucleus while electrons are located inside the nucleus, determining the atom's volume.", "D.) Protons are neutral particles that define the element, neutrons are negatively charged and add stability, and electrons are positively charged and orbit the nucleus."],
+                answer: "B.) Protons are positively charged in the nucleus, defining the element. Neutrons add mass and stability, while electrons orbit the nucleus, influencing chemical bonding."
+            },
+            {
+                question: "Explain isotopes with an example, how do isotopes of an element differ from each other?",
+                options: ["A.) Isotopes are atoms of the same element with different numbers of neutrons, like carbon-12 and carbon-14. They share chemical properties but differ in atomic mass and some physical properties.", "B.) Isotopes are atoms of different elements with the same number of neutrons, like carbon-12 and carbon-14. They have identical chemical properties but differ in atomic number and mass.", "C.) Isotopes are atoms of the same element with identical numbers of neutrons, like carbon-12 and carbon-14. They differ only in their reactivity with other elements.", "D.) Isotopes are atoms of the same element with different numbers of electrons, like carbon-12 and carbon-14. They have different chemical properties due to their electron configuration."],
+                answer: "A.) Isotopes are atoms of the same element with different numbers of neutrons, like carbon-12 and carbon-14. They share chemical properties but differ in atomic mass and some physical properties."
+            },
+            {
+                question: "What do the atomic number and mass number signify in an atom? How are they related?",
+                options: ["A.) Atomic number signifies the number of neutrons and element identity, while mass number indicates the total number of protons and neutrons in the atom.", "B.) Atomic number indicates protons and element identity, while mass number includes protons and neutrons, varying in isotopes. Atomic number defines elements, mass number distinguishes isotopes.", "C.) Atomic number indicates the number of protons and element identity, while mass number indicates the total number of electrons and protons in the atom.", "D.) Atomic number indicates the number of protons and distinguishes isotopes, while mass number indicates the total number of protons and neutrons in the nucleus."],
+                answer: "B.) Atomic number indicates protons and element identity, while mass number includes protons and neutrons, varying in isotopes. Atomic number defines elements, mass number distinguishes isotopes."
+            },
+            {
+                question: "Describe the plum pudding model of the atom proposed by Thompson. How did this model contribute to understanding atomic structure before Rutherford's findings?",
+                options: ["A.) Thompson's plum pudding model depicted atoms as solid spheres with electrons spinning around the surface, suggesting that atoms could be divided into smaller parts.", "B.) Thompson's plum pudding model depicted a dense nucleus surrounded by orbiting electrons, which was later disproved by Rutherford's findings of a more complex atomic structure.", "C.) Thompson's plum pudding model depicted atoms as mostly empty space with electrons scattered around a central nucleus, a concept that was later refined by Rutherford's gold foil experiment.", "D.) Thompson's plum pudding model depicted electrons embedded in a positively charged matrix, challenging the idea of indivisible atoms and paving the way for Rutherford's nuclear model."],
+                answer: "D.) Thompson's plum pudding model depicted electrons embedded in a positively charged matrix, challenging the idea of indivisible atoms and paving the way for Rutherford's nuclear model."
+            },
+            {
+                question: "Describe the relationship between the valency of elements and their position in the periodic table groups.",
+                options: ["A.) The valency of elements corresponds to the number of neutrons in their nucleus, which decreases as you move down the periodic table groups. For example, elements in Group 1 have 1 valence electron and tend to gain it to achieve a stable electron configuration.", "B.) The valency of elements corresponds to the number of shells in their atomic structure, which decreases as you move across the periodic table groups. For example, elements in Group 1 have 1 valence electron and tend to lose it to achieve a stable electron configuration.", "C.) The valency of elements corresponds to the number of electrons in their outermost shell, which is determined by their group number in the periodic table. For example, elements in Group 1 have 1 valence electron and tend to lose it to achieve a stable electron configuration.", "D.) The valency of elements corresponds to the number of electrons in their outermost shell, which is determined by their group number in the periodic table. For example, elements in Group 1 have 1 valence electron and tend to gain it to achieve a stable electron configuration."],
+                answer: "C.) The valency of elements corresponds to the number of electrons in their outermost shell, which is determined by their group number in the periodic table. For example, elements in Group 1 have 1 valence electron and tend to lose it to achieve a stable electron configuration."
+            }
+        ],
+        "Unit 4: Bonding": [
+            {
+                question: "What principle does the Law of Conservation of Mass state?",
+                options: ["A.) The Law of Conservation of Mass states that the total volume of reactants equals the total volume of products in a chemical reaction.", "B.) The Law of Conservation of Mass states that the total number of reactants equals the total number of products in a chemical reaction.", "C.) The Law of Conservation of Mass states that the total mass of reactants equals the total mass of products in a chemical reaction.", "D.) The Law of Conservation of Mass states that the total energy of reactants equals the total energy of products in a chemical reaction."],
+                answer: "C.) The Law of Conservation of Mass states that the total mass of reactants equals the total mass of products in a chemical reaction."
+            },
+            {
+                question: "What type of bond forms between a metal and a non-metal?",
+                options: ["A.) Covalent bonds form between a metal (which shares electrons) and a non-metal (which shares protons).", "B.) Ionic bonds form between a metal (which loses electrons) and a non-metal (which gains electrons).", "C.) Metallic bonds form between a metal (which loses electrons) and another metal (which gains electrons).", "D.) Van der Waals bonds form between a metal (which attracts electrons) and a non-metal (which repels electrons)."],
+                answer: "B.) Ionic bonds form between a metal (which loses electrons) and a non-metal (which gains electrons)."
+            },
+            {
+                question: "Which allotrope of carbon has a structure consisting of layers of hexagonal rings?",
+                options: ["A.) Diamond is the allotrope of carbon that has a structure consisting of layers of hexagonal rings.", "B.) Graphite is the allotrope of carbon that has a structure consisting of layers of hexagonal rings.", "C.) Buckminsterfullerene (C60) is the allotrope of carbon that has a structure consisting of layers of hexagonal rings.", "D.) Amorphous carbon is the allotrope of carbon that has a structure consisting of layers of hexagonal rings."],
+                answer: "B.) Graphite is the allotrope of carbon that has a structure consisting of layers of hexagonal rings."
+            },
+            {
+                question: "What do Lewis structures and dot and cross diagrams illustrate, respectively?",
+                options: ["A.) Lewis structures illustrate the number of protons in atoms, while dot and cross diagrams illustrate the number of neutrons.", "B.) Lewis structures illustrate the shapes of molecules, while dot and cross diagrams illustrate the colors of atoms.", "C.) Lewis structures illustrate electron arrangements in molecules, while dot and cross diagrams illustrate the sharing of electron pairs between atoms.", "D.) Lewis structures illustrate the temperature at which molecules melt, while dot and cross diagrams illustrate the mass of atoms."],
+                answer: "C.) Lewis structures illustrate electron arrangements in molecules, while dot and cross diagrams illustrate the sharing of electron pairs between atoms."
+            },
+            {
+                question: "Which type of bonding has the highest melting points and conducts electricity well?",
+                options: ["A.) Covalent bonding has the highest melting points and conducts electricity well due to the strong bonds formed by electron sharing.", "B.) Van der Waals forces have the highest melting points and conduct electricity well due to the strong attraction between atoms or molecules.", "C.) Hydrogen bonding has the highest melting points and conducts electricity well due to the attraction between hydrogen atoms in different molecules.", "D.) Metallic bonding has the highest melting points and conducts electricity well due to the delocalized electrons in a lattice of positive metal ions."],
+                answer: "D.) Metallic bonding has the highest melting points and conducts electricity well due to the delocalized electrons in a lattice of positive metal ions."
+            }
+        ],
+        "Unit 5: Acids and Alkalis": [
+            {
+                question: "What is the main characteristic of acids according to the Arrhenius theory? ",
+                options: ["A.) Acids produce hydrogen ions (H⁺) when dissolved in water.", "B.) Acids produce hydroxide ions (OH⁻) when dissolved in water.", "C.) Acids produce ammonium ions (NH₄⁺) when dissolved in water.", "D.) Acids produce hydrogen sulfide gas (H₂S) when dissolved in water."],
+                answer: "A.) Acids produce hydrogen ions (H⁺) when dissolved in water."
+            },
+            {
+                question: "Which of the following characterizes strong acids and bases?",
+                options: ["A.) Strong acids and bases are insoluble in water, forming precipitates.", "B.) Strong acids and bases do not react with water, remaining unchanged.", "C.) Strong acids and bases have low melting points and boil at high temperatures.", "D.) Strong acids and bases are nearly or completely ionized in water, producing a high concentration of ions."],
+                answer: "D.) Strong acids and bases are nearly or completely ionized in water, producing a high concentration of ions."
+            },
+            {
+                question: "What property distinguishes alkalis from acids when using litmus paper?",
+                options: ["A.) Acids turn blue litmus paper red.", "B.) Alkalis turn universal indicator paper red.", "C.) Acids turn universal indicator paper blue.", "D.) Alkalis turn red litmus paper blue."],
+                answer: "D.) Alkalis turn red litmus paper blue."
+            },
+            {
+                question: "What is the pH range of acidic solutions?",
+                options: ["A.) The pH of acidic solutions ranges from 7 to more than 14.", "B.) The pH of acidic solutions ranges from 0 to less than 7.", "C.) The pH of acidic solutions ranges from 0 to 14.", "D.) The pH of acidic solutions ranges from less than 7 to 14."],
+                answer: "B.) The pH of acidic solutions ranges from 0 to less than 7."
+            },
+            {
+                question: "Which type of reaction results in the formation of a salt and water when an acid reacts with a base?",
+                options: ["A.) A neutralization reaction results in the formation of a salt and water when an acid reacts with a base.", "B.) A combustion reaction results in the formation of a salt and water when an acid reacts with a base.", "C.) A precipitation reaction results in the formation of a salt and water when an acid reacts with a base.", "D.) A redox reaction results in the formation of a salt and water when an acid reacts with a base."],
+                answer: "A.) A neutralization reaction results in the formation of a salt and water when an acid reacts with a base."
+            }
+        ],
+        "Unit 6: Stoichiometry": [
+            {
+                question: "What is the mass of 3 moles of CO₂? (Given: Atomic masses: C = 12 amu, O = 16 amu)?",
+                options: ["A.) The mass of 3 moles of CO₂ is 108 grams.", "B.) The mass of 3 moles of CO₂ is 72 grams.", "C.) The mass of 3 moles of CO₂ is 132 grams.", "D.) The mass of 3 moles of CO₂ is 96 grams."],
+                answer: "C.) The mass of 3 moles of CO₂ is 132 grams."
+            },
+            {
+                question: "Calculate the number of moles in 96 grams of H₂O. (Given: Atomic masses: H = 1 amu, O = 16 amu).",
+                options: ["A.) The number of moles in 96 grams of H₂O is approximately 5.33 moles.", "B.) The number of moles in 96 grams of H₂O is approximately 6.72 moles.", "C.) The number of moles in 96 grams of H₂O is approximately 5 moles.", "D.) The number of moles in 96 grams of H₂O is approximately 4.9 moles."],
+                answer: "A.) The number of moles in 96 grams of H₂O is approximately 5.33 moles."
+            },
+            {
+                question: " Determine the mass of 2.5 moles of NaCl (sodium chloride). (Given: Atomic masses: Na = 23 amu, Cl = 35.5 amu).",
+                options: ["A.) The mass of 2.5 moles of NaCl is 147 grams.", "B.) The mass of 2.5 moles of NaCl is 146.25 grams.", "C.) The mass of 2.5 moles of NaCl is 246 grams.", "D.) The mass of 2.5 moles of NaCl is 139 grams."],
+                answer: "B.) The mass of 2.5 moles of NaCl is 146.25 grams."
+            },
+            {
+                question: "How many molecules are there in 4 moles of CO₂? (Given: Avogadro's number = 6.022 × 10²³)?",
+                options: ["A.) There are approximately 2.4088 × 10²⁴ molecules in 4 moles of CO₂.", "B.) There are approximately 6.02 × 10²⁴ molecules in 4 moles of CO₂.", "C.) There are approximately 5.2 × 10²⁴ molecules in 4 moles of CO₂.", "D.) There are approximately 3.02 × 10²⁴ molecules in 4 moles of CO₂."],
+                answer: "A.) There are approximately 2.4088 × 10²⁴ molecules in 4 moles of CO₂."
+            },
+            {
+                question: "Calculate the mass of 1.5 moles of CH₄ (methane). (Given: Atomic masses: C = 12 amu, H = 1 amu).",
+                options: ["A.) The mass of 1.5 moles of CH₄ is 14 grams.", "B.) The mass of 1.5 moles of CH₄ is 24.5 grams.", "C.) The mass of 1.5 moles of CH₄ is 24 grams.", "D.) The mass of 1.5 moles of CH₄ is 26 grams."],
+                answer: "C.) The mass of 1.5 moles of CH₄ is 24 grams."
+            }
+        ],
+        "Unit 7: Radioactivity": [
+            {
+                question: "Define an isotope.",
+                options: ["A.) An isotope is an atom of the same element with a different number of neutrons.", "B.) An isotope is an atom of the same element with a different number of electrons.", "C.) An isotope is an atom of a different element with a different number of neutrons.", "D.) An isotope is an atom of the same element with a different number of protons."],
+                answer: "A.) An isotope is an atom of the same element with a different number of neutrons."
+            },
+            {
+                question: "What is the relative atomic mass of an element with 70% of an isotope weighing 40 amu and 30% of another isotope weighing 42 amu?",
+                options: ["A.) The relative atomic mass is 40 amu.", "B.) The relative atomic mass is 40.6 amu.", "C.) The relative atomic mass is 30.6 amu.", "D.) The relative atomic mass is 44.5 amu."],
+                answer: "B.) The relative atomic mass is 40.6 amu."
+            },
+            {
+                question: "How does Hydrogen-2 (Deuterium) differ from Hydrogen-1 (Protium)?",
+                options: ["A.) Hydrogen-2 has two neutrons, while Hydrogen-1 has one neutron.", "B.) Hydrogen-2 has one proton and one neutron, while Hydrogen-1 has one proton and no neutrons.", "Hydrogen-2 has one neutron, while Hydrogen-1 has no neutrons.", "D.) Hydrogen-2 has no neutrons, while Hydrogen-1 has one neutron."],
+                answer: "C.) Hydrogen-2 has one neutron, while Hydrogen-1 has no neutrons."
+            },
+            {
+                question: "Calculate the relative atomic mass of chlorine if 75% is Cl-35 (mass = 34.97 amu) and 25% is Cl-37 (mass = 36.97 amu).",
+                options: ["A.) The relative atomic mass of chlorine is 34.2 amu.", "B.) The relative atomic mass of chlorine is 23.45 amu.", "C.) The relative atomic mass of chlorine is 37.9 amu.", "D.) The relative atomic mass of chlorine is 35.47 amu."],
+                answer: "D.) The relative atomic mass of chlorine is 35.47 amu."
+            },
+            {
+                question: "What is alpha decay and what does it emit?",
+                options: ["A.) Alpha decay is a process where a nucleus emits an alpha particle, which consists of 2 protons and 2 neutrons.", "B.) Alpha decay is a process where a nucleus emits a beta particle, which consists of an electron.", "C.) Alpha decay is a process where a nucleus emits a gamma ray, which is a high-energy photon.", "D.) Alpha decay is a process where a nucleus emits a positron, which is a positively charged particle."],
+                answer: "A.) Alpha decay is a process where a nucleus emits an alpha particle, which consists of 2 protons and 2 neutrons."
+            }
+        ],
+        "Unit 8: Redox": [
+            {
+                question: "Define oxidation and reduction in terms of electron transfer.",
+                options: ["A.) Oxidation is the gain of electrons, while reduction is the loss of electrons.", "B.) Oxidation is the gain of protons, while reduction is the loss of protons.", "C.) Oxidation is the gain of neutrons, while reduction is the loss of neutrons.", "D.) Oxidation is the loss of electrons, while reduction is the gain of electrons."],
+                answer: "D.) Oxidation is the loss of electrons, while reduction is the gain of electrons."
+            },
+            {
+                question: "Identify the oxidizing and reducing agents in the reaction: Zn + Cu^2+ → Zn^2+ + Cu.",
+                options: ["A.) Zinc (Zn) is the reducing agent, and Copper ion (Cu^2+) is the oxidizing agent.", "B.) Zinc ion (Zn^2+) is the reducing agent, and Copper (Cu) is the oxidizing agent.", "C.) Zinc (Zn) is the oxidizing agent, and Copper ion (Cu^2+) is the reducing agent.", "D.) Copper (Cu) is the reducing agent, and Zinc ion (Zn^2+) is the oxidizing agent."],
+                answer: "A.) Zinc (Zn) is the reducing agent, and Copper ion (Cu^2+) is the oxidizing agent."
+            },
+            {
+                question: "Write the oxidation half-equation for the reaction:",
+                options: ["A.) The oxidation half-equation is: MgCl2 → Mg^2+ + 2Cl^-.", "B.) The oxidation half-equation is: Mg → Mg^2+ + 2e^-.", "C.) The oxidation half-equation is: MgCl2 → Mg^2+ + 2e^-.", "D.) The oxidation half-equation is: Mg + 2Cl → MgCl2."],
+                answer: "B.) The oxidation half-equation is: Mg → Mg^2+ + 2e^-.",
+                image: "../../images/Chemistry/Redox/question3.png"
+            },
+            {
+                question: "Explain the purpose of a salt bridge in a voltaic cell.",
+                options: ["A.) A salt bridge allows ion flow between half-cells to maintain electrical neutrality and complete the circuit.", "B.) A salt bridge prevents ion flow between half-cells to maintain electrical neutrality and complete the circuit.", "C.) A salt bridge allows ion flow between half-cells to prevent electrical neutrality and complete the circuit.", "D.) A salt bridge allows ion flow between half-cells to maintain electrical neutrality but does not complete the circuit."],
+                answer: "A.) A salt bridge allows ion flow between half-cells to maintain electrical neutrality and complete the circuit."
+            },
+            {
+                question: "Calculate the oxidation state of sulfur in:",
+                options: ["A.) The oxidation state of sulfur in hydrogen sulfate is +4.", "B.) The oxidation state of sulfur in hydrogen sulfate is -6.", "C.) The oxidation state of sulfur in hydrogen sulfate is -4.", "D.) The oxidation state of sulfur in hydrogen sulfate is +6."],
+                answer: "D.) The oxidation state of sulfur in hydrogen sulfate is +6.",
+                image: "../../images/Chemistry/Redox/question5.png"
+            }
+        ],
+        "Unit 9: Climate Change": [
+            {
+                question: "What was the Miller-Urey experiment used for?",
+                options: ["A.) To study the behavior of primordial gases in the atmosphere of Mars.", "B.) To investigate the origin of the solar system.", "C.) To prove the theory of evolution on Earth.", "D.) To analyze the migration patterns of early humans."],
+                answer: "C.) To prove the theory of evolution on Earth."
+            },
+            {
+                question: "What are the primary human-made chemicals responsible for ozone depletion, and how do they contribute to the breakdown of ozone molecules in the stratosphere?",
+                options: ["A.) The primary human-made chemicals responsible for ozone depletion are ozone-depleting substances (ODS), such as CFCs and halons. These substances release chlorine and bromine atoms when broken down by UV radiation in the stratosphere, which then catalyze the destruction of ozone molecules.", "B.) The primary human-made chemicals responsible for ozone depletion are greenhouse gases, such as carbon dioxide (CO2) and methane (CH4). These substances absorb UV radiation in the stratosphere, which directly breaks down ozone molecules.", "C.) The primary human-made chemicals responsible for ozone depletion are nitrogen oxides (NOx). These substances react with ozone molecules, leading to their breakdown in the stratosphere.", "D.) The primary human-made chemicals responsible for ozone depletion are aerosols, such as sulfur dioxide (SO2). These substances release chlorine and bromine atoms when broken down by UV radiation in the stratosphere, which then catalyze the destruction of ozone molecules."],
+                answer: "A.) The primary human-made chemicals responsible for ozone depletion are ozone-depleting substances (ODS), such as CFCs and halons. These substances release chlorine and bromine atoms when broken down by UV radiation in the stratosphere, which then catalyze the destruction of ozone molecules."
+            },
+            {
+                question: "What are the main greenhouse gases involved in the greenhouse effect, and how do they contribute to warming the Earth's atmosphere?",
+                options: ["A.) The main greenhouse gases involved in the greenhouse effect are oxygen (O2), nitrogen (N2), argon (Ar), and carbon monoxide (CO). These gases trap heat from the sun by absorbing and re-emitting infrared radiation, thus warming the Earth's lower atmosphere.", "B.) The main greenhouse gases involved in the greenhouse effect are carbon dioxide (CO2), methane (CH4), nitrous oxide (N2O), and water vapor. These gases reflect sunlight away from the Earth's surface, thereby cooling the atmosphere.", "C.) The main greenhouse gases involved in the greenhouse effect are carbon dioxide (CO2), methane (CH4), nitrous oxide (N2O), and water vapor. These gases trap heat from the sun by absorbing and re-emitting infrared radiation, thus warming the Earth's lower atmosphere.", "D.) The main greenhouse gases involved in the greenhouse effect are sulfur dioxide (SO2), ozone (O3), and nitrogen dioxide (NO2). These gases emit ultraviolet radiation into the atmosphere, warming the Earth's lower atmosphere."],
+                answer: "C.) The main greenhouse gases involved in the greenhouse effect are carbon dioxide (CO2), methane (CH4), nitrous oxide (N2O), and water vapor. These gases trap heat from the sun by absorbing and re-emitting infrared radiation, thus warming the Earth's lower atmosphere."
+            },
+            {
+                question: "Explain the purpose of denitrifying bacteria in the nitrogen cycle:",
+                options: ["A.) Denitrifying bacteria convert ammonia in the soil into nitrogen gas, thereby returning it to the atmosphere.", "B.) Denitrifying bacteria convert nitrogen gas from the atmosphere into nitrates in the soil, making nitrogen available to plants.", "C.) Denitrifying bacteria convert nitrogen gas from the atmosphere into ammonia, which can be used directly by plants for growth.", "D.) Denitrifying bacteria, along with lightning, play a crucial role in the nitrogen cycle by converting nitrates in the soil back into nitrogen gas, thereby returning it to the atmosphere."],
+                answer: "D.) Denitrifying bacteria, along with lightning, play a crucial role in the nitrogen cycle by converting nitrates in the soil back into nitrogen gas, thereby returning it to the atmosphere.",
+                image: "../../images/Chemistry/ClimateChange/question4.png"
+            },
+            {
+                question: "How is the ozone layer formed and why is it important for life on Earth?",
+                options: ["A.) The ozone layer is formed in the mesosphere when oxygen molecules (O2) combine with nitrogen molecules (N2) to form ozone (O3). It is important because it absorbs heat from the sun, regulating Earth's temperature.", "B.) The ozone layer is formed in the stratosphere when high-energy UV radiation splits oxygen molecules (O2) into individual oxygen atoms, which then combine with other oxygen molecules to form ozone (O3). It is important because it absorbs the majority of the sun's harmful UV radiation, protecting life on Earth from excessive UV exposure.", "C.) The ozone layer is formed in the thermosphere when ultraviolet radiation reacts with nitrogen molecules (N2) to form ozone (O3). It is important because it shields Earth from solar winds and cosmic rays.", "D.) The ozone layer is formed in the stratosphere when high-energy UV radiation splits nitrogen molecules (N2) into individual nitrogen atoms, which then combine with oxygen molecules (O2) to form ozone (O3). It is important because it reflects harmful UV radiation back into space, reducing global warming."],
+                answer: "B.) The ozone layer is formed in the stratosphere when high-energy UV radiation splits oxygen molecules (O2) into individual oxygen atoms, which then combine with other oxygen molecules to form ozone (O3). It is important because it absorbs the majority of the sun's harmful UV radiation, protecting life on Earth from excessive UV exposure."
+            }
+        ],
+        "Unit 10: Thermal Chemistry": [
+            {
+                question: "",
+                options: ["A.) 125 J/kg°C", "B.) 130 J/kg°C", "C.) 135 J/kg°C", "D.) 133.2 J/kg°C"],
+                answer: "B.) 130 J/kg°C",
+                image: "../../images/Chemistry/Thermal/question1.png"
+            },
+            {
+                question: "Identify what arrows A and B represent and whether the reaction is endo or exothermic.",
+                options: ["A.) A is the activation energy, B is the enthalpy change, and the reaction is exothermic.", "B.) A is the activation energy, B is the enthalpy change, and the reaction is endothermic.", "C.) A is the enthalpy change, B is the activation energy, and the reaction is endothermic.", "D.) A is the reaction rate, B is the activation energy, and the reaction is exothermic."],
+                answer: "B.) A is the activation energy, B is the enthalpy change, and the reaction is endothermic.",
+                image: "../../images/Chemistry/Thermal/question2.png"
+            },
+            {
+                question: "Outline why complete and incomplete combustion can be harmful to society.",
+                options: ["A.) Incomplete combustion can produce carbon monoxide, which results in negative health issues for humans, and complete combustion produces carbon dioxide, which contributes to global warming.", "B.) Incomplete combustion can produce carbon monoxide, which results in negative health issues for humans, and complete combustion produces water vapor, which contributes to global warming.", "C.) Incomplete combustion can produce nitrogen gas, which is harmful to the environment, and complete combustion produces oxygen, which can lead to respiratory problems.", "D.) Incomplete combustion can produce hydrogen gas, which is explosive, and complete combustion produces methane, which is a potent greenhouse gas."],
+                answer: "A.) Incomplete combustion can produce carbon monoxide, which results in negative health issues for humans, and complete combustion produces carbon dioxide, which contributes to global warming."
+            },
+            {
+                question: "",
+                options: ["A.) +76J/mol", "B.) +70kJ/mol", "C.) +76kJ/dm^3", "D.) +76kJ/mol"],
+                answer: "D.) +76kJ/mol",
+                image: "../../images/Chemistry/Thermal/question4.png" 
+            },
+            {
+                question: "A 750g of Iron with the specific heat capacity of 4500 J/kg°C is heated from a temperature of 29°C using 0.75kJ of energy. Calculate the final temperature of the iron block.",
+                options: ["A.) 28.5°C", "B.) 29.2C", "C.) 30°C", "D.) 29.2°C"],
+                answer: "D.) 29.2°C"
+            }
+        ],
+        "Unit 11: Rate of Reactions and Equilibrium": [
+            {
+                question: "Which of the following does not affect equilibrium?",
+                options: ["A.) A", "B.) B", "C.) C", "D.) D"],
+                answer: "C.) C",
+                image: "../../images/Chemistry/Equilibrium/question1.png"
+            },
+            {
+                question: "Explain how increasing the concentration of the reactants can increase the rate of reaction.",
+                options: ["A.) Increasing the concentration of the reactants decreases the energy required for collisions, thus increasing the rate of reaction.", "B.) Increasing the concentration of the reactants increases the temperature of the reaction mixture, which speeds up the rate of reaction.", "C.) Increasing the concentration of the reactants changes the phase of the reactants from liquid to gas, which increases the rate of reaction.", "D.) As the concentration of the reactants increases, there are more reactant particles present which are moving, hence there will be more frequent successful collisions between the reactant particles leading to a greater rate of reaction."],
+                answer: "D.) As the concentration of the reactants increases, there are more reactant particles present which are moving, hence there will be more frequent successful collisions between the reactant particles leading to a greater rate of reaction."
+            },
+            {
+                question: "Name A and B, and considering this reaction is reversible, what is the outcome yield if the temperature is increased?",
+                options: ["A.) A is activation energy, B is enthalpy change, and the outcome yield would increase.", "B.) A is enthalpy change, B is the activation energy, and the outcome yield would decrease.", "C.) A is activation energy, B is enthalpy change, and the outcome yield would remain the same.", "D.) A is enthalpy change, B is reaction rate, and the outcome yield would increase."],
+                answer: "B.) A is enthalpy change, B is the activation energy, and the outcome yield would decrease.",
+                image: "../../images/Chemistry/Equilibrium/question3.png"
+            },
+            {
+                question: "Define a dynamic equilibrium.",
+                options: ["A.) In a reversible reaction, the rate of the forward reaction is much faster than the rate of the backward reaction, leading to a constant increase in product concentration.", "B.) In a reversible reaction, the rate of reaction between the forward and backward reaction is equivalent so there is no visible change.", "C.) In a dynamic equilibrium, the concentration of reactants is always higher than the concentration of products, regardless of the reaction conditions.", "D.) A dynamic equilibrium is reached when the reactants are completely converted to products, and no further reaction occurs in either direction."],
+                answer: "B.) In a reversible reaction, the rate of reaction between the forward and backward reaction is equivalent so there is no visible change."
+            },
+            {
+                question: "If the pressure in the system is increased during the reaction, what would you expect from the outcome yield from this reaction:",
+                options: ["A.) The outcome yield should increase.", "B.) The outcome yield should decrease.", "C.) The outcome yield should stay the same.", "D.) This won't affect the outcome yield."],
+                answer: "A.) The outcome yield should increase.",
+                image: "../../images/Chemistry/Equilibrium/question5.png"
+            }
+        ],
+        "Unit 12: Organic Chemistry": [
+            {
+                question: "Name the following substance:",
+                options: ["A.) 3-fluoro-2-methylbutanoic acid", "B.) fluoromethylbutanoic acid", "C.) 3-fluoro-2-methylbutanol", "D.) fluoro-2-ethylbutanoic acid"],
+                answer: "A.) 3-fluoro-2-methylbutanoic acid",
+                image: "../../images/Chemistry/OrganicChemistry/question1.png"
+            },
+            {
+                question: "Which of the following is the correct representation of a polymer?",
+                options: ["A.) A", "B.) B", "C.) C", "D.) D"],
+                answer: "A.) A",
+                image: "../../images/Chemistry/OrganicChemistry/question2.png"
+            },
+            {
+                question: "Why do industries use cracking and fractional distillation for crude oil?",
+                options: ["A.) To convert crude oil into solid carbon for use in manufacturing.", "B.) To transform crude oil into pure water and other non-organic compounds.", "C.) To separate and prepare samples of smaller carbon chain organic compounds to use for things like fuel.", "D.) To produce larger, more complex hydrocarbons from smaller ones found in crude oil."],
+                answer: "C.) To separate and prepare samples of smaller carbon chain organic compounds to use for things like fuel."
+            },
+            {
+                question: "How can you test to differ between alkanes and alkenes?",
+                options: ["A.) You can add bromine water to an alkane and the color will change from orange/brown to colorless; by adding bromine water to an alkene, the color won't change.", "B.) You can add iodine solution to an alkane and it will turn blue; by adding iodine solution to an alkene, it will turn green.", "C.) You can add bromine water to an alkane and the color won't change; by adding bromine water to an alkene, the color will change from orange/brown to colorless.", "D.) You can add phenolphthalein to an alkane and it will turn pink; by adding phenolphthalein to an alkene, it will remain colorless."],
+                answer: "C.) You can add bromine water to an alkane and the color won't change; by adding bromine water to an alkene, the color will change from orange/brown to colorless."
+            },
+            {
+                question: "",
+                options: ["A.) A", "B.) B", "C.) C", "D.) D"],
+                answer: "B.) B",
+                image: "../../images/Chemistry/OrganicChemistry/question5.png"
+            }
+        ]
+    },
+        // Add more units and questions as needed
+    "Physics": {
+        "Unit 1: Measurements": [
+            {
+                question: "Which of the following is not an SI unit?",
+                options: ["A) m", "B) A", "C) K", "D) Hz"],
+                answer: "D) Hz"
+            },
+            {
+                question: "write 10800000 in scientific notation:",
+                options: ["A) 108 x 10^5", "B) 1.08 x 10^8", "C) 108 x 10^-5", "D) 1.08 x 10^-8"],
+                answer: "B) 1.08 x 10^8"
+            },
+            {
+                question: "Convert this number to normal form:",
+                options: ["A) 0.00392", "B) 392000", "C) 0.0392", "D) 39200"],
+                answer: "A) 0.00392",
+                image: "../../images/Physics/Measurements/3rd-questions.png"
+            },
+            {
+                question: "Convert 49280100 to 3 significant figures:",
+                options: ["A) 49300000", "B) 4920000", "C) 4930000", "D) 49200000"],
+                answer: "A) 49300000"
+            },
+            {
+                question: "Convert 500m to cm:",
+                options: ["A) 5000cm", "B) 50000", "C) 50000cm", "D) 50000"],
+                answer: "C) 50000cm"
+            }
+        ],
+        "Unit 2: Motion and Forces": [
+            {
+                question: "A car is traveling at 20m/s, it takes him a second to apply the brakes, after which the car comes to rest in 8 seconds, what was the stopping distance of the car?",
+                options: ["A) 180m", "B) 150m", "C) 200m", "D) 120m"],
+                answer: "A) 180m"
+            },
+            {
+                question: "A ball is dropped vertically from 30m, assuming the ball was accelerating at the rate of gravitational acceleration (9.8m/s^2), calculate the time it took for the ball to reach the ground.",
+                options: ["A) 2s", "B) 2.47s", "C) 2.5s", "2.44s"],
+                answer: "B) 2.47s"
+            },
+            {
+                question: "A runner raced a 200m track, below is a diagram of her motion, calculate the value of u:",
+                options: ["A) 5.76m/s", "B) 9.32m/s", "C) 6.2m/s", "D) 8.99m/s"],
+                answer: "C) 6.2m/s",
+                image: "../../images/Physics/MandF/3rd-questions.png"
+            },
+            {
+                question: "Calculate the distance covered by runner x from 17 to 50 seconds from his motion graph:",
+                options: ["A) 396m", "B) 367m", "C) 413m", "D) 432m"],
+                answer: "A) 396m",
+                image: "../../images/Physics/MandF/4th-questions.png"
+            },
+            {
+                question: "Name force A:",
+                options: ["A) Magnetic force", "B) Buoyancy force", "C) Gravitational Force", "D) Normal Force"],
+                answer: "D) Normal Force",
+                image: "../../images/Physics/MandF/5th-questions.png"
+            }
+        ],
+        "Unit 3: Newtons Law": [
+            {
+                question: "Given that this box weighs 5kgs, calculate its acceleration:",
+                options: ["A) 44m/s", "B) 44m/s^-1", "C) 44m/s^2", "D) 44km/h"],
+                answer: "C) 44m/s^2",
+                image: "../../images/Physics/Newton/1st-questions.png"
+            },
+            {
+                question: "The seesaw is in equilibrium, calculate the distance x:",
+                options: ["A) 10m", "B) 15m", "C) 21m", "D) 12m"],
+                answer: "D) 12m",
+                image: "../../images/Physics/Newton/2nd-questions.png"
+            },
+            {
+                question: "The mass of a skateboard is 1.8kg and the mass of the skateboarder is 42kg, calculate the velocity at which the skateboard moves backwards if the skateboarder jumps forwards at a velocity of 0.3m/s.",
+                options: ["A) 7m/s^2", "B) 7m/s", "C) 7m/s^-1", "D) 7km/h"],
+                answer: "B) 7m/s"
+            },
+            {
+                question: "Which law supports the following scenario: After a magician quickly removes a sheet of paper which separates a box and a glass of water the glass of water stays on the box now without spilling any water.",
+                options: ["A) Newton's First Law", "B) Newton's Second Law", "C) Newton's Third Law", "D) Boyle's law"],
+                answer: "A) Newton's First Law"
+            },
+            {
+                question: "Which of the following scenarios displays Newton’s third law?",
+                options: ["A) A ball rolling down a hill speeds up.", "B) A car accelerates when the gas pedal is pressed.", "C) As a man hits into a wall, it leaves a bruise on his back as he backfires from the wall upon impact.", "D) A book rests on a table without moving."],
+                answer: "C) As a man hits into a wall, it leaves a bruise on his back as he backfires from the wall upon impact."
+            }
+        ],
+        "Unit 4: Work Power Energy": [
+            {
+                question: "A car with a mass of 500kg uses 10000N of force to move 1000m, calculate the final velocity of the car.",
+                options: ["A) 200m/s", "B) 200m/s^-2", "C) 2000m/s", "D) 2000m/s^-2"],
+                answer: "A) 200m/s"
+            },
+            {
+                question: "Calculate the efficiency of this light bulb:",
+                options: ["A) 100%", "B) 75%", "C) 50%", "D) 25%"],
+                answer: "B) 75%",
+                image: "../../images/Physics/WPE/2nd-questions.png"
+            },
+            {
+                question: "A boy of mass 50kg standing 10m above the ground on a slide, slides down with the speed of 7m/s, calculate the energy loss from GPE to KE.",
+                options: ["A) 3775J", "B) B) 2856J", "C) 4121J", "D) 3368J"],
+                answer: "A) 3775J"
+            },
+            {
+                question: "A man uses 500N of force to push a box 10m across the ground in 6 seconds, calculate the power used by the man.",
+                options: ["A) 816.2W", "B) 945.8W", "C) 833.3W", "D)777.7W"],
+                answer: "C) 833.3W"
+            },
+            {
+                question: "What is the energy transfer for when a car starts and moves?",
+                options: ["A) Kinetic -> Mechanical -> Chemical Potential -> Heat -> Sound", "B) Heat -> Chemical Potential -> Mechanical -> Sound -> Kinetic", "C) Mechanical -> Kinetic -> Chemical Potential -> Heat -> Sound", "D) Chemical potential -> Heat -> Mechanic -> Kinetic -> Sound"],
+                answer: "D) Chemical potential -> Heat -> Mechanic -> Kinetic -> Sound"
+            }
+        ],
+        "Unit 5: Thermal Physics": [
+            {
+                question: "10g of ice at temperature 0°C is added to 100g of water of temperature 30°C, the ice melts and assume the specific heat capacity for water is 4.2 J/g°C, and the specific latent heat of fusion for ice is 334 J/g. Calculate the new temperature of the water once the ice melts.",
+                options: ["A) 22*C", "B) 20*C", "C) 24*C", "D) 26*C"],
+                answer: "A) 22*C"
+            },
+            {
+                question: "Explain the processes taking place in stages 2 and 4:",
+                options: ["A) At stage 2, the substance is changing from solid to liquid, and at stage 4, the substance is changing from liquid to gas.", "B) At stage 1, the substance is changing from solid to liquid, and at stage 3, the substance is changing from liquid to gas.", "C) At stage 2, the substance is changing from liquid to gas, and at stage 4, the substance is changing from gas to solid.", "D)At stage 1, the substance is changing from liquid to solid, and at stage 3, the substance is changing from gas to liquid."],
+                answer: "A) At stage 2, the substance is changing from solid to liquid, and at stage 4, the substance is changing from liquid to gas.",
+                image: "../../images/Physics/Thermal/2nd-questions.png"
+            },
+            {
+                question: "150g of water releases 5000J of energy, its initial temperature was 340K, assuming water’s specific heat capacity is 4.2 J/g°C, calculate the final temperature of the water.",
+                options: ["A) 324K", "B) 348K", "C) 356K", "D) 385K"],
+                answer: "B) 348K"
+            },
+            {
+                question: "Explain why a balloon expands when heated using kinetic theory.",
+                options: ["A) The kinetic energy of the gas particles decreases, leading to slower velocities and fewer collisions on the balloon’s surface, causing the balloon to shrink.", "B) The kinetic energy of the gas particles remains the same, but the volume of the balloon decreases", "C) The gas particles in the balloon absorb the heat and condense into a liquid, leading to a decrease in volume.", "D) The kinetic energy of the gas particles increases, leading to faster velocities and more frequent collisions on the balloon’s surface, causing the balloon to expand."],
+                answer: "D) The kinetic energy of the gas particles increases, leading to faster velocities and more frequent collisions on the balloon’s surface, causing the balloon to expand."
+            },
+            {
+                question: "In the beach the sand feels very warm, but the water feels cold, since both the sand and water receive the same solar radiation source, you wonder why the water is cool. Explain why the water is cooler than the sand even though they both receive the same solar radiation.",
+                options: ["A) Water has a lower specific heat capacity than sand, so it takes less energy to increase the temperature of 1kg of water by 1°C.", "B) Sand has a far greater specific heat capacity than water, so it takes more energy to increase the temperature of 1kg of sand by 1°C.", "C) Water has a far greater specific heat capacity than sand, so it takes more energy to increase the temperature of 1kg of water by 1°C, resulting in the water’s temperature taking longer to rise compared to the sand.", "D) Water and sand have the same specific heat capacity, so they heat up at the same rate."],
+                answer: "C) Water has a far greater specific heat capacity than sand, so it takes more energy to increase the temperature of 1kg of water by 1°C, resulting in the water’s temperature taking longer to rise compared to the sand."
+            }
+        ],
+        "Unit 6: Climate Change": [
+            {
+                question: "Which of the following is not a greenhouse gas:",
+                options: ["A) Water vapor", "B) Nitrous oxide", "C) Nitrogen tetrafluoride", "D) Calcium carbonate."],
+                answer: "D) Calcium carbonate",
+            },
+            {
+                question: "Explain why greenhouse gases are important to an extent.",
+                options: ["A) A moderate level of greenhouse gas layers in the atmosphere allows a certain amount of the reflected heat from the sun to be reemitted to Earth’s surface, helping to control Earth's temperature and keep it at a sustainable level.", "B) Greenhouse gases absorb all the sun's heat, preventing any from reaching Earth's surface and thus cooling the planet.", "C) Greenhouse gases allow all the sun's heat to pass through the atmosphere without any reflection, leading to an increase in Earth's temperature.", "D) The absence of greenhouse gases in the atmosphere allows the Earth’s surface to reflect all of the sun’s heat back into space, leading to a stable temperature."],
+                answer: "A) A moderate level of greenhouse gas layers in the atmosphere allows a certain amountof the reflected heat from the sun to be reemitted to Earth’s surface, helping to control Earth's temperature and keep it at a sustainable level."
+            },
+            {
+                question: "How can changes in albedo indicate increasing climate change?",
+                options: ["A) It indicates that a greater proportion of solar radiation is being reflected by the surface, leading to a decrease in temperature for that surface.", "B) It indicates that a greater proportion of solar radiation is being absorbed by the surface, leading to an increase in temperature for that surface.", "C) It means that the surface is absorbing less solar radiation, which results in a lower temperature for that surface.", "D) It suggests that the albedo fraction has no impact on the surface temperature and only affects the color of the surface."],
+                answer: "B) It indicates that a greater proportion of solar radiation is being absorbed by the surface, leading to an increase in temperature for that surface."
+            },
+            {
+                question: "Which of the following is not a renewable-energy source:",
+                options: ["A) Tidal energy", "B) wind energy", "C) solar energy", "D) nuclear energy"],
+                answer: "D) Nuclear energy"
+            },
+            {
+                question: "Define ozone depletion.",
+                options: ["A) Ozone depletion is the gradual thickening of the ozone layer, and its primary sources are natural volcanic eruptions.", "B) Ozone depletion is the process of creating more ozone in the atmosphere, and its primary sources are industrial pollutants.", "C) Ozone depletion is the gradual thinning of the ozone layer in the atmosphere which shields Earth from the sun’s UV radiation. The sources of ozone depletion are man-made chemicals like CFCs.", "D) Ozone depletion is the increase of ozone concentration in the lower atmosphere, and its primary sources are forest fires."],
+                answer: "C) Ozone depletion is the gradual thinning of the ozone layer in the atmosphere which shields Earth from the sun’s UV radiation. The sources of ozone depletion are man-made chemicals like CFCs."
+            }
+        ],
+        "Unit 7: Waves and Optics": [
+            {
+                question: "Explain what total internal reflection is and how it is used in fiber optics.",
+                options: ["A) Total internal reflection occurs when the incident angle of the incident ray is greater than the critical angle of the material, resulting in the ray reflecting rather than refracting. In fiber optics, the light ray will keep undergoing total internal reflection to form an image of the end of the tube.", "B) Total internal reflection occurs when the incident angle of the incident ray is less than the critical angle of the material, resulting in the ray refracting rather than reflecting. In fiber optics, this causes the light to scatter and lose intensity.", "C) Total internal reflection is the process where light is absorbed by the material and re-emitted at a different angle. In fiber optics, this re-emission helps to transmit data over long distances.", "D) Total internal reflection happens when the incident ray travels through a material with a lower refractive index, causing the ray to bend away from the normal. In fiber optics, this bending helps to guide the light through the tube."],
+                answer: "A) Total internal reflection occurs when the incident angle of the incident ray is greater than the critical angle of the material, resulting in the ray reflecting rather than refracting. In fiber optics, the light ray will keep undergoing total internal reflection to form an image of the end of the tube."
+            },
+            {
+                question: "A microwave is sent via a cell tower to a mobile device with the frequency 400GHz, calculate the wavelength of the microwave.",
+                options: ["A) 7 x 10^-4m", "B) 7.5 x 10^-4m", "C) 7.5 x 10m", "D) 7 x 10m"],
+                answer: "B) 7.5 x 10^-4m"
+            },
+            {
+                question: "If the speed of sound in seawater is 1500 meters per second and the sonar detects the echo after 2.5 seconds, what is the distance between the seabed and the ship?",
+                options: ["A) 1785m", "B) 1832m", "C) 1875m", "D) 1932m"],
+                answer: "C) 1875m"
+            },
+            {
+                question: "A light ray passes from air with a refractive index of 1 into glass with a refractive index of 1.52 has an incident angle of 50°, calculate the angle of refraction.",
+                options: ["A) 32.5°", "B) 33.5°", "C) 30.0°", "D) 31.42°"],
+                answer: "C) 30.0°"
+            },
+            {
+                question: "Calculate the magnification from this lens and state the type of lens shown in this diagram.",
+                options: ["A) Magnification = 0.53, the type of lens is concave.", "B) Magnification = 1.00, the type of lens is planar.", "C) Magnification = 0.75, the type of lens is cylindrical.", "D) Magnification = 0.53, the type of lens is convex."],
+                answer: "D) Magnification = 0.53, the type of lens is convex.",
+                image: "../../images/Physics/Waves/5th-questions.png"
+            }
+        ],
+        "Unit 8: Electricity": [
+            {
+                question: "Explain the use of a fuse in circuits in terms of safety.",
+                options: ["A) Fuses act as circuit breakers. They are thin wires that can only handle a maximum number of Amperes flowing through them. Once that limit is exceeded, the wire burns, and the circuit is broken off, preventing overheating of the circuit.", "B) Fuses are used to increase the voltage in a circuit. They regulate the current flow to ensure a constant voltage level.", "C) Fuses act as insulators. They prevent any current from flowing through the circuit by blocking the flow of electricity.", "D) Fuses are used to decrease the resistance in a circuit. They allow more current to flow through the circuit by reducing resistance."],
+                answer: "A) Fuses act as circuit breakers. They are thin wires that can only handle a maximum number of Amperes flowing through them. Once that limit is exceeded, the wire burns, and the circuit is broken off, preventing overheating of the circuit."
+            },
+            {
+                question: "Explain the use of a fuse in circuits in terms of safety.",
+                options: ["A) Fuses act as circuit breakers. They are thin wires that can only handle a maximum number of Amperes flowing through them. Once that limit is exceeded, the wire burns, and the circuit is broken off, preventing overheating of the circuit.", "B) Fuses are used to increase the voltage in a circuit. They regulate the current flow to ensure a constant voltage level.", "C) Fuses act as insulators. They prevent any current from flowing through the circuit by blocking the flow of electricity.", "D) Fuses are used to decrease the resistance in a circuit. They allow more current to flow through the circuit by reducing resistance."],
+                answer: "A) Fuses act as circuit breakers. They are thin wires that can only handle a maximum number of Amperes flowing through them. Once that limit is exceeded, the wire burns, and the circuit is broken off, preventing overheating of the circuit."
+            },
+            {
+                question: "Why is this circuit not functioning?",
+                options: ["A) The resistor is too high", "B) The diode is in the wrong direction", "C) The capacitor is faulty", "D) The power supply is too low"],
+                answer: "B) The diode is in the wrong direction",
+                image: "../../images/Physics/Electric/3rd-questions.png"
+            },
+            {
+                question: "A series circuit has 3 identical resistors and a light bulb of resistance 2 ohms, the battery of the circuit is supplying 12V, and the wires pass a charge of 36C in 12 seconds, calculate the resistance of the resistor.",
+                options: ["A) 1/2 ohm", "B) 1 ohm", "C) 2/3 ohm", "D) 3/2 ohm"],
+                answer: "C) 2/3 ohm"
+            },
+            {
+                question: "Explain why it is important to transfer mains electricity through grid lines at high voltages.",
+                options: ["A) High voltage ensures faster transmission of electricity.", "B) High voltage reduces the size of the conductors needed.", "C) High voltage increases the lifespan of electrical components.", "D) Because of the equation P=IV, as the voltage is greater the current will be lower. As a result, with less current there will be less collisions of electrons when transferring electricity through the wires resulting in less heat loss and less power loss"],
+                answer: "D) Because of the equation P=IV, as the voltage is greater the current will be lower. As a result, with less current there will be less collisions of electrons when transferring electricity through the wires resulting in less heat loss and less power loss"
+            }
+        ],
+        "Unit 9: Electromagnetism": [
+            {
+                question: "The primary coil of a transformer has a voltage of 50V and current 12A, the secondary voltage is 2V, calculate the final current passing through the secondary coil.",
+                options: ["A) 300A", "B) 250A", "C) 200A", "D) 150A"],
+                answer: "A) 300A"
+            },
+            {
+                question: "Explain the motor effect.",
+                options: ["A) When an electric current flows through a conductor, it generates a magnetic field around the conductor. This magnetic field can then interact with another magnetic field, such as the one created by a permanent magnet, to produce a force that can cause the conductor to move, resulting in the motor effect.", "B) When an electric current flows through a conductor, it generates a magnetic field around the conductor. This magnetic field can then interact with another magnetic field, such as the one created by a permanent magnet, to produce a force that can cause the conductor to move, resulting in the motor effect.", "C) When an electric current flows through a conductor, it generates a magnetic field around the conductor. This magnetic field can then interact with another magnetic field, such as the one created by a permanent magnet, to produce a force that can cause the conductor to move, resulting in the motor effect.", "D) When an electric current flows through a conductor, it generates a magnetic field around the conductor. This magnetic field can then interact with another magnetic field, such as the one created by a permanent magnet, to produce a force that can cause the conductor to move, resulting in the motor effect."],
+                answer: "B) When an electric current flows through a conductor, it generates a magnetic field around the conductor. This magnetic field can then interact with another magnetic field, such as the one created by a permanent magnet, to produce a force that can cause the conductor to move, resulting in the motor effect."
+            },
+            {
+                question: "In this diagram, the red arrows show the direction of the current and the black arrows show the direction of the magnetic field, what direction will the coil move",
+                options: ["A) anti-clockwise", "B) clockwise", "C) upwards", "D) downwards"],
+                answer: "A) anti-clockwise",
+                image: "../../images/Physics/Electro/3rd-questions.png"
+            },
+            {
+                question: "What are ways to reverse the direction of the rotation on a motor?",
+                options: ["A) Increase the voltage", "B) Decrease the resistance", "C) You can change the poles of the magnets from both sides, or you can swap the direction of the current.", "D) Use a stronger magnet"],
+                answer: "C) You can change the poles of the magnets from both sides, or you can swap the direction of the current."
+            },
+            {
+                question: "Explain how electromagnets are used in circuits involving bells.",
+                options: ["A) The electromagnet generates heat to produce sound.", "B) The electromagnet rotates to strike the bell.", "C) The electromagnet is used to light up the bell.", "D) When an electric current flows through the coil of an electromagnet, it generates a strong magnetic field. This magnetic field can then be used to attract iron armature, which is connected to the clapper of the bell. As the armature is attracted, it strikes the bell, producing the ringing sound. Once the metal armature hits the bell, it disconnects from the circuit, hence the circuit breaks and the process continues."],
+                answer: "D) When an electric current flows through the coil of an electromagnet, it generates a strong magnetic field. This magnetic field can then be used to attract iron armature, which is connected to the clapper of the bell. As the armature is attracted, it strikes the bell, producing the ringing sound. Once the metal armature hits the bell, it disconnects from the circuit, hence the circuit breaks and the process continues."
+            }
+        ],
+        "Unit 10: Astrophysics": [
+            {
+                question: "Explain how redshift supports the big bang theory.",
+                options: ["A) The observation that the light from distant galaxies is shifted towards longer, 'redder' wavelengths, known as redshift, indicates that those galaxies are moving away from us. This indicates that the universe is constantly expanding which supports the big bang theory.", "B) Redshift suggests that galaxies are coming closer.", "C) Redshift shows that the universe is contracting.", "D) Redshift is not related to the big bang theory."],
+                answer: "A) The observation that the light from distant galaxies is shifted towards longer, 'redder' wavelengths, known as redshift, indicates that those galaxies are moving away from us. This indicates that the universe is constantly expanding which supports the big bang theory."
+            },
+            {
+                question: "From these stages, under which stage does the star start producing larger fusion products like beryllium?",
+                options: ["A) Main sequence", "B) Red giant and red supergiant", "C) White dwarf", "D) Neutron star"],
+                answer: "B) Red giant and red supergiant",
+                image: "../../images/Physics/Astro/2nd-questions.png"
+            },
+            {
+                question: "Considering Kepler’s third law, if Mars has an approximate orbital radius of 1.5 AU (astronomical units), while Jupiter has an approximate orbital radius of 5.2 AU, calculate how much longer it takes Jupiter to orbit the Sun compared to Mars.",
+                options: ["A) 5 times as long", "B) 8 times as long", "C) It takes Jupiter 12 times as long as Mars.", "D) 15 times as long"],
+                answer: "C) It takes Jupiter 12 times as long as Mars."
+            },
+            {
+                question: "If an ambulance is passing by you, in which case, approaching or receding, will the perceived siren frequency by you be higher than the actual siren frequency (600 Hz) and why?",
+                options: ["A) Receding, due to the Doppler effect.", "B) Approaching, due to the Doppler effect.", "C) Receding, because sound waves are compressed.", "D) With regard to the doppler shift principle, when the siren is approaching the observer, the perceived frequency will be greater than the real frequency because as the ambulance is approaching the user the sound waves are compressed."],
+                answer: "D) With regard to the doppler shift principle, when the siren is approaching the observer, the perceived frequency will be greater than the real frequency because as the ambulance is approaching the user the sound waves are compressed."
+            },
+            {
+                question: "What is the motion of a moon compared to a comet?",
+                options: ["A) A moon follows a circular orbit while a comet follows an elliptical orbit.", "B) A moon follows a straight line while a comet follows a circular orbit.", "C) Both follow elliptical orbits.", "D) A moon follows an elliptical orbit while a comet follows a circular orbit."],
+                answer: "A) A moon follows a circular orbit while a comet follows an elliptical orbit."
+            }
+        ],
+        "Unit 11: Radioactivity": [
+            {
+                question: "Write down the half-life of Magnesium-28:",
+                options: ["A) 20 Hours", "B) 24 Hours", "C) 18 Hours", "D) 22 Hours"],
+                answer: "A) 20 Hours",
+                image: "../../images/Physics/Radio/1st-questions.png"
+            },
+            {
+                question: "Figure out the values for x and y from the following alpha decay equation:",
+                options: ["A) x = 92, y = 240", "B) x = 94, and y = 242", "C) x = 90, y = 238", "D) x = 96, y = 244"],
+                answer: "B) x = 94, and y = 242",
+                image: "../../images/Physics/Radio/2nd-questions.png"
+            },
+            {
+                question: "With regard to the mass of the charged particle, the change in atomic and mass number, the energy released during the process, and the penetrating power of the charged particle which statement accurately compares alpha, beta, and gamma decay?",
+                options: ["A) Alpha decay reduces the atomic number by 2 and the mass number by 4, emitting a helium nucleus with high energy and low penetrating power. Beta decay changes the atomic number by 1 while keeping the mass number constant, emitting an electron/positron with medium energy and medium penetrating power. Gamma decay does not change the atomic number or mass number, emitting high-energy electromagnetic radiation with high penetrating power.", "B) Beta decay changes the atomic number by 1 while keeping the mass number constant, emitting an electron/positron with medium energy and medium penetrating power. Alpha decay reduces the atomic number by 2 and the mass number by 4, emitting a helium nucleus with high energy and low penetrating power. Gamma decay does not change the atomic number or mass number, emitting high-energy electromagnetic radiation with high penetrating power.", "C) Alpha decay reduces the atomic number by 2 and the mass number by 4, emitting a helium nucleus with high energy and low penetrating power. Beta decay changes the atomic number by 1 while keeping the mass number constant, emitting an electron/positron with medium energy and medium penetrating power. Gamma decay does not change the atomic number or mass number, emitting high-energy electromagnetic radiation with high penetrating power.", "D) Gamma decay does not change the atomic number or mass number, emitting high-energy electromagnetic radiation with high penetrating power. Alpha decay reduces the atomic number by 2 and the mass number by 4, emitting a helium nucleus with high energy and low penetrating power. Beta decay changes the atomic number by 1 while keeping the mass number constant, emitting an electron/positron with medium energy and medium penetrating power."],
+                answer: "C) Alpha decay reduces the atomic number by 2 and the mass number by 4, emitting a helium nucleus with high energy and low penetrating power. Beta decay changes the atomic number by 1 while keeping the mass number constant, emitting an electron/positron with medium energy and medium penetrating power. Gamma decay does not change the atomic number or mass number, emitting high-energy electromagnetic radiation with high penetrating power."
+            },
+            {
+                question: "What is background radiation and how does it affect experiments that measure radiation?",
+                options: ["A) Background radiation is the ionizing radiation produced by artificial sources and affects experiments by providing a higher baseline of radiation.", "B) Background radiation comes from the sun and affects experiments by varying with solar activity.", "C) Background radiation is the ionizing radiation found in living organisms and affects experiments by altering the biological samples.", "D) Background radiation refers to the natural ionizing radiation that is always present in the environment from sources like cosmic rays, radon gas, and radioactive materials in the Earth's crust. This background radiation can affect experiments that measure radiation by creating a baseline level of radiation that needs to be accounted for in order to accurately measure the radiation of interest."],
+                answer: "D) Background radiation refers to the natural ionizing radiation that is always present in the environment from sources like cosmic rays, radon gas, and radioactive materials in the Earth's crust. This background radiation can affect experiments that measure radiation by creating a baseline level of radiation that needs to be accounted for in order to accurately measure the radiation of interest."
+            },
+            {
+                question: "Explain how an electric field affects alpha, beta, and gamma decay.",
+                options: ["A) Alpha decay will be influenced by the negative plane as it will be attracted to the negative side. Beta decay will be influenced by the positive side as it will be attracted to the positive side. Gamma decay will not be influenced as it is not a charged particle.", "B) Alpha decay will be influenced by the positive plane as it will be attracted to the positive side. Beta decay will be influenced by the negative side as it will be attracted to the negative side. Gamma decay will not be influenced as it is not a charged particle.", "C) Alpha decay will not be influenced as it is not a charged particle. Beta decay will be influenced by the negative plane as it will be attracted to the negative side. Gamma decay will be influenced by the positive side as it will be attracted to the positive side.", "D) Alpha decay will not be influenced as it is not a charged particle. Beta decay will not be influenced as it is not a charged particle. Gamma decay will be influenced by both positive and negative sides."],
+                answer: "A) Alpha decay will be influenced by the negative plane as it will be attracted to the negative side. Beta decay will be influenced by the positive side as it will be attracted to the positive side. Gamma decay will not be influenced as it is not a charged particle."
+            }
+        ]
+    },
+    "Biology": {
+        "Unit 1: How is life organized?": [
+            {
+                options: ["A) A", "B) B", "C) C", "D) D"],
+                answer: "B) B",
+                image: "../../images/Biology/Unit-1/1st-questions.png"
+            },
+            {
+                question: "In Pasteur’s experiment, explain the difference between the two apparatus and thus, the result and conclusion.",
+                options: ["A) The first flask had a winded neck, while the second flask had an open neck. Since the second flask’s neck was open, microbes in the air entered the flask and thus the mixture, while the same microbes got stuck in the winded and twisted flask’s neck. After two weeks, the liquid became discolored due to germs and bacteria in the open-necked flask.", "B) Both flasks had open necks, allowing microbes to enter both flasks equally.", "C) The first flask had a closed neck, preventing any microbes from entering.", "D) The second flask had a winded neck, preventing microbes from entering."],
+                answer: "A) The first flask had a winded neck, while the second flask had an open neck. Since the second flask’s neck was open, microbes in the air entered the flask and thus the mixture, while the same microbes got stuck in the winded and twisted flask’s neck. After two weeks, the liquid became discolored due to germs and bacteria in the open-necked flask."
+            },
+            {
+                question: "In the following picture, identify the two cells and categorize them, labeling their differences in structure.",
+                options: ["A) Both cells are eukaryotic with nuclei and organelles.", "B) The top left cell is eukaryotic while the bottom left cell is prokaryotic. The top left cell has a nucleus and nuclear membrane with all organelles intact and is formed through mitosis. The bottom right cells have a nucleoid with no nuclear membrane with almost all organelles missing and are formed through binary fission.", "C) Both cells are prokaryotic with no nuclei or organelles.", "D) The top left cell is prokaryotic while the bottom left cell is eukaryotic."],
+                answer: "B) The top left cell is eukaryotic while the bottom left cell is prokaryotic. The top left cell has a nucleus and nuclear membrane with all organelles intact and is formed through mitosis. The bottom right cells have a nucleoid with no nuclear membrane with almost all organelles missing and are formed through binary fission.",
+                image: "../../images/Biology/Unit-1/3rd-questions.png"
+            },
+            {
+                question: "How is the specialization of cells important for bodily functions?",
+                options: ["A) Specialization is not important for bodily functions.", "B) All cells perform the same functions regardless of specialization.", "C) Cells organize into tissues, organs, and systems, creating a hierarchy that allows for specialization, communication, and efficient functioning of complex organisms. This specialization allows cells to change size, shape, and cell structure to adapt to their function.", "D) Specialization only affects the size of the cells."],
+                answer: "C) Cells organize into tissues, organs, and systems, creating a hierarchy that allows for specialization, communication, and efficient functioning of complex organisms. This specialization allows cells to change size, shape, and cell structure to adapt to their function."
+            },
+            {
+                question: "Describe the hierarchy of Life in Kingdom Classification and its importance, whilst providing examples of binomial nomenclature.",
+                options: ["A) Kingdoms are the smallest classification categories.", "B) Each species has a unique three-part scientific name.", "C) The hierarchy of life does not include kingdoms.", "D) The biological world is classified in a hierarchy, with kingdoms being the broadest category, followed by divisions, classes, orders, families, genera, and lastly, species. This system helps us organize and identify organisms. Each species has a unique two-part scientific name."],
+                answer: "D) The biological world is classified in a hierarchy, with kingdoms being the broadest category, followed by divisions, classes, orders, families, genera, and lastly, species. This system helps us organize and identify organisms. Each species has a unique two-part scientific name."
+            }
+        ],
+        "Unit 2: What chemical process supports life?": [
+            {
+                options: ["A) A", "B) B", "C) C", "D) D"],
+                answer: "B) B",
+                image: "../../images/Biology/Unit-2/1st-questions.png"
+            },
+            {
+                question: "State the difference between Anaerobic and Aerobic respiration, also state the chemical equations",
+                options: ["A) Anaerobic respiration breaks down glucose for less ATP than aerobic respiration. Less efficient, makes lactic acid or ethanol. Aerobic: More efficient, uses oxygen to make more ATP in mitochondria.", "B) Anaerobic respiration is more efficient than aerobic respiration and produces more ATP.", "C) Anaerobic respiration uses oxygen while aerobic respiration does not.", "D) There is no significant difference between anaerobic and aerobic respiration."],
+                answer: "A) Anaerobic respiration breaks down glucose for less ATP than aerobic respiration. Less efficient, makes lactic acid or ethanol. Aerobic: More efficient, uses oxygen to make more ATP in mitochondria."
+            },
+            {
+                question: "Outline the stages involved in cellular respiration and explain how TWO specific stages contribute to the generation of ATP.",
+                options: ["A) Cellular respiration occurs in one stage and produces only ATP.", "B) Cellular respiration breaks down glucose for energy in several stages. Glycolysis kickstarts the process, producing some ATP and NADH. The Citric Acid Cycle takes over, using NADH to prepare for the most efficient energy production in later stages.", "C) Cellular respiration occurs only in the mitochondria and produces only NADH.", "D) Cellular respiration does not produce ATP."],
+                answer: "B) Cellular respiration breaks down glucose for energy in several stages. Glycolysis kickstarts the process, producing some ATP and NADH. The Citric Acid Cycle takes over, using NADH to prepare for the most efficient energy production in later stages."
+            },
+            {
+                question: "What are some of the environmental factors that can limit the rate of photosynthesis, and why is understanding these limitations important?",
+                options: ["A) Temperature and humidity are the only factors affecting photosynthesis.", "B) Only soil quality limits photosynthesis.", "C) Several factors like light intensity and carbon dioxide can limit photosynthesis. These factors affect the efficiency of the process, impacting plant growth. We can optimize agricultural practices to ensure optimal plant growth.", "D) Photosynthesis is not affected by environmental factors."],
+                answer: "C) Several factors like light intensity and carbon dioxide can limit photosynthesis. These factors affect the efficiency of the process, impacting plant growth. We can optimize agricultural practices to ensure optimal plant growth."
+            },
+            {
+                question: "The lock and key theory is a model used to explain how enzymes work. Explain the role of specificity in this theory and how it contributes to the efficiency of enzyme function.",
+                options: ["A) Enzymes can bind to any substrate, making them very versatile.", "B) Specificity does not play a role in enzyme function.", "C) Enzymes change their shape to fit any substrate.", "D) The lock and key theory emphasizes the specificity of enzymes. Just like a key fits only one specific lock, an enzyme's active site is shaped to bind only a particular substrate. This ensures that enzymes are catalysing only the intended reactions."],
+                answer: "D) The lock and key theory emphasizes the specificity of enzymes. Just like a key fits only one specific lock, an enzyme's active site is shaped to bind only a particular substrate. This ensures that enzymes are catalysing only the intended reactions."
+            }
+        ],
+        "Unit 3: How do organisms sustain themselves?": [
+            {
+                options: ["A) A", "B) B", "C) C", "D) D"],
+                answer: "B) B",
+                image: "../../images/Biology/Unit-3/1st-questions.png"
+            },
+            {
+                question: "Saturated and unsaturated fats differ in their chemical structure. How does this difference relate to their melting points?",
+                options: ["A) Saturated fats with no double bonds have a higher melting point because they pack tightly together. Unsaturated fats, with kinks due to double bonds, have lower melting points.", "B) Unsaturated fats have a higher melting point because they pack tightly together. Saturated fats have kinks due to double bonds, leading to lower melting points.", "C) Both types of fats have the same melting points.", "D) Saturated fats have lower melting points because they pack tightly together."],
+                answer: "A) Saturated fats with no double bonds have a higher melting point because they pack tightly together. Unsaturated fats, with kinks due to double bonds, have lower melting points."
+            },
+            {
+                question: "Dietary recommendations suggest limiting saturated fat intake. Explain how the chemical structure of saturated fats might be linked to their potential health effects.",
+                options: ["A) Saturated fats do not affect cholesterol levels.", "B) Saturated fats (no double bonds) can contribute to the build-up of 'bad' cholesterol due to their ability to pack tightly. This can increase the risk of heart disease.", "C) Saturated fats are beneficial for heart health.", "D) Saturated fats have no impact on cholesterol levels or heart disease risk."],
+                answer: "B) Saturated fats (no double bonds) can contribute to the build-up of 'bad' cholesterol due to their ability to pack tightly. This can increase the risk of heart disease."
+            },
+            {
+                question: "The mechanical breakdown of protein begins in the mouth. How do the stomach and its secretions further contribute to protein digestion?",
+                options: ["A) The stomach only stores the food and does not contribute to protein digestion.", "B) The stomach secretes saliva to break down proteins.", "C) The stomach muscles churn food with gastric juices containing hydrochloric acid, which creates a highly acidic environment. This acidic environment helps break down protein structures, making them more susceptible to enzyme action.", "D) The stomach does not secrete any substances that contribute to protein digestion."],
+                answer: "C) The stomach muscles churn food with gastric juices containing hydrochloric acid, which creates a highly acidic environment. This acidic environment helps break down protein structures, making them more susceptible to enzyme action."
+            },
+            {
+                question: "The small intestine is the primary site of nutrient absorption. How do the pancreas and its secretions work with the small intestine to complete protein digestion?",
+                options: ["A) The pancreas does not contribute to protein digestion.", "B) The pancreas releases bile into the small intestine to break down proteins.", "C) The pancreas releases insulin into the small intestine to break down proteins.", "D) The pancreas releases enzymes (proteases) into the small intestine that specifically target protein molecules. These enzymes break down the protein fragments further into amino acids, the building blocks our body can absorb."],
+                answer: "D) The pancreas releases enzymes (proteases) into the small intestine that specifically target protein molecules. These enzymes break down the protein fragments further into amino acids, the building blocks our body can absorb."
+            }
+        ],
+        "Unit 4: What issues do larger organisms face?": [
+            {
+                options: ["A) A", "B) B", "C) C", "D) D"],
+                answer: "C) C",
+                image: "../../images/Biology/Unit-4/1st-questions.png"
+            },
+            {
+                question: "Explain the difference between a structural adaptation and a behavioral adaptation, using examples.",
+                options: ["A) Structural adaptations are physical features, like a chameleon's camouflage coloring that helps it blend in (forests). Behavioral adaptations are learned or instinctive behaviors, like bird migration to find better food and weather.", "B) Structural adaptations are learned behaviors, while behavioral adaptations are physical features.", "C) Both structural and behavioral adaptations are only physical features.", "D) Structural adaptations are only seen in animals, while behavioral adaptations are only seen in plants."],
+                answer: "A) Structural adaptations are physical features, like a chameleon's camouflage coloring that helps it blend in (forests). Behavioral adaptations are learned or instinctive behaviors, like bird migration to find better food and weather."
+            },
+            {
+                question: "The placenta is a temporary organ crucial for pregnancy. Describe two ways the placenta facilitates the exchange of essential materials between mother and fetus.",
+                options: ["A) The placenta reduces the size of the fetus to facilitate easier nutrient transfer.", "B) The placenta has a large surface area with finger-like projections (villi) that increase contact between maternal and fetal blood. It also acts as a selective barrier, allowing essential nutrients and oxygen to pass to the fetus while filtering out waste products and harmful substances.", "C) The placenta actively pumps nutrients into the fetus.", "D) The placenta stores nutrients for the fetus."],
+                answer: "B) The placenta has a large surface area with finger-like projections (villi) that increase contact between maternal and fetal blood. It also acts as a selective barrier, allowing essential nutrients and oxygen to pass to the fetus while filtering out waste products and harmful substances."
+            },
+            {
+                question: "Leaves come in various shapes and sizes. Explain how leaf structure can be an adaptation for a specific environment.",
+                options: ["A) Leaf structure does not affect plant adaptation.", "B) All leaves have the same structure regardless of the environment.", "C) Leaf size and shape can influence water conservation. Broad leaves in humid environments maximize light capture, while narrow leaves in dry environments minimize water loss through a smaller surface area and sunken stomata.", "D) Leaf structure only affects the color of the plant."],
+                answer: "C) Leaf size and shape can influence water conservation. Broad leaves in humid environments maximize light capture, while narrow leaves in dry environments minimize water loss through a smaller surface area and sunken stomata."
+            },
+            {
+                question: "Plants lack a circulatory system like animals. How do xylem and phloem work together to transport essential materials throughout the plant?",
+                options: ["A) Xylem transports nutrients from leaves to roots, while phloem transports water from roots to leaves.", "B) Both xylem and phloem transport water throughout the plant.", "C) Xylem and phloem do not work together; they have separate functions.", "D) Xylem vessels transport water and minerals from roots to shoots, aided by transpiration pull. Phloem, on the other hand, carries organic compounds like sugars from areas of production (source) to areas of need (sink) using pressure differentials created by active transport."],
+                answer: "D) Xylem vessels transport water and minerals from roots to shoots, aided by transpiration pull. Phloem, on the other hand, carries organic compounds like sugars from areas of production (source) to areas of need (sink) using pressure differentials created by active transport."
+            }
+        ],
+        "Unit 5: What factors affect human health?": [
+            {
+                options: ["A) A", "B) B", "C) C", "D) D"],
+                answer: "C) C",
+                image: "../../images/Biology/Unit-5/1st-questions.png"
+            },
+            {
+                question: "What is homeostasis, and how does it relate to the biological concept of health?",
+                options: ["A) Homeostasis is the body's ability to maintain a stable internal environment despite external changes. This includes things like body temperature, blood sugar levels, and pH. Biological health is achieved when the body can effectively maintain homeostasis.", "B) Homeostasis is the body's ability to change its internal environment to match external changes.", "C) Homeostasis is the process of aging and deterioration over time.", "D) Homeostasis is the body's response to stress and anxiety."],
+                answer: "A) Homeostasis is the body's ability to maintain a stable internal environment despite external changes. This includes things like body temperature, blood sugar levels, and pH. Biological health is achieved when the body can effectively maintain homeostasis."
+            },
+            {
+                question: "Briefly explain how a robust immune system helps an organism stay healthy.",
+                options: ["A) A strong immune system does not affect an organism's health.", "B) A strong immune system defends against pathogens (disease-causing agents) and infections. It can recognize and eliminate foreign invaders, preventing them from causing illness. This helps the body maintain optimal health and function.", "C) A strong immune system only helps in repairing tissue damage.", "D) A strong immune system helps in the digestion of food."],
+                answer: "B) A strong immune system defends against pathogens (disease-causing agents) and infections. It can recognize and eliminate foreign invaders, preventing them from causing illness. This helps the body maintain optimal health and function."
+            },
+            {
+                question: "Give two examples of physical barriers that prevent pathogens from entering our bodies.",
+                options: ["A) Our skin acts as a second line of defense, while blood cells in our veins trap pathogens.", "B) Our bones act as a barrier, while our liver detoxifies pathogens.", "C) Our skin acts as a first line of defense, while mucous membranes lining our respiratory and digestive tracts produce mucus that traps pathogens.", "D) Our nails protect from pathogens, while hair acts as a filter."],
+                answer: "C) Our skin acts as a first line of defense, while mucous membranes lining our respiratory and digestive tracts produce mucus that traps pathogens."
+            },
+            {
+                question: "How do cilia in the respiratory tract help prevent infection?",
+                options: ["A) Cilia absorb pathogens into the bloodstream.", "B) Cilia produce antibodies to fight pathogens.", "C) Cilia filter pathogens from the air we breathe.", "D) Cilia are tiny hair-like structures that constantly move mucus and trapped pathogens upwards towards the throat, where they can be expelled through coughing or swallowed."],
+                answer: "D) Cilia are tiny hair-like structures that constantly move mucus and trapped pathogens upwards towards the throat, where they can be expelled through coughing or swallowed."
+            }
+        ],
+        "Unit 6: Heredity and Genetics": [
+            {
+                options: ["A) A", "B) B", "C) C", "D) D"],
+                answer: "C) C",
+                image: "../../images/Biology/Unit-6/1st-questions.png"
+            },
+            {
+                question: "What are the key differences between DNA and RNA?",
+                options: ["A) DNA and RNA are both nucleic acids, but they have some key differences. DNA is double-stranded and contains deoxyribose sugar and the base thymine. RNA is single-stranded, contains ribose sugar, and uses uracil instead of thymine. DNA serves as the genetic code, while RNA plays a crucial role in protein synthesis.", "B) DNA is single-stranded while RNA is double-stranded.", "C) DNA contains ribose sugar while RNA contains deoxyribose sugar.", "D) DNA and RNA have identical functions and structures."],
+                answer: "A) DNA and RNA are both nucleic acids, but they have some key differences. DNA is double-stranded and contains deoxyribose sugar and the base thymine. RNA is single-stranded, contains ribose sugar, and uses uracil instead of thymine. DNA serves as the genetic code, while RNA plays a crucial role in protein synthesis."
+            },
+            {
+                question: "Describe the Genetic Information Storage.",
+                options: ["A) Genetic information is stored in proteins.", "B) DNA encodes the genetic instructions that determine our traits and development. The sequence of nitrogenous bases in DNA specifies the amino acid sequence of proteins, which shape our physical characteristics and cellular functions.", "C) Genetic information is stored in carbohydrates.", "D) Genetic information is not stored in any specific molecule."],
+                answer: "B) DNA encodes the genetic instructions that determine our traits and development. The sequence of nitrogenous bases in DNA specifies the amino acid sequence of proteins, which shape our physical characteristics and cellular functions."
+            },
+            {
+                question: "Traits are passed from generation to generation through inheritance. Briefly explain this concept.",
+                options: ["A) Traits are passed randomly without any genetic material involved.", "B) Traits are passed only through environmental factors.", "C) DNA is passed from parents to offspring during reproduction. This ensures that genetic information is transmitted from one generation to the next, resulting in the similarities and variations we see between parents and their children.", "D) Traits are not passed from generation to generation."],
+                answer: "C) DNA is passed from parents to offspring during reproduction. This ensures that genetic information is transmitted from one generation to the next, resulting in the similarities and variations we see between parents and their children."
+            },
+            {
+                question: "What is the role of crossing over in meiosis?",
+                options: ["A) Crossing over prevents genetic diversity.", "B) Crossing over only occurs during mitosis.", "C) Crossing over does not involve chromosomes.", "D) Crossing over is a process that shuffles genetic material between homologous chromosomes during meiosis I. This exchange creates new combinations of alleles on chromosomes, leading to increased genetic diversity in the resulting gametes."],
+                answer: "D) Crossing over is a process that shuffles genetic material between homologous chromosomes during meiosis I. This exchange creates new combinations of alleles on chromosomes, leading to increased genetic diversity in the resulting gametes."
+            }
+        ],
+        "Unit 7: How have different forms of life arisen?": [
+            {
+                options: ["A) A", "B) B", "C) C", "D) D"],
+                answer: "C) C",
+                image: "../../images/Biology/Unit-7/1st-questions.png"
+            },
+            {
+                question: "Describe the early hominin species Australopithecus afarensis?",
+                options: ["A) Australopithecus afarensis lived in Africa about 4 million years ago. They are considered early ancestors of Homo sapiens and showed some adaptations for walking upright (bipedalism).", "B) Australopithecus afarensis lived in Asia about 2 million years ago.", "C) Australopithecus afarensis had a large brain size similar to modern humans.", "D) Australopithecus afarensis were primarily tree-dwellers with no adaptations for walking upright."],
+                answer: "A) Australopithecus afarensis lived in Africa about 4 million years ago. They are considered early ancestors of Homo sapiens and showed some adaptations for walking upright (bipedalism)."
+            },
+            {
+                question: "What key features distinguish modern humans (Homo sapiens) from earlier hominin species?",
+                options: ["A) Modern humans have a smaller brain size compared to earlier hominins.", "B) Modern humans have a larger brain size compared to earlier hominins. Additionally, Homo sapiens exhibit a high forehead, prominent chin, and smaller brow ridges.", "C) Modern humans have no chin and large brow ridges.", "D) Modern humans have a low forehead and larger teeth."],
+                answer: "B) Modern humans have a larger brain size compared to earlier hominins. Additionally, Homo sapiens exhibit a high forehead, prominent chin, and smaller brow ridges."
+            },
+            {
+                question: "Explain how fossil records contribute to our understanding of human evolution.",
+                options: ["A) Fossil records do not provide any information about human evolution.", "B) Fossil records only show the diet of ancient species.", "C) Fossil records provide physical evidence of past organisms, allowing scientists to compare anatomical features and piece together the evolutionary history of different species. By studying these remains, we can learn about adaptations, relationships between species, and migration patterns.", "D) Fossil records only indicate the size of ancient species."],
+                answer: "C) Fossil records provide physical evidence of past organisms, allowing scientists to compare anatomical features and piece together the evolutionary history of different species. By studying these remains, we can learn about adaptations, relationships between species, and migration patterns."
+            },
+            {
+                question: "How do scientists use the pentadactyl limb structure as evidence for evolution?",
+                options: ["A) The pentadactyl limb is unique to humans and does not indicate evolution.", "B) The pentadactyl limb structure is only found in fish.", "C) The pentadactyl limb structure varies significantly among vertebrates, indicating no common ancestry.", "D) The pentadactyl limb, a five-fingered structure, is present in various vertebrates despite serving different functions. This shared anatomical feature suggests a common ancestor with this limb design. It points towards evolution from a shared lineage."],
+                answer: "D) The pentadactyl limb, a five-fingered structure, is present in various vertebrates despite serving different functions. This shared anatomical feature suggests a common ancestor with this limb design. It points towards evolution from a shared lineage."
+            }
+        ],
+        "Unit 8: How are animals adapted to life?": [
+            {
+                options: ["A) A", "B) B", "C) C", "D) D"],
+                answer: "D) D",
+                image: "../../images/Biology/Unit-8/1st-questions.png"
+            },
+            {
+                question: "What is ancestry, and how can it be traced?",
+                options: ["A) Ancestry refers to your lineage or family history. You can explore your ancestry through various methods like Genealogical records, DNA analysis, Historical documentation, and Oral traditions.", "B) Ancestry refers to your future generations.", "C) Ancestry is only traced through DNA analysis.", "D) Ancestry does not involve historical documentation."],
+                answer: "A) Ancestry refers to your lineage or family history. You can explore your ancestry through various methods like Genealogical records, DNA analysis, Historical documentation, and Oral traditions."
+            },
+            {
+                question: "Explain how DNA sequencing helps scientists understand the relationships between organisms from different kingdoms.",
+                options: ["A) DNA sequencing is only used to identify genetic disorders.", "B) By comparing DNA sequences from different organisms, scientists can identify shared genetic material. This suggests a common ancestor for all life forms. Additionally, the presence of conserved genes further strengthens this theory.", "C) DNA sequencing is not useful for understanding relationships between organisms.", "D) DNA sequencing only applies to animals and not to other kingdoms."],
+                answer: "B) By comparing DNA sequences from different organisms, scientists can identify shared genetic material. This suggests a common ancestor for all life forms. Additionally, the presence of conserved genes further strengthens this theory."
+            },
+            {
+                question: "Describe one positive and one negative impact of evolution on human health.",
+                options: ["A) Evolution has no impact on human health.", "B) Evolution only has negative impacts on human health.", "C) Physiological adaptations: Humans have evolved traits like tolerance to different climates or resistance to certain diseases. Antimicrobial resistance: Bacteria can evolve resistance to antibiotics, making infections harder to treat.", "D) Evolution only has positive impacts on human health."],
+                answer: "C) Physiological adaptations: Humans have evolved traits like tolerance to different climates or resistance to certain diseases. Antimicrobial resistance: Bacteria can evolve resistance to antibiotics, making infections harder to treat."
+            },
+            {
+                question: "What are stimuli, and how do they influence an organism's behavior?",
+                options: ["A) Stimuli are internal changes that do not affect behavior.", "B) Stimuli only affect the behavior of plants.", "C) Stimuli are genetic changes that do not influence behavior.", "D) Stimuli are changes in the environment, like light, sound, or temperature, that trigger responses in organisms. These responses help organisms adapt to their surroundings."],
+                answer: "D) Stimuli are changes in the environment, like light, sound, or temperature, that trigger responses in organisms. These responses help organisms adapt to their surroundings."
+            }
+        ],
+        "Unit 9: How do species interact?": [
+            {
+                options: ["A) A", "B) B", "C) C", "D) D"],
+                answer: "B) B",
+                image: "../../images/Biology/Unit-9/1st-questions.png"
+            },
+            {
+                question: "Briefly describe the difference between a producer and a consumer in an ecosystem.",
+                options: ["A) Producers: Organisms that create their own food through photosynthesis, using sunlight, water, and carbon dioxide. Consumers: Organisms that obtain energy and nutrients by feeding on other organisms. They can be herbivores, carnivores or omnivores.", "B) Producers: Organisms that feed on other organisms. Consumers: Organisms that create their own food.", "C) Producers: Non-living elements in an ecosystem. Consumers: Living organisms.", "D) There is no difference between producers and consumers."],
+                answer: "A) Producers: Organisms that create their own food through photosynthesis, using sunlight, water, and carbon dioxide. Consumers: Organisms that obtain energy and nutrients by feeding on other organisms. They can be herbivores, carnivores or omnivores."
+            },
+            {
+                question: "Give an example of how a single ecosystem, like a forest, can provide us with essential things we need.",
+                options: ["A) Forests only provide us with timber.", "B) Forests provide clean air by absorbing carbon dioxide and releasing oxygen through photosynthesis. They also help regulate water flow, preventing floods and soil erosion. Additionally, forests provide us with timber, food (fruits, nuts), and habitat for various animal species.", "C) Forests are only important for providing habitats for animals.", "D) Forests do not play a significant role in our ecosystem."],
+                answer: "B) Forests provide clean air by absorbing carbon dioxide and releasing oxygen through photosynthesis. They also help regulate water flow, preventing floods and soil erosion. Additionally, forests provide us with timber, food (fruits, nuts), and habitat for various animal species."
+            },
+            {
+                question: "What is the main limitation of a food chain compared to a food web?",
+                options: ["A) A food chain accurately represents all feeding relationships in an ecosystem.", "B) A food chain can only show one predator and one prey.", "C) A food chain is a simplified linear model showing energy transfer, while a food web is a more complex network that represents the interconnected feeding relationships between multiple species at different trophic levels. Food chains don't account for the possibility of organisms having multiple food sources or being prey for multiple predators.", "D) A food chain is more accurate than a food web."],
+                answer: "C) A food chain is a simplified linear model showing energy transfer, while a food web is a more complex network that represents the interconnected feeding relationships between multiple species at different trophic levels. Food chains don't account for the possibility of organisms having multiple food sources or being prey for multiple predators."
+            },
+            {
+                question: "Explain why the removal of a top predator can lead to a loss of biodiversity.",
+                options: ["A) The removal of a top predator has no impact on biodiversity.", "B) Top predators play a crucial role in keeping prey populations in check. If they are removed, the prey population might explode, leading to overgrazing or competition for resources. This can harm other species that depend on the same resources or prey on the now-abundant prey species, ultimately causing a decline in overall species diversity.", "C) Top predators only affect the populations of plants.", "D) Top predators have no role in maintaining biodiversity."],
+                answer: "B) Top predators play a crucial role in keeping prey populations in check. If they are removed, the prey population might explode, leading to overgrazing or competition for resources. This can harm other species that depend on the same resources or prey on the now-abundant prey species, ultimately causing a decline in overall species diversity."
+            }
+        ],
+        "Unit 10: How do human interactions affect the environment?": [
+            {
+                options: ["A) A", "B) B", "C) C", "D) D"],
+                answer: "B) B",
+                image: "../../images/Biology/Unit-10/1st-questions.png"
+            },
+            {
+                question: "Briefly describe a reason why agriculture is important for human well-being.",
+                options: ["A) Agriculture provides essential food for human health and survival. It is the primary source of calories and nutrients needed to maintain a healthy population.", "B) Agriculture only provides raw materials for industries.", "C) Agriculture is only important for recreational activities.", "D) Agriculture has no impact on human well-being."],
+                answer: "A) Agriculture provides essential food for human health and survival. It is the primary source of calories and nutrients needed to maintain a healthy population."
+            },
+            {
+                question: "What percentage of Earth's land area is estimated to be used for agriculture, according to the FAO?",
+                options: ["A) 50%", "B) The Food and Agriculture Organization (FAO) estimates that approximately 38% of the Earth's land area is dedicated to agriculture, including fields for crops, pastures for livestock, and combined systems like agroforestry.", "C) 25%", "D) 60%"],
+                answer: "B) The Food and Agriculture Organization (FAO) estimates that approximately 38% of the Earth's land area is dedicated to agriculture, including fields for crops, pastures for livestock, and combined systems like agroforestry."
+            },
+            {
+                question: "What are two factors that can contribute to population growth, as described in the passage?",
+                options: ["A) Increased immigration and urbanization.", "B) High birth rates in developed countries and decreased birth rates in developing countries.", "C) High birth rates, particularly in developing countries, can lead to rapid population increases. Advancements in healthcare, sanitation, and disease control have led to lower death rates and increased life expectancy, contributing to population growth.", "D) Increased education levels and economic development."],
+                answer: "C) High birth rates, particularly in developing countries, can lead to rapid population increases. Advancements in healthcare, sanitation, and disease control have led to lower death rates and increased life expectancy, contributing to population growth."
+            },
+            {
+                question: "Define the term 'invasive species' in the context of ecology.",
+                options: ["A) Invasive species are native organisms that migrate to a new environment.", "B) Invasive species are organisms that adapt to changes in their native environment.", "C) Invasive species are non-native organisms that do not affect their new environment.", "D) Invasive species are non-native organisms introduced into a new environment, either intentionally or accidentally. These species can harm native species, ecosystems by outcompeting native organisms for resources and altering habitats."],
+                answer: "D) Invasive species are non-native organisms introduced into a new environment, either intentionally or accidentally. These species can harm native species, ecosystems by outcompeting native organisms for resources and altering habitats."
+            }
+        ]
+    },
+    "Math": {
+        "Unit 1: Algebra": [
+            {
+                question: "Expand and simplify: (5x-2y)(3x+9y)",
+                options: ["A) 15x^2 + 45xy - 6y^2", "B) 15x^2 - 18xy - 18y^2", "C) 15x^2 + 39xy - 18y^2", "D) 15x^2 + 39xy + 18y^2"],
+                answer: "C) 15x^2 + 39xy - 18y^2",
+            },
+            {
+                options: ["A) x = -5, x = 0.4", "B) x = -2, x = 1", "C) x = -5, x = 0.5", "D) x = -2.5, x = 0.5"],
+                answer: "D) x = -2.5, x = 0.5",
+                image: "../../images/Math/Algebra/2nd-questions.png"
+            },
+            {
+                options: ["A) (2w - 5) / (3w - 4)", "B) (2w + 5) / (3w + 4)", "C) (2w + 5) / (3w - 4)", "D) (2w - 5) / (3w + 4)"],
+                answer: "A) (2w - 5) / (3w - 4)",
+                image: "../../images/Math/Algebra/3rd-questions.png"
+            },
+            {
+                question: "Solve for x:",
+                options: ["A) x = 16/3 or 2/3", "B) x = -17/3 or -1/3", "C) x = 17/3 or x = 1/3", "D) 17/3 or -1/3"],
+                answer: "B) x = 17/3 or x = 1/3",
+                image: "../../images/Math/Algebra/4th-questions.png"
+            },
+            {
+                options: ["A) 3/5v", "B) 3v/5", "C) 5v/3", "D) 5/3v"],
+                answer: "D) 5/3v",
+                image: "../../images/Math/Algebra/5th-questions.png"
+            }
+        ],
+        "Unit 2: Surds": [
+            {
+                options: ["A) 5√6", "B) 6√5", "C) 3√10", "D) 2√45"],
+                answer: "B) 6√5",
+                image: "../../images/Math/Surds/1st-questions.png"
+            },
+            {
+                options:["A) 22", "B) 21", "C) 24", "D) 23"],
+                answer: "D) 23",
+                image: "../../images/Math/Surds/2nd-questions.png"
+            },
+            {
+                question: "Find the Perimeter:",
+                options: ["A) 12√2", "B) 5√4", "C) 10√2", "D) 10"],
+                answer: "A) 12√2",
+                image: "../../images/Math/Surds/3rd-questions.png"
+            },
+            {
+                options: ["A) 4√3", "B) 3√4", "C) 4/√3", "D) 3/√4"],
+                answer: "A) 4√3",
+                image: "../../images/Math/Surds/4th-questions.png"
+            },
+            {
+                options: ["A) 5√5 / 2√3", "B) 5√2 / (3 - √5)", "C) (5√5 - √15) / 11", "D) (√11 - 5√15) / 5"],
+                answer: "C) (5√5 - √15) / 11",
+                image: "../../images/Math/Surds/5th-questions.png"
+            }
+        ],
+        "Unit 3: Exponents and Logarithms": [
+            {
+                question: "Simplify:",
+                options: ["A) a^4b^9yc", "B) y^4c^9ab", "C) b^4a^9cy", "D) a^3y^6bc"],
+                answer: "A) a^4b^9yc",
+                image: "../../images/Math/E-an-L/1st-questions.png"
+            },
+            {
+                question: "Simplify:",
+                options: ["A) 25x^20y^9", "B) 25x^8y^9", "C) 25x^8y^16", "D) 25x^15y^9"],
+                answer: "C) 25x^8y^16",
+                image: "../../images/Math/E-an-L/2nd-questions.png"
+            },
+            {
+                question: "Solve:",
+                options: ["A) loga(4)", "B) loga(2)", "C) -loga(2)", "D) -loga(4)"],
+                answer: "D) -loga(4)",
+                image: "../../images/Math/E-an-L/3rd-questions.png"
+            },
+            {
+                options: ["A) 2", "B) 8", "C) 3", "D) 3.125"],
+                answer: "C) 3",
+                image: "../../images/Math/E-an-L/4th-questions.png"
+            },
+            {
+                options: ["A) 2 + 3y", "B) 3 + 2y", "C) 3y + 2x", "D) 2y + 3x"],
+                answer: "B) 3 + 2y",
+                image: "../../images/Math/E-an-L/5th-questions.png"
+            }
+        ],
+        "Unit 4: Equations": [
+            {
+                question: "Express (x + 4)(x - 2) in complete square form",
+                options: ["A) (x + 9)^2 + 1", "B) (x + 1)^2 - 9", "C) (x - 9)^2 - 1", "D) (x - 1)^2 + 9"],
+                answer: "B) (x + 1)^2 - 9"
+            },
+            {
+                question: "Find the vertex coordinate of this equation:",
+                options: ["A) x = -0.25, x = -3.75", "B) x = -1, x = 1.5", "C) x = 0.25, x = 3.75", "D) x = -0.5, x = -4"],
+                answer: "A) x = -0.25, x = -3.75",
+                image: "../../images/Math/Equations/2nd-questions.png"
+            },
+            {
+                question: "Solve for x:",
+                options: ["A) x = -0.19, x = 0.86", "B) x = 1.5, x = -2.5", "C) x = 0.19, x = -0.86", "D) x = 0.25, x = -1"],
+                answer: "C) x = 0.19, x = -0.86",
+                image: "../../images/Math/Equations/3rd-questions.png"
+            },
+            {
+                question: "Solve the simultaneous equations:",
+                options: ["A) x = 3, y = 2", "B) x = -2, y = -3", "C) x = -3, y = -2", "D) x = 2, y = 3"],
+                answer: "D) x = 2, y = 3",
+                image: "../../images/Math/Equations/4th-questions.png"
+            },
+            {
+                question: "A quadratic graph has the roots (5, 0), and (9,0), find the equation of the line if it passes through the point (3,4)",
+                options: ["A) y = 1/2x^2 - 7x + 15", "B) y = x^2 - 14x + 45", "C) y = 1/3x^2 - 14/3x + 15", "D) y = 1/4x^2 - 3.5x + 10"],
+                answer: "C) y = 1/3x^2 - 14/3x + 15",
+                image: "../../images/Math/Equations/5th-questions.png"
+            }
+        ],
+        "Unit 5: Functions and Function Graphs": [
+            {
+                options: ["A) g(f(x)) = 25x^2 + 10x + 6", "B) g(f(x)) = 24x^2 + 25x + 6", "C) g(f(x)) = 25x^2 + 25x + 6", "D) g(f(x)) = 25x^2 + 20x + 6"],
+                answer: "C) g(f(x)) = 25x^2 + 25x + 6",
+                image: "../../images/Math/FandF/1st-questions.png"
+            },
+            {
+                question: "Describe the function transformation from the red curve to blue curve:",
+                options: ["A) f(x+2)-3", "B) f(x+3)-2", "C) f(x-2)+3", "D) f(x-3)+2"],
+                answer: "D) f(x-3)+2",
+                image: "../../images/Math/FandF/2nd-questions.png"
+            },
+            {
+                options: ["A) f^{-1}(x) = -1.5 ± √(x + 7.5)", "B) f^{-1}(x) = -1.5 ± √(x + 7.25)", "C) f^{-1}(x) = -1.5 ± √(x + 7)", "D) f^{-1}(x) = -1.5 ± √(x + 8.25)"],
+                answer: "B) f^{-1}(x) = -1.5 ± √(x + 7.25)",
+                image: "../../images/Math/FandF/3rd-questions.png"
+            },
+            {
+                question: "What is the domain and range of the following:",
+                options: ["A) x ∈ R, x ≠ 1, y ∈ R, y ≠ 3", "B) x ∈ R, x ≠ 0, y ∈ R, y ≠ 2", "C) x ∈ R, x ≠ 2, y ∈ R, y ≠ 0", "D) x ∈ R, x ≠ -1, y ∈ R, y ≠ 4"],
+                answer: "B) x ∈ R, x ≠ 0, y ∈ R, y ≠ 2",
+                image: "../../images/Math/FandF/4th-questions.png"
+            },
+            {
+                question: "Describe this function transformation:",
+                options: ["A) -2f(x)", "B) 2f(x)", "C) -f(x)", "D) 2x"],
+                answer: "A) -2f(x)",
+                image: "../../images/Math/FandF/5th-questions.png"
+            }
+        ],
+        "Unit 6: Trigonometry": [
+            {
+                question: "Given that this is a right-angle triangle, work out angle x to the nearest decimal place?",
+                options: ["A) x = 45 degrees", "B) x = 30 degrees", "C) x = 36.9 degrees", "D) x = 60 degrees"],
+                answer: "C) x = 36.9 degrees",
+                image: "../../images/Math/Trig/1st-questions.png"
+            },
+            {
+                question: "Given that this is not a right-angle triangle, work out the size of angle x to the nearest 1 decimal place:",
+                options: ["A) x = 59.0 degrees", "B) x = 60.0 degrees", "C) x = 48.0 degrees", "D) x = 55.69 degrees"],
+                answer: "A) x = 59.0 degrees",
+                image: "../../images/Math/Trig/2nd-questions.png"
+            },
+            {
+                question: "find the length of x to the nearest 1 decimal place:",
+                options : ["A) x = 5.0", "B) x = 4.5", "C) x = 4.9", "D) x = 4.0"],
+                answer: "C) x = 4.9",
+                image: "../../images/Math/Trig/3rd-questions.png"
+            },
+            {
+                question: "Find the angle x to the nearest 1 decimal place:",
+                options: ["A) x = 110.0 degrees", "B) x = 120.5 degrees", "C) x = 115.2 degrees", "D) x = 117.3 degrees"],
+                answer: "D) x = 117.3 degrees",
+                image: "../../images/Math/Trig/4th-questions.png"
+            },
+            {
+                question: "Find the equation of this graph:",
+                options: ["A) f(x) = 2sin(x)", "B) f(x) = 3sin(x)", "C) f(x) = sin(3x)", "D) f(x) = 3cos(x)"],
+                answer: "B) f(x) = 3sin(x)",
+                image: "../../images/Math/Trig/5th-questions.png"
+            }
+        ],
+        "Unit 7: Coordinate Geometry": [
+            {
+                question: "given the following coordinates from a straight line, find the distance between the two points, (2, 10), (8, 25):",
+                options: ["A) 16", "B) 10", "C) 22", "D) 5"], 
+                answer: "A) 16"
+            },
+            {
+                question: "The equation of L1 is y=3x+2, L2 is parallel to L1 and passes through the points (4, 17), find the equation of line L2:",
+                options: ["A) y = 5x + 3", "B) y = 4 + 5x", "C) y = 3 + 5x", "D) 5x - 4"],
+                answer: "C) y = 3 + 5x"
+            },
+            {
+                question: "The equation of L1 is y = 2x + 3, L2 is perpendicular to L1 and passes through the points (4, 4), find the equation of the line L2:",
+                options: ["A) y = -1/2x + 6", "B) y = 1/2x + 6", "C) y = -1/2x - 6", "D) y = -2x + 6"],
+                answer: "A) y = -1/2x + 6"
+            },
+            {
+                question: "A straight line L1 passes through the points (-2, 10), and (0, 4) find the equation of the line:",
+                options: ["A) y = 3x + 4", "B) y = -3x + 4", "C) y = -3x - 4", "D) y = 3x - 4"],
+                answer: "B) y = -3x + 4"
+            },
+            {
+                question: "L1 has the equation y = 3x + 5, L2 is perpendicular to L1, what is the possible equation for L2:",
+                options: ["A) y = 1/3x - 2", "B) y = -1/3x - 2", "C) y = -1/3x + 2", "D) y = 1/3x + 2"],
+                answer: "B) y = -1/3x - 2"
+            }
+        ],
+        "Unit 8: Probability and Sets": [
+            {
+                question: "Find the probability that it rains at least once after day 1 and 2:",
+                options: ["A) 0.78", "B) 0.98", "C) 0.89", "D) 0.79"],
+                answer: "C) 0.89",
+                image: "../../images/Math/ProbandSet/1st-questions.png"
+            },
+            {
+                question: "There are only red counters, blue counters, and green counters in a bag. There are 5 red counters, 6 blue counters, and 1 green counter. Some green counters are added to the bag, the probability of taking a red counter at random is now 1/3, calculate the total number of green counters in the bag now.",
+                options: ["A) 4", "B) 8", "C) 1", "D) 6"],
+                answer: "A) 4"
+            },
+            {
+                question: "What is the proof that events A and B are not independent:",
+                options: ["A) (14/19 * 5/19) = 5/19", "B) (14/19 * 5/19) = 19/5", "C) (14/19 * 5/19) ≠ 5/19", "D) (14/19 * 5/19) = 14/19"],
+                answer: "C) (14/19 * 5/19) ≠ 5/19",
+                image: "../../images/Math/ProbandSet/3rd-questions.png"
+            },
+            {
+                question: "Write the set notation to describe the shaded region",
+                options: ["A) A ∪ B ∩ C'", "B) A ∩ B ∪ C'", "C) A ∩ B ∩ C", "D) A ∪ B ∪ C'"],
+                answer: "B) A ∩ B ∪ C'",
+                image: "../../images/Math/ProbandSet/4th-questions.png"
+            },
+            {
+                question: "Jade is playing tennis, when it is windy the probability of Jade getting an ace is 0.1, if it is not windy the probability that Jade gets an ace is 0.25. The probability of it being windy is 0.3, calculate the probability that Jade will get an ace.",
+                options: ["A) 0.175", "B) 0.225", "C) 0.289", "D) 0.205"],
+                answer: "D) 0.205"
+            }
+        ],
+        "Unit 9: Geometry": [
+            {
+                question: "A rectangular prism has a length of 4 meters, a width of 3 meters, and a height of 5 meters. The prism is made of a material that costs $20 per square meter to cover. What is the total cost of the material needed to completely cover the surface of the prism?",                
+                options: ["A) $1200", "B) $1500", "C) $900", "D) $1800"],
+                answer: "A) $1200"
+            },
+            {
+                question: "A triangular prism has an isosceles triangle as its base, the base of the triangle is 8, and the two side lengths are 6m, with the height of the triangle being 4m. The length of the triangular prism is 10m. The cost for painting the object is $30 per cubic meter, what is the total cost to paint 75% of the object.",
+                options: ["A) $2200", "B) $1800", "C) $3600", "D) $2800"],
+                answer: "C) $3600"
+            },
+            {
+                question: "Describe the full transformation from shape B to C:",
+                options: ["A) Translation 6 units to the right, and 4 units up. Then a reflection across y=0.", "B) Translation 6 units to the left, and 4 units down. Then a reflection across x=0.", "C) Translation 6 units to the left, and 4 units up. Then a reflection across x=0.", "D) Translation 6 units to the right, and 4 units down. Then a reflection across y=0."],
+                answer: "B) Translation 6 units to the left, and 4 units down. Then a reflection across x=0.",
+                image: "../../images/Math/Geo/3rd-questions.png"
+            },
+            {
+                question: "Given that these two triangles are similar, find the length x:",
+                options: ["A) x = 5.5 cm", "B) x = 4.5 cm", "C) x = 3.5 cm", "D) x = 4.0 cm"],
+                answer: "B) x = 4.5 cm",
+                image: "../../images/Math/Geo/4th-questions.png"
+            },
+            {
+                question: "Prove that triangles ABD and BCD are congruent:",
+                options: ["A) BD is shared, BC = AD, and angle CBD = angle BDA.", "B) BD is shared, BC = AD, and angle CBD = angle ABD.", "C) BD is shared, BC = DC, and angle CBD = angle BDA.", "D) BD is shared, AB = CD, and angle CBD = angle BDA."],
+                answer: "A) BD is shared, BC = AD, and angle CBD = angle BDA.",
+                image: "../../images/Math/Geo/5th-questions.png"
+            }
+        ],
+        "Unit 10: Linear Relations": [
+            {
+                question: "Which set of inequalities satisfies the shaded region:",
+                options: ["A) y ≤ 8, y ≥ 4x - 4, and -1 < x < 2", "B) y ≥ 8, y ≤ 4x - 4, and -1 < x < 2", "C) y ≤ 8, y ≥ 4x + 4, and -1 < x < 2", "D) y ≤ 8, y ≥ 4x - 4, and 1 < x < 2"],
+                answer: "A) y ≤ 8, y ≥ 4x - 4, and -1 < x < 2",
+                image: "../../images/Math/Linear/1st-questions.png"
+            },
+            {
+                question: "Sara is planning a trip to Europe. She has budgeted (b) $3,000 for the entire trip, but she needs to allocate her funds across several expenses. For accommodation (a), she needs to spend at least $1,000. For food (f), she wants to spend between $50 and $80 per day, and the trip will last 10 days. For transportation (t), she needs to spend at least $500. What set of inequalities satisfy this situation?",
+                options: ["A) b ≤ $3000, a ≥ $1000, $50 ≤ f ≤ $80, t ≥ $500", "B) b ≤ $3000, a ≤ $1000, $50 ≤ f ≤ $80, t ≥ $500", "C) b ≤ $3000, a ≥ $1000, $50 ≤ f ≤ $80, t ≤ $500", "D) b ≥ $3000, a ≥ $1000, $50 ≤ f ≤ $80, t ≥ $500"],
+                answer: "A) b ≤ $3000, a ≥ $1000, $50 ≤ f ≤ $80, t ≥ $500"
+            },
+            {
+                question: "Find the set of inequalities that satisfy the shaded region:",
+                options: ["A) x ≥ 2, y < 2x - 2, y > -x - 2", "B) x ≤ 2, y > 2x - 2, y > -x - 2", "C) x ≤ 2, y < 2x - 2, y > -x - 2", "D) x ≤ 2, y < 2x + 2, y > -x - 2"],
+                answer: "C) x ≤ 2, y < 2x - 2, y > -x - 2",
+                image: "../../images/Math/Linear/3rd-questions.png"
+            },
+            {
+                question: "Simplify these inequalities:",
+                options: ["A) x > 1, y ≤ -2x + 40, 7 < x", "B) x > 1, y ≥ -2x + 40, 7 < x", "C) x ≥ 1, y ≥ -2x + 40, 7 < x", "D) x > 1, y ≥ -2x + 40, 7 ≤ x"],
+                answer: "B) x > 1, y ≥ -2x + 40, 7 < x",
+                image: "../../images/Math/Linear/4th-questions.png"
+            },
+            {
+                question: "A community center is planning to host a charity event and needs to prepare gift bags for attendees. Each gift bag costs $3 to assemble, and the center has a budget of $500 for the gift bags. In addition, the community center wants to have at least 100 gift bags available for the event. If x represents the number of gift bags the community center can prepare, write an inequality to represent this situation and find the possible range for x.",
+                options: ["A) 100 ≤ x < 166", "B) 100 ≤ x ≤ 160", "C) 100 < x ≤ 166", "D) 100 ≤ x ≤ 166"],
+                answer: "D) 100 ≤ x ≤ 166"
+            }
+        ],
+        "Unit 11: Statistics": [
+            {
+                question: "Given the following set, determine the mean, median, mode, and range: {2, 3, 3, 4, 4, 4, 4, 5, 6, 6, 7, 8, 8}",
+                options: ["A) Mode = 4, Range = 7, Median = 4, Mean = 4.9", "B) Mode = 5, Range = 6, Median = 4, Mean = 4.9", "C) Mode = 4, Range = 6, Median = 4, Mean = 4.9", "D) Mode = 4, Range = 6, Median = 5, Mean = 4.9"],
+                answer: "C) Mode = 4, Range = 6, Median = 4, Mean = 4.9"
+            },
+            {
+                question: "Mrs. Ruth assigns a test for her class, the scores of her students are displayed on the box plot below, calculate the IQR:",
+                options: ["A) 16", "B) 22", "C)12", "D) 8"],
+                answer: "A) 16",
+                image: "../../images/Math/Stats/2nd-questions.png"
+            },
+            {
+                question: "Estimate the IQR from the cumulative frequency graph:",
+                options: ["A) 3.0", "B) 3.1", "C) 3.2", "D) 3.3"],
+                answer: "C) 3.2",
+                image: "../../images/Math/Stats/3rd-questions.png"
+            },
+            {
+                question: "Calculate the mean number of tickets won from this table:",
+                options: ["A) 3.32", "B) 3.34", "C) 3.36", "D) 3.38"],
+                answer: "D) 3.38",
+                image: "../../images/Math/Stats/4th-questions.png"
+            },
+            {
+                question: "The players compare their throwing distances in meters, compare player 5 and 6’s results:",
+                options: ["A) Player 6 has a smaller range indicating that he is more consistent, player 6 has a greater mean indicating that he has a greater average.", "B) Player 6 has a smaller IQR indicating that he is more consistent, player 6 has a greater median indicating that he has a greater average.", "C) Player 6 has a larger IQR indicating that he is more consistent, player 6 has a smaller median indicating that he has a greater average.", "D) Player 6 has a smaller IQR indicating that he is less consistent, player 6 has a greater median indicating that he has a smaller average."],
+                answer: "B) Player 6 has a smaller IQR indicating that he is more consistent, player 6 has a greater median indicating that he has a greater average.",
+                image: "../../images/Math/Stats/5th-questions.png"
+            }
+        ]
+    },
+    "Economics": {
+        "Unit 1: The Basic Economic Problem": [
+            {
+                question: "What is the basic economic problem?",
+                options: ["A) Unlimited resources and unlimited wants", "B) Unlimited resources and limited wants", "C) Limited resources and unlimited wants", "D) Limited resources and limited wants"],
+                answer: "C) Limited resources and unlimited wants"
+            },
+            {
+                question: "Which of the following best defines scarcity?",
+                options: ["A) A surplus of goods and services", "B) A shortage of goods and services", "C) The inability to satisfy all wants with available resources", "D) The ability to produce everything needed"],
+                answer: "C) The inability to satisfy all wants with available resources"
+            },
+            {
+                question: "What is opportunity cost?",
+                options: ["A) The cost of all possible choices", "B) The benefit of the next best alternative foregone", "C) The cost of the chosen option", "D) The monetary cost of a decision"],
+                answer: "B) The benefit of the next best alternative foregone"
+            },
+            {
+                question: "Which of the following is an example of a resource?",
+                options: ["A) Money", "B) Labor", "C) Technology", "D) All of the above"],
+                answer: "D) All of the above"
+            },
+            {
+                question: "What does 'allocative efficiency' mean in economics?",
+                options: ["A) Producing goods at the lowest possible cost", "B) Distributing goods and services based on needs", "C) Allocating resources in a way that maximizes the welfare of society", "D) Allocating resources based on government decisions"],
+                answer: "C) Allocating resources in a way that maximizes the welfare of society"
+            }
+        ],
+        "Unit 2: Supply and Demand": [
+            {
+                question: "What happens to the quantity demanded of a good when its price increases, ceteris paribus?",
+                options: ["A) It increases", "B) It decreases", "C) It stays the same", "D) It becomes infinite"],
+                answer: "B) It decreases"
+            },
+            {
+                question: "Which of the following factors is most likely to cause a rightward shift in the demand curve for a product?",
+                options: ["A) An increase in the price of the product", "B) A decrease in consumer income (assuming it is a normal good)", "C) An increase in the price of a substitute good", "D) An increase in the price of a complementary good"],
+                answer: "B) A decrease in consumer income (assuming it is a normal good)"
+            },
+            {
+                question: "What term describes the amount of a good that producers are willing and able to sell at different prices over a given period of time?",
+                options: ["A) Supply", "B) Demand", "C) Equilibrium", "D) Market Price"],
+                answer: "A) Supply"
+            },
+            {
+                question: "Which of the following is NOT a determinant of demand?",
+                options: ["A) Prices of related goods", "B) Consumer preferences", "C) Consumer income", "D) Technology used in production"],
+                answer: "D) Technology used in production"
+            },
+            {
+                question: "What happens to the supply curve when there is an improvement in technology?",
+                options: ["A) It stays the same", "B) It becomes vertical", "C) It shifts to the right", "D) It shifts to the left"],
+                answer: "C) It shifts to the right"
+            }
+        ],
+        "Unit 3: Organization of products and growth of firms": [
+            {
+                question: "What is the primary goal of a firm in a market economy?",
+                options: ["A) Maximizing revenue", "B) Minimizing costs", "C) Maximizing profit", "D) Maximizing production"],
+                answer: "C) Maximizing profit"
+            },
+            {
+                question: "Which of the following best describes economies of scale?",
+                options: ["A) Increasing costs as production increases", "B) Decreasing costs as production increases", "C) Constant costs regardless of production level", "D) Decreasing revenue as production increases"],
+                answer: "B) Decreasing costs as production increases"
+            },
+            {
+                question: "What is a fixed cost?",
+                options: ["A) A cost that changes with the level of output", "B) A cost that remains constant regardless of output", "C) A cost that decreases as output increases", "D) A cost that only occurs when there is production"],
+                answer: "B) A cost that remains constant regardless of output"
+            },
+            {
+                question: "Which of the following is an example of a variable cost?",
+                options: ["A) Rent for factory space", "B) Salaries of permanent staff", "C) Cost of raw materials", "D) Insurance premiums"],
+                answer: "C) Cost of raw materials"
+            },
+            {
+                question: "What is the definition of 'marginal cost'?",
+                options: ["A) The total cost of production divided by the number of units produced", "B) The change in total cost resulting from producing one more unit", "C) The cost of all variable inputs used in production", "D) The fixed cost of producing one more unit"],
+                answer: "B) The change in total cost resulting from producing one more unit"
+            }
+        ],
+        "Unit 4: Introductions to Macroeconomics": [
+            {
+                question: "What is Gross Domestic Product (GDP)?",
+                options: ["A) The total value of all goods and services produced in a country over a year", "B) The total amount of money in circulation", "C) The total population of a country", "D) The total number of employed individuals"],
+                answer: "A) The total value of all goods and services produced in a country over a year"
+            },
+            {
+                question: "Which of the following is a component of GDP?",
+                options: ["A) Personal savings", "B) Government purchases", "C) Stock market investments", "D) Imports"],
+                answer: "B) Government purchases"
+            },
+            {
+                question: "What does the term 'real GDP' refer to?",
+                options: ["A) GDP measured at current prices", "B) GDP adjusted for changes in the price level", "C) GDP including black market activities", "D) GDP excluding government spending"],
+                answer: "B) GDP adjusted for changes in the price level"
+            },
+            {
+                question: "Which of the following best describes 'nominal GDP'?",
+                options: ["A) GDP adjusted for inflation", "B) GDP measured using constant prices", "C) GDP measured at current prices", "D) GDP excluding net exports"],
+                answer: "C) GDP measured at current prices"
+            },
+            {
+                question: "Which of the following is a measure of the overall economic activity in a country?",
+                options: ["A) Consumer Price Index (CPI)", "B) Unemployment rate", "C) Balance of trade", "D) Gross Domestic Product (GDP)"],
+                answer: "D) Gross Domestic Product (GDP)"
+            }
+        ],
+        "Unit 5: Inflation and Unemployment": [
+            {
+                question: "What is inflation?",
+                options: ["A) A decrease in the overall price level of goods and services", "B) An increase in the overall price level of goods and services", "C) A constant price level of goods and services", "D) A decrease in the money supply"],
+                answer: "B) An increase in the overall price level of goods and services"
+            },
+            {
+                question: "Which of the following is a common measure of inflation?",
+                options: ["A) Gross Domestic Product (GDP)", "B) Unemployment rate", "C) Consumer Price Index (CPI)", "D) Interest rate"],
+                answer: "C) Consumer Price Index (CPI)"
+            },
+            {
+                question: "What is hyperinflation?",
+                options: ["A) A situation where prices rise at a very slow rate", "B) A situation where prices rise moderately", "C) A situation where prices rise extremely rapidly and uncontrollably", "D) A situation where prices fall rapidly"],
+                answer: "C) A situation where prices rise extremely rapidly and uncontrollably"
+            },
+            {
+                question: "What is unemployment?",
+                options: ["A) The state of having a job", "B) The state of being without a job, actively seeking work, and available to work", "C) The state of not wanting to work", "D) The state of working part-time"],
+                answer: "B) The state of being without a job, actively seeking work, and available to work"
+            },
+            {
+                question: "What is the natural rate of unemployment?",
+                options: ["A) The unemployment rate when the economy is in a recession", "B) The unemployment rate when the economy is at full employment", "C) The unemployment rate when inflation is high","D) The unemployment rate when there is no cyclical unemployment"],
+                answer: "D) The unemployment rate when there is no cyclical unemployment"
+            }
+        ],
+        "Unit 6: Economic Growth": [
+            {
+                question: "What is aggregate demand?",
+                options: ["A) The total supply of goods and services in an economy", "B) The total demand for goods and services in an economy at different price levels", "C) The demand for a specific good or service", "D) The supply of money in the economy"],
+                answer: "B) The total demand for goods and services in an economy at different price levels"
+            },
+            {
+                question: "Which of the following components is NOT part of aggregate demand?",
+                options: ["A) Consumer spending", "B) Investment spending", "C) Government spending", "D) Net imports"],
+                answer: "D) Net imports"
+            },
+            {
+                question: "What does the aggregate demand curve represent?",
+                options: ["A) The relationship between the total quantity of goods and services demanded and the price level", "B) The relationship between the total quantity of goods and services supplied and the price level", "C) The relationship between consumer income and spending", "D) The relationship between the interest rate and investment"],
+                answer: "A) The relationship between the total quantity of goods and services demanded and the price level"
+            },
+            {
+                question: "Which of the following would cause a rightward shift in the aggregate demand curve?",
+                options: ["A) An increase in taxes", "B) A decrease in consumer confidence", "C) An increase in government spending", "D) A decrease in the money supply"],
+                answer: "C) An increase in government spending"
+            },
+            {
+                question: "Which of the following would cause a rightward shift in the short-run aggregate supply (SRAS) curve?",
+                options: ["A) An increase in input prices", "B) An improvement in technology", "C) An increase in taxes on businesses", "D) A decrease in labor productivity"],
+                answer: "B) An improvement in technology"
+            }
+        ],
+        "Unit 7: Macroeconomic Policies": [
+            {
+                question: "What is fiscal policy?",
+                options: ["A) Government policies related to controlling the money supply", "B) Government policies related to taxation and spending", "C) Policies implemented by the central bank to control interest rates", "D) Policies that regulate international trade"],
+                answer: "B) Government policies related to taxation and spending"
+            },
+            {
+                question: "Which of the following is an example of expansionary fiscal policy?",
+                options: ["A) Increasing taxes", "B) Decreasing government spending", "C) Increasing government spending", "D) Raising interest rates"],
+                answer: "C) Increasing government spending"
+            },
+            {
+                question: "Which of the following is a goal of contractionary fiscal policy?",
+                options: ["A) To increase economic growth", "B) To reduce inflation", "C) To decrease unemployment", "D) To increase consumer spending"],
+                answer: "B) To reduce inflation"
+            },
+            {
+                question: "What is monetary policy?",
+                options: ["A) Government policies related to taxation and spending", "B) Policies implemented by the central bank to control the money supply and interest rates", "C) Policies that regulate international trade", "D) Policies related to labor market regulations"],
+                answer: "B) Policies implemented by the central bank to control the money supply and interest rates",
+            },
+            {
+                question: "Which of the following is a tool of monetary policy?",
+                options: ["A) Government spending", "B) Taxation", "C) Open market operations", "D) Transfer payments"],
+                answer: "C) Open market operations"
+            }
+        ]
+    }
+    // Add more subjects and their respective units and questions as needed
+};
+
+function toggleDropdown(subject) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    for (var i = 0; i < dropdowns.length; i++) {
+        var dropdown = dropdowns[i];
+        if (dropdown.parentElement.classList.contains(subject)) {
+            dropdown.classList.toggle("show");
+            dropdown.style.height = dropdown.classList.contains("show") ? dropdown.scrollHeight + "px" : "0";
+        } else {
+            dropdown.classList.remove("show");
+            dropdown.style.height = "0";
+        }
+    }
+}
+
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
+function displayQuestions(subject, unit) {
+    const questionContainer = document.getElementById("question-container");
+    let questionData = questions[subject][unit];
+    questionData = shuffle(questionData);  // Shuffle the questions here
+    let currentQuestionIndex = 0;
+    let attempts = 0; // Track attempts for each question
+
+    function showQuestion(index) {
+    if (index >= questionData.length) {
+        questionContainer.innerHTML = "<p>All questions answered correctly!</p>";
+        return;
+    }
+
+    const q = questionData[index];
+    let questionHTML = `
+        <div class="question">
+            ${q.image? `<img src="${q.image}" alt="Question Image" style="max-width: 100%; height: auto;">` : ''}
+            ${q.question? `<p>${q.question}</p>` : ''}
+            ${q.options.map(option => `
+                <label>
+                    <input type="radio" name="question${index}" value="${option}">
+                    ${option}
+                </label><br>
+            `).join('')}
+            <button onclick="checkAnswer(${index})">Submit</button>
+            <p class="result"></p>
+        </div>
+    `;
+    questionContainer.innerHTML = questionHTML;
+    questionContainer.style.display = "block";
+    setTimeout(() => {
+        questionContainer.style.opacity = 1;
+    }, 100); // Delayed for smooth transition
+}
+
+window.checkAnswer = function(index) {
+    const questionData = questions[subject][unit][index];
+    const selectedOption = document.querySelector(`input[name="question${index}"]:checked`);
+    const result = document.querySelector(".result");
+
+    if (selectedOption) {
+        if (selectedOption.value === questionData.answer) {
+            result.textContent = "Correct!";
+            result.className = "correct";
+            setTimeout(() => {
+                currentQuestionIndex++;
+                attempts = 0; // Reset attempts for the next question
+                showQuestion(currentQuestionIndex);
+            }, 1000); // Delayed for smooth transition
+        } else {
+            attempts++;
+            if (attempts < 2) {
+                result.textContent = "Incorrect! Try again.";
+            } else {
+                result.textContent = "That's still wrong. Try again.";
+            }
+            result.className = "incorrect";
+            document.querySelectorAll(`input[name="question${index}"]`).forEach(input => {
+                input.checked = false; // Allow retrying the question
+            });
+            // Add the following code to allow retries
+            setTimeout(() => {
+                showQuestion(currentQuestionIndex);
+            }, 1000); // Delayed for smooth transition
+        }
+    } else {
+        result.textContent = "Please select an option.";
+        result.className = "incorrect";
+    }
+}
+
+    showQuestion(currentQuestionIndex);
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    var elements = document.querySelectorAll("*"); // Select all elements
+
+    // Set initial opacity to 0 for the fade-in effect
+    elements.forEach(function(element) {
+        element.style.opacity = 0;
+    });
+
+    var index = 0;
+    var interval = setInterval(function() {
+        if (index < elements.length) {
+            fadeIn(elements[index]);
+            index++;
+        } else {
+            clearInterval(interval);
+        }
+    }, 25);
+
+    // Function to apply fade-in effect
+    function fadeIn(element) {
+        var opacity = 0;
+        var interval = setInterval(function() {
+            if (opacity < 1) {
+                opacity += 0.05;
+                element.style.opacity = opacity;
+            } else {
+                clearInterval(interval);
+            }
+        }, 25);
+    }
+
+    // Toggle responsive menu (for the hamburger icon)
+    document.getElementById('hamburger-icon').addEventListener('click', function() {
+        var navigation = document.getElementById("menu");
+        if (navigation.className === "topnav") {
+            navigation.className += " responsive";
+        } else {
+            navigation.className = "topnav";
+        }
+    });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,422 @@
+#logo {
+	transition: transform 0.3s ease ;
+}
+
+#logo:hover {
+	transform: scale(1.05);
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    background: #242323;
+    text-align: justify;
+    font: 13px Arial, Helvetica, sans-serif;
+    color: #444444;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+#header, #menu {
+    background: #6257e3;
+}
+
+/* Menu */
+#menu {
+    float: right;
+    background: #6257e3; 
+    padding-right: 0; /* Adjust padding if necessary */
+}
+
+#menu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    line-height: normal;
+    background: #6257e3; 
+}
+
+#menu li {
+    float: left;
+    margin: 0px;
+    padding: 0px; /* Adjust padding if necessary */
+}
+
+#menu a {
+    display: block;
+    padding: 10px 20px; /* Adjust padding to your preference */
+    color: white; /* Adjust text color if necessary */
+    background: g#6257e3; 
+}
+
+
+
+h1, h2, h3 {
+	margin-top: 0px;
+	font-weight: normal;
+	color: #FFFFFF;
+	font-family:'Times New Roman', Times, serif;
+}
+
+h4,h5 {
+    padding: px;
+	margin-top: 0px;
+	font-weight: normal;
+	color: #000000;
+	font-family:'Times New Roman', Times, serif;
+}
+
+h6 {
+    padding: 30px;
+	margin-top: -50px;
+	font-weight: normal;
+	color: #000000;
+	font-family:'Times New Roman', Times, serif;
+}
+
+
+h1 {
+	font-size: 2.4em;
+	padding-top: 28px;
+	padding-left: 10px;
+}
+
+h2 {
+	font-size: 1.8em;
+}
+
+h3 {
+	font-size: 1.4em;
+}
+
+h4 {
+    font-size: 1.2em;
+}
+
+h5 {
+    font-size: 3.0em;
+}
+
+h6 {
+    font-size: 1.6em;
+}
+
+p, ol, ul {
+	margin-bottom: 1.8em;
+	line-height: 160%;
+}
+
+a {
+	color: #000000;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #FF0000;
+}
+
+a img {
+	border: none;
+}
+
+#wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#inner-wrapper {
+    flex: 1;
+    max-width: 900px; /* Adjusted to make the page smaller */
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    width: 425px;
+    height: 200px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    margin: 10px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 55px;
+    width: 70%;
+    height: 100px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    padding: 10px;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+/* Header */
+
+/* Header */
+/* Header */
+#header {
+	width: 900px;
+	height: 100px;
+	margin: 0px auto;
+}
+
+#header a {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+/* Logo */
+#logo {
+	float: left;
+	padding-left: 20px;
+}
+
+#logo h1, #logo p {
+	margin: 0px;
+	line-height: normal;
+	font-weight: normal;
+	color: #FFFFFF;
+}
+
+#logo h1 {
+	padding: 25px 0px 0px 0px;
+}
+
+/* Menu */
+#menu {
+	float: right;
+	height: 100px; /* Add this property */
+}
+
+#menu ul {
+	margin: 0;
+	padding: 30px 0px 0px 0px; /* Adjust padding to your preference */
+	list-style: none;
+	line-height: normal;
+}
+
+#menu li {
+	float: left;
+	margin: 0px;
+}
+
+#menu a {
+	display: block;
+	width: auto;
+	padding: 6px 20px;
+	transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#menu a:hover {
+	text-decoration: underline;
+	transform: scale(1.05);
+}
+
+#menu .active a {
+	background: url(images/img02.gif) no-repeat 100% -40px;
+}
+/* Page */
+
+#page {
+    flex: 1;
+    width: 100%;
+}
+
+
+/* Content */
+
+#content {
+	float: right;
+	width: 570px;
+}
+
+.post {
+	margin: 0px 0px 30px 0px;
+}
+
+.post .title {
+	margin: 0px;
+background: #444444 url(images/img02.jpg) no-repeat left 50%;
+	padding: 7px 25px;
+	font-size: 1.4em;
+}
+
+.post .title h1 {
+}
+
+.post .entry {
+	padding: 0 20px;
+}
+
+.post .meta {
+	font-weight: bold;
+	padding-left: 20px;
+}
+
+.post .byline {
+	margin: 0px;
+	padding-left: 20px;
+}
+
+/* Sidebar */
+
+#sidebar {
+	float: left;
+	width: 300px;
+}
+
+#sidebar-bgtop {
+}
+
+#sidebar-bgbtm {
+	background: url(images/img03.jpg) no-repeat left bottom;
+}
+
+#sidebar-content {
+	background: url(images/img01.jpg) repeat-y left top;
+}
+
+#sidebar ul {
+	padding: 0px 0 5px 0;
+	margin: 0px;
+	list-style: none;
+}
+
+#sidebar li li {
+	margin-left: 20px;
+	margin-right: 20px;
+	line-height: 30px;
+	border-bottom: 1px dashed #BDBDBD;
+	background: url(images/img04.jpg) no-repeat left 50%;
+}
+
+#sidebar li ul {
+	margin-bottom: 1.8em;
+	list-style: none;
+}
+
+#sidebar h2 {
+	background: #444444 url(images/img02.jpg) no-repeat left 50%;
+	padding: 7px 25px;
+	font-size: 1.4em;
+}
+
+#sidebar a {
+	text-decoration: none;
+}
+
+#sidebar a:hover {
+	text-decoration: underline;
+}
+
+/* Search */
+
+#search {
+}
+
+#search form {
+	margin-bottom: 1.8em;
+	padding: 0px;
+}
+
+#search fieldset {
+	margin-left: 20px;
+	padding: 0px;
+	border: none;
+}
+
+#search #s {
+	width: 160px;
+}
+
+/* Footer */
+
+#footer {
+	clear: both;
+	width: 900px;
+	height: 50px;
+	margin: 0px auto 30px auto;
+	color: #FFFFFF;
+}
+
+#footer {
+    width: 100%;
+    height: 50px;
+    margin: 0px auto 30px auto;
+    color: #FFFFFF;
+    text-align: center;
+    padding-top: 19px;
+    font-size: smaller;
+}
+
+#footer a {
+	color: #FFFFFF;
+}
+.navbar1 a:hover {
+	color: #000000 !important;
+}
+
+.navbar2 a:hover {
+    color: #004626 !important;
+}
+
+.navbar3 a:hover {
+    color: #81b673 !important; /* A shade of yellow */
+}
+
+.navbar4 a:hover {
+    color: #FFFFFF !important;
+}
+
+.navbar5 a:hover {
+    color:  rgb(240, 35, 69) !important;
+}
+
+#video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.video-container {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.video-container h4 {
+    margin-bottom: 15px;
+}
+
+.video-item {
+    margin-bottom: 20px;
+}
+
+.video-item h5 {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+video {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}

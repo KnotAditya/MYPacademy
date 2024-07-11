@@ -1,0 +1,848 @@
+#logo {
+    transition: transform 0.3s ease ;
+}
+
+#logo:hover {
+    transform: scale(1.05);
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    background: #242323;
+    text-align: justify;
+    font: 13px Arial, Helvetica, sans-serif;
+    color: #444444;
+}
+
+#header, #menu {
+    background: #81b673;
+}
+
+/* Menu */
+#menu {
+    float: right;
+    background: #81b673; /* Ensure the navbar background is red */
+    padding-right: 0; /* Adjust padding if necessary */
+}
+
+#menu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    line-height: normal;
+    background: #81b673; /* Ensure the navbar background is red */
+}
+
+#menu li {
+    float: left;
+    margin: 0px;
+    padding: 0px; /* Adjust padding if necessary */
+}
+
+#menu a {
+    display: block;
+    padding: 10px 20px; /* Adjust padding to your preference */
+    color: white; /* Adjust text color if necessary */
+    background: #81b673; /* Ensure the navbar background is red */
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+#economicschapter1 {
+    border: 2px solid black;
+    padding: 10px;
+    width: 250px;
+    height: 100px;
+    text-align: center;
+}
+#economicschapter2 {
+    border: 2px solid black;
+    padding: 10px;
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 241px;
+    left: 585px;
+    text-align: center;
+}
+#economicschapter3 {
+    border: 2px solid black;
+    padding: 10px;
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 241px;
+    left: 880px;
+    text-align: center;
+}
+#economicschapter4 {
+    border: 2px solid black;
+    padding: 10px;
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 400px;
+    text-align: center;
+}
+#economicschapter5 {
+    border: 2px solid black;
+    padding: 10px;
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 400px;
+    left: 585px;
+    text-align: center;
+}
+#economicschapter6 {
+    border: 2px solid black;
+    padding: 10px;
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 400px;
+    left: 880px;
+    text-align: center;
+}
+#economicschapter7 {
+    border: 2px solid black;
+    padding: 10px;
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 550px;
+    text-align: center;
+}
+#physicsformulabooklet {
+    border: 2px solid black;
+    padding: 10px;
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 750px;
+    text-align: center;
+}
+#physicschapter1 {
+    border: 2px solid black;
+    padding: 10px;
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 750px;
+    left: 585px;
+    text-align: center;
+}
+#physicschapter2 {
+    border: 2px solid black;
+    padding: 10px;
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 750px;
+    left: 880px;
+    text-align: center;
+}
+#physicschapter3 {
+    border: 2px solid black;
+    padding: 10px;
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 900px;
+    text-align: center;
+}
+#physicschapter4 {
+    border: 2px solid black;
+    padding: 10px;
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 900px;
+    left: 585px;
+    text-align: center;
+}
+#physicschapter5 {
+    border: 2px solid black;
+    padding: 10px;
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 900px;
+    left: 880px;
+    text-align: center;
+}
+#physicschapter6 {
+    border: 2px solid black;
+    padding: 10px;
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 1050px;
+    text-align: center;
+}
+#physicschapter7 {
+    border: 2px solid black;
+    padding: 10px;
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 1050px;
+    left: 585px;
+    text-align: center;
+}
+#physicschapter8 {
+    border: 2px solid black;
+    padding: 10px;
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 1050px;
+    left: 880px;
+    text-align: center;
+}
+#physicschapter9 {
+    border: 2px solid black;
+    padding: 10px;
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 1200px;
+    text-align: center;
+}
+#physicschapter10 {
+    border: 2px solid black;
+    padding: 10px;
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 1200px;
+    left: 585px;
+    text-align: center;
+}
+#physicschapter11 {
+    border: 2px solid black;
+    padding: 10px;
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 1200px;
+    left: 880px;
+    text-align: center;
+}
+#chemistrychapter1 {
+    border: 2px solid black;
+    padding: 10px;
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 1400px;
+    text-align: center;
+}
+#chemistrychapter2 {
+    border: 2px solid black;
+    padding: 10px;
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 1400px;
+    left: 585px;
+    text-align: center;
+}
+#chemistrychapter3 {
+    border: 2px solid black;
+    padding: 10px;
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 1400px;
+    left: 880px;
+    text-align: center;
+}
+#chemistrychapter4 {
+    border: 2px solid black;
+    padding: 10px;
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 1550px;
+    text-align: center;
+}
+#chemistrychapter5 {
+    border: 2px solid black;
+    padding: 10px;
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 1550px;
+    left: 585px;
+    text-align: center;
+}
+#chemistrychapter6 {
+    border: 2px solid black;
+    padding: 10px;
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 1550px;
+    left: 880px;
+    text-align: center;
+}
+#chemistrychapter7 {
+    border: 2px solid black;
+    padding: 10px;
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 1700px;
+    text-align: center;
+}
+#chemistrychapter8 {
+    border: 2px solid black;
+    padding: 10px;
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 1700px;
+    left: 585px;
+    text-align: center;
+}
+#chemistrychapter9 {
+    border: 2px solid black;
+    padding: 10px;
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 1700px;
+    left: 880px;
+    text-align: center;
+}
+#chemistrychapter10 {
+    border: 2px solid black;
+    padding: 10px;
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 1850px;
+    text-align: center;
+}
+#chemistrychapter11 {
+    border: 2px solid black;
+    padding: 10px;
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 1850px;
+    left: 585px;
+    text-align: center;
+}
+#chemistrychapter12 {
+    border: 2px solid black;
+    padding: 10px;
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 1850px;
+    left: 880px;
+    text-align: center;
+}
+#mathchapter1 {
+    border: 2px solid black;
+    padding: 10px;
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 2050px;
+    text-align: center;
+}
+#mathchapter2 {
+    border: 2px solid black;
+    padding: 10px;
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 2050px;
+    left: 585px;
+    text-align: center;
+}
+#mathchapter3 {
+    border: 2px solid black;
+    padding: 10px;
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 2050px;
+    left: 880px;
+    text-align: center;
+}
+#mathchapter4 {
+    border: 2px solid black;
+    padding: 10px;
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 2200px;
+    text-align: center;
+}
+#mathchapter5 {
+    border: 2px solid black;
+    padding: 10px;
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 2200px;
+    left: 585px;
+    text-align: center;
+}
+#mathchapter6 {
+    border: 2px solid black;
+    padding: 10px;
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 2200px;
+    left: 880px;
+    text-align: center;
+}
+#mathchapter7 {
+    border: 2px solid black;
+    padding: 10px;
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 2350px;
+    text-align: center;
+}
+#mathchapter8 {
+    border: 2px solid black;
+    padding: 10px;
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 2350px;
+    left: 585px;
+    text-align: center;
+}
+#mathchapter9 {
+    border: 2px solid black;
+    padding: 10px;
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 2350px;
+    left: 880px;
+    text-align: center;
+}
+#mathchapter10 {
+    border: 2px solid black;
+    padding: 10px;
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 2500px;
+    text-align: center;
+}
+#mathchapter11 {
+    border: 2px solid black;
+    padding: 10px;
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 2500px;
+    left: 585px;
+    text-align: center;
+}
+#biologychapter1 {
+    border: 2px solid black;
+    padding: 10px;
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 2700px;
+    text-align: center;
+}
+#biologychapter2 {
+    border: 2px solid black;
+    padding: 10px;
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 2700px;
+    left: 585px;
+    text-align: center;
+}
+#biologychapter3 {
+    border: 2px solid black;
+    padding: 10px;
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 2700px;
+    left: 880px;
+    text-align: center;
+}
+#biologychapter4 {
+    border: 2px solid black;
+    padding: 10px;
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 2850px;
+    text-align: center;
+}
+#biologychapter5 {
+    border: 2px solid black;
+    padding: 10px;
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 2850px;
+    left: 585px;
+    text-align: center;
+}
+#biologychapter6 {
+    border: 2px solid black;
+    padding: 10px;
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 2850px;
+    left: 880px;
+    text-align: center;
+}
+#biologychapter7 {
+    border: 2px solid black;
+    padding: 10px;
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 3000px;
+    text-align: center;
+}
+#biologychapter8 {
+    border: 2px solid black;
+    padding: 10px;
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 3000px;
+    left: 585px;
+    text-align: center;
+}
+#biologychapter9 {
+    border: 2px solid black;
+    padding: 10px;
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 3000px;
+    left: 880px;
+    text-align: center;
+}
+#biologychapter10 {
+    border: 2px solid black;
+    padding: 10px;
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 3150px;
+    text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6, h7 {
+    margin-top: 0px;
+    font-weight: normal;
+    color: #000000;
+    font-family:'Times New Roman', Times, serif;
+}
+
+h1 {
+    font-size: 2.4em;
+    padding-top: 28px;
+    padding-left: 380px;
+}
+
+h2 {
+    font-size: 1.8em;
+}
+
+h3 {
+    font-size: 1.4em;
+    color: black;
+    text-align: center;
+}
+
+h4 {
+    font-size: 1.8em;
+    color: black;
+    position: absolute;
+    top: 700px;
+}
+h5 {
+    font-size: 1.8em;
+    color: black;
+    position: absolute;
+    top: 1350px;
+}
+h6 {
+    font-size: 1.8em;
+    color: black;
+    position: absolute;
+    top: 2000px;
+}
+h7 {
+    font-size: 1.8em;
+    color: black;
+    position: absolute;
+    top: 2650px;
+}
+p, ol, ul {
+    margin-bottom: 1.8em;
+    line-height: 160%;
+}
+
+a {
+    color: #000000;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #FF0000;
+}
+
+a img {
+    border: none;
+}
+
+#wrapper {
+    width: 900px;
+    margin: 0 auto;
+    border: 10px solid #FFFFFF;
+}
+
+/* Header */
+
+/* Header */
+/* Header */
+#header {
+    width: 900px;
+    height: 100px;
+    margin: 0px auto;
+}
+
+#header a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+/* Logo */
+#logo {
+    float: left;
+    padding-left: 20px;
+}
+
+#logo h1, #logo p {
+    margin: 0px;
+    line-height: normal;
+    font-weight: normal;
+    color: #FFFFFF;
+}
+
+#logo h1 {
+    padding: 25px 0px 0px 0px;
+}
+
+/* Menu */
+#menu {
+    float: right;
+    height: 100px; /* Add this property */
+}
+
+#menu ul {
+    margin: 0;
+    padding: 30px 0px 0px 0px; /* Adjust padding to your preference */
+    list-style: none;
+    line-height: normal;
+}
+
+#menu li {
+    float: left;
+    margin: 0px;
+}
+
+#menu a {
+    display: block;
+    width: auto;
+    padding: 6px 20px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#menu a:hover {
+    text-decoration: underline;
+    transform: scale(1.05);
+}
+
+#menu .active a {
+    background: url(images/img02.gif) no-repeat 100% -40px;
+}
+/* Page */
+
+#page {
+    width: 900px;
+    height: 3200px;
+    margin: 0px auto;
+    background: #FFFFFF;
+}
+
+
+
+/* Content */
+
+#content {
+    float: right;
+    width: 570px;
+}
+
+.post {
+    margin: 0px 0px 30px 0px;
+}
+
+.post .title {
+    margin: 0px;
+background: #444444 url(images/img02.jpg) no-repeat left 50%;
+    padding: 7px 25px;
+    font-size: 1.4em;
+}
+
+.post .title h1 {
+}
+
+.post .entry {
+    padding: 0 20px;
+}
+
+.post .meta {
+    font-weight: bold;
+    padding-left: 20px;
+}
+
+.post .byline {
+    margin: 0px;
+    padding-left: 20px;
+}
+
+/* Sidebar */
+
+#sidebar {
+    float: left;
+    width: 300px;
+}
+
+#sidebar-bgtop {
+}
+
+#sidebar-bgbtm {
+    background: url(images/img03.jpg) no-repeat left bottom;
+}
+
+#sidebar-content {
+    background: url(images/img01.jpg) repeat-y left top;
+}
+
+#sidebar ul {
+    padding: 0px 0 5px 0;
+    margin: 0px;
+    list-style: none;
+}
+
+#sidebar li li {
+    margin-left: 20px;
+    margin-right: 20px;
+    line-height: 30px;
+    border-bottom: 1px dashed #BDBDBD;
+    background: url(images/img04.jpg) no-repeat left 50%;
+}
+
+#sidebar li ul {
+    margin-bottom: 1.8em;
+    list-style: none;
+}
+
+#sidebar h2 {
+    background: #444444 url(images/img02.jpg) no-repeat left 50%;
+    padding: 7px 25px;
+    font-size: 1.4em;
+}
+
+#sidebar a {
+    text-decoration: none;
+}
+
+#sidebar a:hover {
+    text-decoration: underline;
+}
+
+/* Search */
+
+#search {
+}
+
+#search form {
+    margin-bottom: 1.8em;
+    padding: 0px;
+}
+
+#search fieldset {
+    margin-left: 20px;
+    padding: 0px;
+    border: none;
+}
+
+#search #s {
+    width: 160px;
+}
+
+/* Footer */
+
+#footer {
+    clear: both;
+    width: 900px;
+    height: 50px;
+    margin: 0px auto 30px auto;
+    color: #FFFFFF;
+}
+
+#footer p {
+    margin: 0px;
+    padding: 19px 0px 0px 0px;
+    text-align: center;
+    line-height: normal;
+    font-size: smaller;
+}
+
+#footer a {
+    color: #FFFFFF;
+}
+/* Color of navigation bar hovers*/
+
+.navbar1 a:hover {
+    color: #000000 !important;
+}
+
+.navbar2 a:hover {
+    color: #004626 !important;
+}
+
+.navbar3 a:hover {
+    color: #FFFFFF !important; /* A shade of yellow */
+}
+
+.navbar4 a:hover {
+    color: #6257e3 !important;
+}
+
+.navbar5 a:hover {
+    color:  rgb(240, 35, 69) !important;
+}
