@@ -34,10 +34,13 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Upload Notespages Batch 1
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           # Specify the first batch of files to upload
-          path: 'Notespages/Eassessments/'
+          path: |
+            Notespages/Eassessments/
+            Notespages/biology/
+            Notespages/chemistry/
 
       - name: Deploy Batch 1 of Notespages to GitHub Pages
         id: deployment
@@ -58,7 +61,7 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Upload Notespages Batch 2
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           # Specify the second batch of files to upload
           path: |
@@ -83,7 +86,7 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           # Upload entire repository except Notespages
           path: |
