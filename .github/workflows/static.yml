@@ -65,9 +65,9 @@ jobs:
         with:
           # Specify the second batch of files to upload
           path: |
-            'Notespages/economics/'
-            'Notespages/maths/'
-            'Notespages/physics/'
+            Notespages/economics/
+            Notespages/maths/
+            Notespages/physics/
 
       - name: Deploy Batch 2 of Notespages to GitHub Pages
         id: deployment
