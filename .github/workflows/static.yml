@@ -22,25 +22,75 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # Single deploy job since we're just deploying
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  deploy-batch-1:
     runs-on: ubuntu-latest
-    timeout-minutes: 180
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v4
         with:
            lfs: true
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Notespages Batch 1
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Specify the first batch of files to upload
+          path: |
+            Notespages/Eassessments/*
+            Notespages/biology/*
+            Notespages/chemistry/*
+
+      - name: Deploy Batch 1 of Notespages to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+        with:
+          destination_dir: Notespages  # Specify the target directory on GitHub Pages
+
+  deploy-batch-2:
+    runs-on: ubuntu-latest
+    needs: deploy-batch-1
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+           lfs: true
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Notespages Batch 2
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Specify the second batch of files to upload
+          path: |
+            Notespages/economics/*
+            Notespages/maths/*
+            Notespages/physics/*
+
+      - name: Deploy Batch 2 of Notespages to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+        with:
+          destination_dir: Notespages  # Specify the target directory on GitHub Pages
+          
+  deploy-core:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
-          path: '.'
+          # Upload entire repository except Notespages
+          path: |
+            !Notespages/**
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
