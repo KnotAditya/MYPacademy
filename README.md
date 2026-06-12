@@ -12,7 +12,7 @@ Every note on the site is hand-written and fact-checked by students who scored *
 
 ## What's on the site
 
-- **Subject notes** — Written and video notes for **Biology**, **Chemistry**, **Physics**, and **Maths**, organized by unit/chapter (PDFs + video walkthroughs).
+- **Subject notes** — Written and video notes for **Biology**, **Economics**, **Chemistry**, **Physics**, and **Maths**, organized by unit/chapter (PDFs + video walkthroughs).
 - **E-assessment practice** — Past-style E-assessment walkthrough videos for each subject across multiple sessions (M21–M23).
 - **Question Bank** — Practice questions to test your understanding.
 - **Search** — On-page search with suggestions to jump straight to a topic.
