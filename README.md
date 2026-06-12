@@ -18,15 +18,6 @@ Every note on the site is hand-written and fact-checked by students who scored *
 - **Search** — On-page search with suggestions to jump straight to a topic.
 - **About Us** — More on the students behind the project.
 
-## Subjects covered
-
-| Subject   | Notes (PDF) | Video walkthroughs | E-assessment practice |
-|-----------|:-----------:|:------------------:|:---------------------:|
-| Biology   | ✅ (Units 1–10) | ✅ | ✅ |
-| Chemistry | ✅ (Chapters 1–12) | ✅ | ✅ |
-| Physics   | ✅ | ✅ | ✅ |
-| Maths     | ✅ | ✅ | ✅ |
-
 ## Tech stack
 
 - **HTML / CSS / JavaScript** — static multi-page website
